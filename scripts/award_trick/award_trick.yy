@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"award_trick",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"award_trick",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
