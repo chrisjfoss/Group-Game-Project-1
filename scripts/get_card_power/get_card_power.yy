@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_card_power",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_card_power",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
