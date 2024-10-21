@@ -1,0 +1,127 @@
+/// @description Insert description here
+// You can write your code in this editor
+
+draw_set_font(display_font);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_set_color(c_black);
+
+draw_sprite(sprite_index,image_index,x,y);
+
+draw_sprite(resource_spr_suit1,0,x+28,y+24);
+draw_sprite(resource_spr_suit2,0,x+28+64,y+24);
+draw_sprite(resource_spr_suit3,0,x+28+64*2,y+24);
+
+
+
+
+draw_text(x+28+18,y+10,string(resource_value_suit1));
+draw_text(x+28+64+18,y+10,string(resource_value_suit2));
+draw_text(x+28+64*2+18,y+10,string(resource_value_suit3));
+
+var setup_phase = false;
+if (instance_exists(card_game_controller_obj))
+{
+	if (card_game_controller_obj.card_game_phase == 1)
+	{
+		setup_phase = true;
+		
+		//draw up/down triangles to allow player to modify resource values
+		draw_sprite(triangle_spr,0,x+28+24,y-12+animation_pip*2);
+		draw_sprite(triangle_spr,0,x+28+64+24,y-12+animation_pip*2);
+		draw_sprite(triangle_spr,0,x+28+64*2+24,y-12+animation_pip*2);
+		
+		draw_sprite_ext(triangle_spr,0,x+28+24,y+sprite_height+12-animation_pip*2,1,-1,0,c_white,1);
+		draw_sprite_ext(triangle_spr,0,x+28+64+24,y+sprite_height+12-animation_pip*2,1,-1,0,c_white,1);
+		draw_sprite_ext(triangle_spr,0,x+28+64*2+24,y+sprite_height+12-animation_pip*2,1,-1,0,c_white,1);
+		
+		
+		//determine if the player has clicked within the bounds of one of the triangle buttons
+		if (mouse_check_button_pressed(mb_left))
+		{
+			var mclick_x = mouse_x;
+			var mclick_y = mouse_y;
+			
+			var detection_circle_size = 30;
+			
+			if (point_distance(mclick_x,mclick_y,x+28+24,y-12) < detection_circle_size)
+			{
+				//clicked the UP ARROW above suit1!
+				resource_value_suit1 += 1;
+				resource_value_suit1 = clamp(resource_value_suit1,0,9);
+			}
+			else if (point_distance(mclick_x,mclick_y,x+28+64+24,y-12) < detection_circle_size)
+			{
+				//clicked the UP ARROW above suit2!
+				resource_value_suit2 += 1;
+				resource_value_suit2 = clamp(resource_value_suit2,0,9);
+			}
+			else if (point_distance(mclick_x,mclick_y,x+28+64*2+24,y-12) < detection_circle_size)
+			{
+				//clicked the UP ARROW above suit3!
+				resource_value_suit3 += 1;
+				resource_value_suit3 = clamp(resource_value_suit3,0,9);
+			}
+			else if (point_distance(mclick_x,mclick_y,x+28+24,y+sprite_height+12) < detection_circle_size)
+			{
+				//clicked the DOWN ARROW below suit1!
+				resource_value_suit1 -= 1;
+				resource_value_suit1 = clamp(resource_value_suit1,0,9);
+			}
+			else if (point_distance(mclick_x,mclick_y,x+28+64+24,y+sprite_height+12) < detection_circle_size)
+			{
+				//clicked the DOWN ARROW below suit2!
+				resource_value_suit2 -= 1;
+				resource_value_suit2 = clamp(resource_value_suit2,0,9);
+			}
+			else if (point_distance(mclick_x,mclick_y,x+28+64*2+24,y+sprite_height+12) < detection_circle_size)
+			{
+				//clicked the DOWN ARROW below suit3!
+				resource_value_suit3 -= 1;
+				resource_value_suit3 = clamp(resource_value_suit3,0,9);
+			}
+		}
+	}
+	else
+	{
+		//display tricks taken counter
+		if (trick_flashes_left > 0 && animation_pip == 1)
+		{
+			draw_set_color(c_white);
+		}
+		else
+		{
+			draw_set_color(c_black);
+		}
+		draw_text(x+28,y+sprite_height,"Tricks Taken: "+string(tricks_taken)+"/3");
+	}
+}
+
+draw_set_color(c_black);
+if (setup_phase == true)
+{
+	if (type == "player")
+	{
+		draw_text(x-64,y+10,"player");
+	}
+	else if (type == "opponent")
+	{
+		draw_text(x+sprite_width+8,y+10,"opponent");
+	}
+}
+else
+{
+	if (type == "player")
+	{
+		draw_text(x+28,y-10-10,"player");
+		
+		draw_sprite(cheat_sheet_spr,0,x+sprite_width-16,y-20);
+	}
+	else if (type == "opponent")
+	{
+		draw_text(x+28,y-10-10,"opponent");
+	}
+	
+	
+	
+}
