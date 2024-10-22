@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"game_init_obj",
+  "%Name":"quit_button_obj",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":27,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"game_init_obj",
+  "name":"quit_button_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"StartMenu",
+    "path":"folders/Objects/StartMenu.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"button_obj",
+    "path":"objects/button_obj/button_obj.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"card_front_spr",
+    "path":"sprites/card_front_spr/card_front_spr.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

@@ -61,3 +61,4 @@ Temporary Items
 # Exclude built files
 *.exe
 *.zip
+tmp

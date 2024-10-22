@@ -1,12 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"game_init_obj",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":27,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"button_obj",
+  "eventList":[],
   "managed":true,
-  "name":"game_init_obj",
+  "name":"button_obj",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -30,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"card_front_spr",
+    "path":"sprites/card_front_spr/card_front_spr.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
