@@ -22,7 +22,7 @@ draw_text(x+28+64*2+18,y+10,string(resource_value_suit3));
 var setup_phase = false;
 if (instance_exists(card_game_controller_obj))
 {
-	if (card_game_controller_obj.card_game_phase == 1)
+	if (card_game_controller_obj.card_game_phase == GAME_PHASE.NOT_STARTED)
 	{
 		setup_phase = true;
 		

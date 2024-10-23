@@ -9,29 +9,29 @@ draw_set_font(card_ft);
 var hint_text_x = room_width/2;
 var hint_text_y = room_height/2;
 
-if (card_game_phase == 1)
+if (card_game_phase == GAME_PHASE.NOT_STARTED)
 {
 	draw_text(hint_text_x,hint_text_y,"Determine Resource Values for each participant,\nthen press SPACEBAR to start the game.");
 }
-else if (card_game_phase == 2)
+else if (card_game_phase == GAME_PHASE.INITIALIZING_DECKS)
 {
 	draw_text(hint_text_x,hint_text_y,"Shuffling decks...\nBoth decks always contain 5 Gray Star cards.");
 }
-else if (card_game_phase == 3)
+else if (card_game_phase == GAME_PHASE.DEALING_CARDS)
 {
 	draw_text(hint_text_x,hint_text_y,"Each participant draws 5 cards from the\ntop of their decks.");
 }
-else if (card_game_phase == 4)
+else if (card_game_phase == GAME_PHASE.PLAYER_TURN)
 {
 	hint_text_x = 128;
 	draw_text(hint_text_x,hint_text_y,"Your turn! Pick 1\ncard to play.");
 }
-else if (card_game_phase == 5)
+else if (card_game_phase == GAME_PHASE.OPPONENT_TURN)
 {
 	hint_text_x = room_width-128;
 	draw_text(hint_text_x,hint_text_y,"Opponent is\nselecting a card.");
 }
-else if (card_game_phase == 6)
+else if (card_game_phase == GAME_PHASE.DETERMINE_WINNER)
 {
 	if (trick_won == "player")
 	{
@@ -44,7 +44,7 @@ else if (card_game_phase == 6)
 	
 	draw_text(hint_text_x,hint_text_y,trick_over_hint_text);
 }
-else if (card_game_phase == 8)
+else if (card_game_phase == GAME_PHASE.GAME_OVER)
 {
 	var game_over_txt = "";
 	
@@ -167,7 +167,7 @@ if (ds_list_size(player_hand) > 0)
 		draw_text(card_x,card_y+32,card_hint_text);
 
 		//check if the player clicked this card if it is their turn.
-		if (card_game_phase == 4)
+		if (card_game_phase == GAME_PHASE.PLAYER_TURN)
 		{
 			if (mouse_check_button_pressed(mb_left))
 			{
@@ -183,7 +183,7 @@ if (ds_list_size(player_hand) > 0)
 						ds_list_delete(player_hand,i);
 						i--;
 						
-						card_game_phase = 5; //change card game phase over to the opponent's turn to play a card down.
+						card_game_phase = GAME_PHASE.OPPONENT_TURN; //change card game phase over to the opponent's turn to play a card down.
 						ai_counter = 0;
 					}
 					else
@@ -235,7 +235,7 @@ if (ds_list_size(player_hand) > 0)
 							ds_list_delete(player_hand,i);
 							i--;
 						
-							card_game_phase = 5; //change card game phase over to the opponent's turn to play a card down.
+							card_game_phase = GAME_PHASE.OPPONENT_TURN; //change card game phase over to the opponent's turn to play a card down.
 							ai_counter = 0;
 						}
 					}

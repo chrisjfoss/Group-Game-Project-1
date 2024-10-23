@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-card_game_phase = 3; //deal cards.
+card_game_phase = GAME_PHASE.DEALING_CARDS; //deal cards.
 
 var cards_to_deal = 5;
 while (ds_list_size(player_deck) > 0 && cards_to_deal > 0)
