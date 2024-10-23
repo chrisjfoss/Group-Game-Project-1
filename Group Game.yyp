@@ -48,6 +48,7 @@
     {"id":{"name":"award_trick","path":"scripts/award_trick/award_trick.yy",},},
     {"id":{"name":"get_card_power","path":"scripts/get_card_power/get_card_power.yy",},},
     {"id":{"name":"get_card_suit","path":"scripts/get_card_suit/get_card_suit.yy",},},
+    {"id":{"name":"button_spr","path":"sprites/button_spr/button_spr.yy",},},
     {"id":{"name":"card_back_spr","path":"sprites/card_back_spr/card_back_spr.yy",},},
     {"id":{"name":"card_front_spr","path":"sprites/card_front_spr/card_front_spr.yy",},},
     {"id":{"name":"cheat_sheet_spr","path":"sprites/cheat_sheet_spr/cheat_sheet_spr.yy",},},
