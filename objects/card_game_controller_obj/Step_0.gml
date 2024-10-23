@@ -2,19 +2,19 @@
 // You can write your code in this editor
 
 //game over logic!
-if (card_game_phase == 7)
+if (card_game_phase == GAME_PHASE.ROUND_END)
 {
 	ai_counter += 1;
 	if (ai_counter > 30)
 	{
 		if (trick_won == "player")
 		{
-			card_game_phase = 4; //restart the game, with the player leading.
+			card_game_phase = GAME_PHASE.PLAYER_TURN; //restart the game, with the player leading.
 			leading_participant = "player";
 		}
 		else if (trick_won == "opponent")
 		{
-			card_game_phase = 5; //restart the game, with the computer leading.
+			card_game_phase = GAME_PHASE.OPPONENT_TURN; //restart the game, with the computer leading.
 			leading_participant = "opponent";
 		}
 		
@@ -27,7 +27,7 @@ if (card_game_phase == 7)
 
 
 //opponent card game AI logic.
-if (card_game_phase == 5)
+if (card_game_phase == GAME_PHASE.OPPONENT_TURN)
 {
 	//it is the opponent's turn to pick a card.
 	if (opponent_card_active != "")
@@ -35,13 +35,13 @@ if (card_game_phase == 5)
 		//opponent already picked a card! Either turn it over to the player to follow, or begin comparing cards.
 		if (player_card_active != "")
 		{
-			card_game_phase = 6; //evaluate the trick winner.
+			card_game_phase = GAME_PHASE.DETERMINE_WINNER; //evaluate the trick winner.
 			trick_over_hint_text = "";
 			ai_counter = 0;
 		}
 		else
 		{
-			card_game_phase = 4; //let the player pick their card.
+			card_game_phase = GAME_PHASE.PLAYER_TURN; //let the player pick their card.
 			ai_counter = 0;
 		}
 	}
@@ -66,7 +66,7 @@ if (card_game_phase == 5)
 				ds_list_delete(opponent_hand,rand_pick);
 
 				
-				card_game_phase = 4; //let the player pick their card.
+				card_game_phase = GAME_PHASE.PLAYER_TURN; //let the player pick their card.
 				ai_counter = 0;
 			}
 			else
@@ -116,14 +116,14 @@ if (card_game_phase == 5)
 					}
 				}
 				
-				card_game_phase = 6; //let's compare cards and see who won the trick!
+				card_game_phase = GAME_PHASE.DETERMINE_WINNER; //let's compare cards and see who won the trick!
 				trick_over_hint_text = "";
 				ai_counter = 0;
 			}
 		}
 	}
 }
-else if (card_game_phase == 6)
+else if (card_game_phase == GAME_PHASE.DETERMINE_WINNER)
 {
 	if (ai_counter == 0)
 	{
@@ -247,7 +247,7 @@ else if (card_game_phase == 6)
 		if (player_score >= 3 || opponent_score >= 3)
 		{
 			//GAME OVER.
-			card_game_phase = 8;
+			card_game_phase = GAME_PHASE.GAME_OVER;
 			ai_counter = 0;
 			
 			ds_list_clear(player_hand);
@@ -260,7 +260,7 @@ else if (card_game_phase == 6)
 		}
 		else
 		{
-			card_game_phase = 7;
+			card_game_phase = GAME_PHASE.ROUND_END;
 			ai_counter = 0;
 		}
 	}

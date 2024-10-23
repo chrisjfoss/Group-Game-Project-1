@@ -1,12 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (card_game_phase == 1)
+if (card_game_phase == GAME_PHASE.NOT_STARTED)
 {
 	player_card_active = ""; 
 	opponent_card_active = "";
 	
-	card_game_phase = 2; //shuffle decks based on resource indicator values!
+	card_game_phase = GAME_PHASE.INITIALIZING_DECKS; //shuffle decks based on resource indicator values!
 	
 	//build decks.
 	
@@ -58,9 +58,9 @@ if (card_game_phase == 1)
 	
 	alarm[0] = 150; //deal cards when alarm goes off
 }
-else if (card_game_phase == 8)
+else if (card_game_phase == GAME_PHASE.GAME_OVER)
 {
-	card_game_phase = 1; //reset the game from the top!
+	card_game_phase = GAME_PHASE.NOT_STARTED; //reset the game from the top!
 	
 	with (resource_indicator_obj) { alarm[0] = 20; animation_pip = 0; tricks_taken = 0; resource_value_suit1 = 2; resource_value_suit2 = 2; resource_value_suit3 = 2; }
 }

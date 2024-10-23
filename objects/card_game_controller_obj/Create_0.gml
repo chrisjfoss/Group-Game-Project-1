@@ -1,7 +1,18 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-card_game_phase = 1;
+enum GAME_PHASE {
+	NOT_STARTED = 1,
+	INITIALIZING_DECKS = 2,
+	DEALING_CARDS = 3,
+	PLAYER_TURN = 4,
+	OPPONENT_TURN = 5,
+	DETERMINE_WINNER = 6,
+	ROUND_END = 7,
+	GAME_OVER = 8,
+}
+
+card_game_phase = GAME_PHASE.NOT_STARTED;
 //this variable controls the current state of the card game.
 //1: Game setup. Determine resource indicator values.
 //2: Shuffling deck.
