@@ -194,15 +194,20 @@ if(ds_list_size(_human_hand) != 0) {
 		//check if the player clicked this card if it is their turn.
 		if (card_game_phase == GAME_PHASE.PLAYER_TURN)
 		{
+			var _card_chosen_successfully = false; //bool flag, set to true if the player successfully clicked a valid card.
 			with(obj_base_human) {
 				if(self.choose_card(_card_x, _card_y, _this_card_type)) {
 					show_debug_message("Card chosen");
 					_i--;
-						
-					card_game_phase = GAME_PHASE.OPPONENT_TURN; //change card game phase over to the opponent's turn to play a card down.
-					ai_counter = 0;
+					_card_chosen_successfully = true;
 				}
 				
+			}
+			
+			if (_card_chosen_successfully)
+			{
+				card_game_phase = GAME_PHASE.OPPONENT_TURN; //change card game phase over to the opponent's turn to play a card down.
+				ai_counter = 0;
 			}
 		}
 		else

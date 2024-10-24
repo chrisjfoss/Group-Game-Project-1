@@ -8,7 +8,7 @@ choose_card = function(){
 	var _opponent_suit = "";
 	var _opponent_power = 0;
 	with(obj_base_human) {
-		if(self._active_card) {	
+		if(self._active_card != "") {	
 			var _data = string_split(self._active_card, " ");
 			_opponent_suit = _data[0];
 			_opponent_power = real(_data[1]);
@@ -19,7 +19,7 @@ choose_card = function(){
 				
 	//For now, just choose a random valid card. TODO: Make computer smarter?
 	ds_list_shuffle(_valid_cards);
-	var _card_picked = valid_cards[| 0];
+	var _card_picked = _valid_cards[| 0];
 	
 	return _card_picked;
 }

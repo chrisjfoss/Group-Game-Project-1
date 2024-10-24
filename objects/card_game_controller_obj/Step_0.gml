@@ -20,8 +20,26 @@ if (card_game_phase == GAME_PHASE.ROUND_END)
 		
 		ai_counter = 0;
 		
-		player_card_active = "";
-		opponent_card_active = "";
+		with (obj_base_player)
+		{
+			_active_card = ""; //all participants remove their active cards from the table. Reset.
+		}
+	}
+}
+
+
+//DETERMINE ACTIVE CARDS (aka cards played on the table)
+var opponent_card_active = "";
+var player_card_active = "";
+with (obj_base_player)
+{
+	if (_player_type == PLAYER_TYPE.HUMAN)
+	{
+		player_card_active = _active_card;
+	}
+	else if (_player_type == PLAYER_TYPE.AI)
+	{
+		opponent_card_active = _active_card;
 	}
 }
 
@@ -30,6 +48,7 @@ if (card_game_phase == GAME_PHASE.ROUND_END)
 if (card_game_phase == GAME_PHASE.OPPONENT_TURN)
 {
 	//it is the opponent's turn to pick a card.
+	
 	if (opponent_card_active != "")
 	{
 		//opponent already picked a card! Either turn it over to the player to follow, or begin comparing cards.
@@ -55,69 +74,25 @@ if (card_game_phase == GAME_PHASE.OPPONENT_TURN)
 		else
 		{
 			//officially pick a card.
+			var _chosen_card = "";
 			with(obj_base_ai) {
-				var chosen_card = self.choose_card();
+				_chosen_card = self.choose_card();
 			}
+			
 			if (player_card_active == "")
 			{
-				//player has played NOTHING. Pick a random card from my hand to lead with.
-				rand_pick = irandom(ds_list_size(opponent_hand)-1);
-				rand_card = opponent_hand[| rand_pick];
+				//player has played NOTHING. First, allow AI to choose a card. Then toss the action over to the player's choice.
 				
-				opponent_card_active = rand_card;
-				//remove this card from the opponent's hand.
-				ds_list_delete(opponent_hand,rand_pick);
-
+				with (obj_base_ai) { self.play_card(_chosen_card); }
 				
 				card_game_phase = GAME_PHASE.PLAYER_TURN; //let the player pick their card.
 				ai_counter = 0;
 			}
 			else
 			{
-				//player has played a card. Let's make a smart decision based on the state of the game.
-				valid_cards = ds_list_create();
+				//player has already played a card. AI should pick a card, then we go to compare cards to determine the trick winner.
 				
-				var player_active_suit = get_card_suit(player_card_active);
-				var player_active_power = get_card_power(player_card_active);
-				
-				for (var k = 0; k < ds_list_size(opponent_hand); k++)
-				{
-					var this_card = opponent_hand[| k];
-					
-					var this_card_suit = get_card_suit(this_card);
-					if (this_card_suit == player_active_suit)
-					{
-						ds_list_add(valid_cards,this_card);
-					}
-				}
-				
-				if (ds_list_size(valid_cards) == 0)
-				{
-					//no matching suit cards! Let's just add all cards to the valid list.
-					for (var k = 0; k < ds_list_size(opponent_hand); k++)
-					{
-						var this_card = opponent_hand[| k];
-						ds_list_add(valid_cards,this_card);
-					}
-				}
-				
-				//For now, just choose a random valid card. TODO: Make computer smarter?
-				ds_list_shuffle(valid_cards);
-				var card_picked = valid_cards[| 0];
-				
-				opponent_card_active = card_picked;
-				
-				
-				//remove this card from the opponent's hand.
-				for (var k = 0; k < ds_list_size(opponent_hand); k++)
-				{
-					var this_c = opponent_hand[| k];
-					if (this_c == card_picked)
-					{
-						ds_list_delete(opponent_hand,k);
-						k--;
-					}
-				}
+				with (obj_base_ai) { self.play_card(_chosen_card); }
 				
 				card_game_phase = GAME_PHASE.DETERMINE_WINNER; //let's compare cards and see who won the trick!
 				trick_over_hint_text = "";
@@ -253,13 +228,13 @@ else if (card_game_phase == GAME_PHASE.DETERMINE_WINNER)
 			card_game_phase = GAME_PHASE.GAME_OVER;
 			ai_counter = 0;
 			
-			ds_list_clear(player_hand);
-			ds_list_clear(player_deck);
-			ds_list_clear(opponent_hand);
-			ds_list_clear(opponent_deck);
-			
-			player_card_active = "";
-			opponent_card_active = "";
+			with (obj_base_player)
+			{
+				ds_list_clear(_hand);
+				ds_list_clear(_deck);
+				_tricks_won = 0;
+				_active_card = "";
+			}
 		}
 		else
 		{

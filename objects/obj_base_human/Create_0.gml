@@ -42,7 +42,7 @@ choose_card = function(_card_x, _card_y, _this_card_type) {
 								
 						var check_suit = get_card_suit(check_card);
 								
-						if (check_suit == opp_suit)
+						if (check_suit == _opponent_suit)
 						{
 							has_matching_suit = true;
 						}
@@ -58,6 +58,7 @@ choose_card = function(_card_x, _card_y, _this_card_type) {
 				{
 					//error message
 					show_message("Invalid choice. You must follow suit! Play a card of the same suit as your opponent.");
+					return false;
 				}
 				else
 				{
