@@ -1,21 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"play_button_obj",
+  "%Name":"obj_base_player",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"play_button_obj",
+  "name":"obj_base_player",
   "overriddenProperties":[],
   "parent":{
-    "name":"StartMenu",
-    "path":"folders/Objects/StartMenu.yy",
+    "name":"Players",
+    "path":"folders/Objects/Players.yy",
   },
-  "parentObjectId":{
-    "name":"button_obj",
-    "path":"objects/button_obj/button_obj.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_button",
-    "path":"sprites/spr_button/spr_button.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

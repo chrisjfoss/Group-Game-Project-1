@@ -7,15 +7,15 @@ if (card_game_phase == GAME_PHASE.ROUND_END)
 	ai_counter += 1;
 	if (ai_counter > 30)
 	{
-		if (trick_won == "player")
+		if (trick_won == PLAYER_TYPE.HUMAN)
 		{
 			card_game_phase = GAME_PHASE.PLAYER_TURN; //restart the game, with the player leading.
-			leading_participant = "player";
+			leading_participant = PLAYER_TYPE.HUMAN;
 		}
-		else if (trick_won == "opponent")
+		else if (trick_won == PLAYER_TYPE.AI)
 		{
 			card_game_phase = GAME_PHASE.OPPONENT_TURN; //restart the game, with the computer leading.
-			leading_participant = "opponent";
+			leading_participant = PLAYER_TYPE.AI;
 		}
 		
 		ai_counter = 0;
@@ -55,6 +55,9 @@ if (card_game_phase == GAME_PHASE.OPPONENT_TURN)
 		else
 		{
 			//officially pick a card.
+			with(obj_base_ai) {
+				var chosen_card = self.choose_card();
+			}
 			if (player_card_active == "")
 			{
 				//player has played NOTHING. Pick a random card from my hand to lead with.
@@ -140,57 +143,57 @@ else if (card_game_phase == GAME_PHASE.DETERMINE_WINNER)
 		if (p_suit == "Gray" && o_suit != "Gray")
 		{
 			//opponent scores!
-			award_trick("opponent");
-			trick_won = "opponent";
+			award_trick(PLAYER_TYPE.AI);
+			trick_won = PLAYER_TYPE.AI;
 			trick_over_hint_text = "You lost the trick!\nAll colored suits beat Gray.";
 		}
 		else if (p_suit != "Gray" && o_suit == "Gray")
 		{
 			//player scores!
-			award_trick("player");
-			trick_won = "player";
+			award_trick(PLAYER_TYPE.HUMAN);
+			trick_won = PLAYER_TYPE.HUMAN;
 			trick_over_hint_text = "You won the trick!\nAll colored suits beat Gray.";
 		}
 		else if (p_suit == "Orange" && o_suit == "Yellow")
 		{
 			//opponent scores!
-			award_trick("opponent");
-			trick_won = "opponent";
+			award_trick(PLAYER_TYPE.AI);
+			trick_won = PLAYER_TYPE.AI;
 			trick_over_hint_text = "You lost the trick!\nYellow beats Orange.";
 		}
 		else if (p_suit == "Yellow" && o_suit == "Orange")
 		{
 			//player scores!
-			award_trick("player");
-			trick_won = "player";
+			award_trick(PLAYER_TYPE.HUMAN);
+			trick_won = PLAYER_TYPE.HUMAN;
 			trick_over_hint_text = "You won the trick!\nYellow beats Orange.";
 		}
 		else if (p_suit == "Pink" && o_suit == "Orange")
 		{
 			//opponent scores!
-			award_trick("opponent");
-			trick_won = "opponent";
+			award_trick(PLAYER_TYPE.AI);
+			trick_won = PLAYER_TYPE.AI;
 			trick_over_hint_text = "You lost the trick!\nOrange beats Pink.";
 		}
 		else if (p_suit == "Orange" && o_suit == "Pink")
 		{
 			//player scores!
-			award_trick("player");
-			trick_won = "player";
+			award_trick(PLAYER_TYPE.HUMAN);
+			trick_won = PLAYER_TYPE.HUMAN;
 			trick_over_hint_text = "You won the trick!\nOrange beats Pink.";
 		}
 		else if (p_suit == "Yellow" && o_suit == "Pink")
 		{
 			//opponent scores!
-			award_trick("opponent");
-			trick_won = "opponent";
+			award_trick(PLAYER_TYPE.AI);
+			trick_won = PLAYER_TYPE.AI;
 			trick_over_hint_text = "You lost the trick!\nPink beats Yellow.";
 		}
 		else if (p_suit == "Pink" && o_suit == "Yellow")
 		{
 			//player scores!
-			award_trick("player");
-			trick_won = "player";
+			award_trick(PLAYER_TYPE.HUMAN);
+			trick_won = PLAYER_TYPE.HUMAN;
 			trick_over_hint_text = "You won the trick!\nPink beats Yellow.";
 		}
 		else if (p_suit == o_suit)
@@ -199,32 +202,32 @@ else if (card_game_phase == GAME_PHASE.DETERMINE_WINNER)
 			if (p_power > o_power)
 			{
 				//player scores!
-				award_trick("player");
-				trick_won = "player";
+				award_trick(PLAYER_TYPE.HUMAN);
+				trick_won = PLAYER_TYPE.HUMAN;
 				trick_over_hint_text = "You won the trick!\nYour number was higher.";
 			}
 			else if (o_power > p_power)
 			{
 				//opponent scores!
-				award_trick("opponent");
-				trick_won = "opponent";
+				award_trick(PLAYER_TYPE.AI);
+				trick_won = PLAYER_TYPE.AI;
 				trick_over_hint_text = "You lost the trick!\nYour number was lower.";
 			}
 			else
 			{
 				//tie! Goes to leading participant.
-				if (leading_participant == "player")
+				if (leading_participant == PLAYER_TYPE.HUMAN)
 				{
 					//player scores!
-					award_trick("player");
-					trick_won = "player";
+					award_trick(PLAYER_TYPE.HUMAN);
+					trick_won = PLAYER_TYPE.HUMAN;
 					trick_over_hint_text = "You won the trick!\nLeading card wins ties.";
 				}
 				else
 				{
 					//opponent scores!
-					award_trick("opponent");
-					trick_won = "opponent";
+					award_trick(PLAYER_TYPE.AI);
+					trick_won = PLAYER_TYPE.AI;
 					trick_over_hint_text = "You lost the trick!\nLeading card wins ties.";
 				}
 			}
@@ -240,8 +243,8 @@ else if (card_game_phase == GAME_PHASE.DETERMINE_WINNER)
 		var opponent_score = 0;
 		with (resource_indicator_obj)
 		{
-			if (type == "player") { player_score = tricks_taken; }
-			else if (type == "opponent") { opponent_score = tricks_taken; }
+			if (type == PLAYER_TYPE.HUMAN) { player_score = tricks_taken; }
+			else if (type == PLAYER_TYPE.AI) { opponent_score = tricks_taken; }
 		}
 		
 		if (player_score >= 3 || opponent_score >= 3)

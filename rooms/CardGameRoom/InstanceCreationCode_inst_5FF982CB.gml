@@ -1,1 +1,1 @@
-type = "opponent";
+type = PLAYER_TYPE.AI;

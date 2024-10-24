@@ -27,13 +27,13 @@ if (instance_exists(card_game_controller_obj))
 		setup_phase = true;
 		
 		//draw up/down triangles to allow player to modify resource values
-		draw_sprite(triangle_spr,0,x+28+24,y-12+animation_pip*2);
-		draw_sprite(triangle_spr,0,x+28+64+24,y-12+animation_pip*2);
-		draw_sprite(triangle_spr,0,x+28+64*2+24,y-12+animation_pip*2);
+		draw_sprite(spr_triangle,0,x+28+24,y-12+animation_pip*2);
+		draw_sprite(spr_triangle,0,x+28+64+24,y-12+animation_pip*2);
+		draw_sprite(spr_triangle,0,x+28+64*2+24,y-12+animation_pip*2);
 		
-		draw_sprite_ext(triangle_spr,0,x+28+24,y+sprite_height+12-animation_pip*2,1,-1,0,c_white,1);
-		draw_sprite_ext(triangle_spr,0,x+28+64+24,y+sprite_height+12-animation_pip*2,1,-1,0,c_white,1);
-		draw_sprite_ext(triangle_spr,0,x+28+64*2+24,y+sprite_height+12-animation_pip*2,1,-1,0,c_white,1);
+		draw_sprite_ext(spr_triangle,0,x+28+24,y+sprite_height+12-animation_pip*2,1,-1,0,c_white,1);
+		draw_sprite_ext(spr_triangle,0,x+28+64+24,y+sprite_height+12-animation_pip*2,1,-1,0,c_white,1);
+		draw_sprite_ext(spr_triangle,0,x+28+64*2+24,y+sprite_height+12-animation_pip*2,1,-1,0,c_white,1);
 		
 		
 		//determine if the player has clicked within the bounds of one of the triangle buttons
@@ -115,7 +115,7 @@ else
 	{
 		draw_text(x+28,y-10-10,"player");
 		
-		draw_sprite(cheat_sheet_spr,0,x+sprite_width-16,y-20);
+		draw_sprite(spr_cheat_sheet,0,x+sprite_width-16,y-20);
 	}
 	else if (type == "opponent")
 	{

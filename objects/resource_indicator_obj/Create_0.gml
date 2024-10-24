@@ -1,13 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-display_font = card_ft;
+display_font = fnt_card;
 
-type = "player"; //player/opponent; determines which participant this resource indicator belongs to.
+type = PLAYER_TYPE.HUMAN; //player/opponent; determines which participant this resource indicator belongs to.
 
-resource_spr_suit1 = suit1_spr;
-resource_spr_suit2 = suit2_spr;
-resource_spr_suit3 = suit3_spr;
+resource_spr_suit1 = spr_suit1;
+resource_spr_suit2 = spr_suit2;
+resource_spr_suit3 = spr_suit3;
 
 resource_value_suit1 = 2;
 resource_value_suit2 = 2;

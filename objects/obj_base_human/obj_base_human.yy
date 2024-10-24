@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"play_button_obj",
+  "%Name":"obj_base_human",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"play_button_obj",
+  "name":"obj_base_human",
   "overriddenProperties":[],
   "parent":{
-    "name":"StartMenu",
-    "path":"folders/Objects/StartMenu.yy",
+    "name":"Human",
+    "path":"folders/Objects/Players/Human.yy",
   },
   "parentObjectId":{
-    "name":"button_obj",
-    "path":"objects/button_obj/button_obj.yy",
+    "name":"obj_base_player",
+    "path":"objects/obj_base_player/obj_base_player.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_button",
-    "path":"sprites/spr_button/spr_button.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

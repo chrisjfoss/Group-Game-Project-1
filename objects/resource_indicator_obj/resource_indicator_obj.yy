@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"resource_indicator_bkg_spr",
-    "path":"sprites/resource_indicator_bkg_spr/resource_indicator_bkg_spr.yy",
+    "name":"spr_resource_indicator_bkg",
+    "path":"sprites/spr_resource_indicator_bkg/spr_resource_indicator_bkg.yy",
   },
   "spriteMaskId":null,
   "visible":true,
