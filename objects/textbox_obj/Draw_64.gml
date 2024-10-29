@@ -1,0 +1,66 @@
+/// @desc Show Text
+
+// Set draw
+draw_set_font(card_small_ft); 
+draw_set_color(c_black);
+draw_set_halign(fa_left); 
+
+// Create Text box background
+var lerp_speed = 0.3
+var threshold = 0.5; 
+
+// Potentially animate it opening up
+height = lerp(height, target_height, lerp_speed);
+
+if (abs(height - target_height) <= threshold) {
+	// Finish Lerp
+	height = target_height; 
+	box_open = true;
+}
+	
+draw_sprite_stretched(sprite, sub_img, x, y, width, height);
+
+// Figure out where text will be. Font size acts as a border around the text
+var text_x = x + font_size; 
+var text_y = y + font_size * 2;
+
+// Type out Text
+var mssg = is_array(text) ? text[page] : text;
+
+// Get the total length of the string (number of characters in the text)
+var message_length = string_length(mssg);
+    
+// If the progress through the text (number of characters shown so far) is less than the message length
+if (text_progress < message_length) {
+	text_progress++;  // Increment text progress to show the next character
+} 
+	
+// Copy part of the string from the start up to the current progress
+var print = string_copy(mssg, 1, text_progress);
+
+// Draw the currently visible portion of the text
+draw_text(text_x, text_y, print); 
+
+// What to do when the text box is done typing
+if (text_progress >= message_length) {
+	do_inputs = true; // This is the prerequisite for step event to do anything. 
+}
+
+// Draw question Options
+if (show_q) {
+	
+	// Position question window at top right corner of textbox. 
+	var rx = x + width; // Top right corner x. 
+	var longest_str = widest_string(question_options); 
+	var qw = longest_str + (font_size * 2); // question width
+	var qx = rx - qw; // x on question box 
+	var _max_rows = min(array_length(question_options), max_rows); // Cap the replies to 3 on screen at once
+	var qh = max_rows * font_size + (font_size * 2);
+	var qy = y - qh; // y on question box
+	
+	draw_menu_list(question_options, sprite, qx, qy, font_size, true, _max_rows);  
+}
+
+//// Reset draw <-----------------------Don't know what's going on. Is this needed?
+//draw_set_color(c_white);
+//draw_set_halign(fa_center); 
