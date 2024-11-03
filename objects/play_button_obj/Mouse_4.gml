@@ -1,3 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-room_goto(CardGameRoom);
+room_goto(_room_goto);
