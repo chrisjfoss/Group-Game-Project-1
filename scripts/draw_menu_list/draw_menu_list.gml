@@ -14,6 +14,11 @@
 // Some of the vars (box_height, sub_img) must be initialized in the object's create event
 function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 	
+	// Spawn a cursor
+	if (!instance_exists(cursor_obj)) {
+		instance_create_depth(mouse_x, mouse_y, depth + 1, cursor_obj); 
+	}
+	
 	// Solve the length and height of the text to be drawn. 
 	var longest_str = widest_string(arr_options); 
 	var text_height = string_height("M"); 
@@ -23,6 +28,9 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 	
 	// Solve Height of window
 	var box_target_height = text_height * rows + (text_border * 2);
+	
+	// Now that height is solved, check if the mouse is within bounds
+	var mouse_hover = collision_rectangle(x1, y1, x1 + box_width, y1 + box_height, cursor_obj, false, false); 
 	
 	// Animated popup
 	if popup {
@@ -43,20 +51,49 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 		draw_sprite_stretched(spr, 0, x1, y1, box_width, box_target_height); 
 	}
 	
-	// Set variables for where the options will be drawn
-	var  
-	selector_x = x1 + text_border, 
-	selector_y = y1 + text_border + (text_height * selector - text_height * offset) - 8, 
-	selector_x2 = selector_x + string_width(arr_options[selector]), 
-	selector_y2 = selector_y + text_height; 
+	// Set variables for where the selector will be drawn
+	//var  
+	//selector_x = x1 + text_border, 
+	//selector_y = y1 + text_border + (text_height * selector - text_height * offset) - 8, // No idea why I needed to do - 8		>:(
+	//selector_x2 = selector_x + string_width(arr_options[selector]), 
+	//selector_y2 = selector_y + text_height; 
 	
 	// Draw selector
-	draw_sprite_stretched(basic_selector_spr, 0, selector_x, selector_y, selector_x2 - selector_x, selector_y2 - selector_y);
-
+	//draw_sprite_stretched(basic_selector_spr, 0, selector_x, selector_y, selector_x2 - selector_x, selector_y2 - selector_y);
+	
 	// Draw options text
 	rows = min(rows, array_length(arr_options)); // allow for fewer than max options
 	for (var i = 0; i < rows; i++) {
 		var abridged_txt = check_hidden_num(arr_options[i + offset], "string"); 
+		
+		// Draw Selector Considering mouse
+		var c = c_yellow;
+		if (mouse_hover != noone) {
+			
+			var  
+			selector_x = x1 + text_border, 
+			selector_y = y1 + text_border + (text_height * i), 
+			selector_x2 = selector_x + string_width(arr_options[i]), 
+			selector_y2 = selector_y + text_height; 
+			
+			var option_hover = collision_rectangle(selector_x, selector_y, selector_x2, selector_y2, cursor_obj, false, false); 
+			if (option_hover != noone) {
+				draw_rectangle_color(selector_x, selector_y, selector_x2, selector_y2, c, c, c, c, false);
+			}
+			show_debug_message("draw_menu_list says: mouse is hovering over either option");
+		}
+		else {
+			selector_x = x1 + text_border; 
+			selector_y = y1 + text_border + (text_height * selector - text_height * offset) - 8; // No idea why I needed to do - 8		>:(
+			selector_x2 = selector_x + string_width(arr_options[selector]); 
+			selector_y2 = selector_y + text_height; 
+	
+			draw_rectangle_color(selector_x, selector_y, selector_x2, selector_y2, c, c, c, c, false); 
+			
+			show_debug_message("draw_menu_list says: mouse is NOT hovering");
+		}
+	
+		 
 		
 		draw_text(x1 + text_border, y1 + text_border + (text_height * i), abridged_txt); 	
 	}

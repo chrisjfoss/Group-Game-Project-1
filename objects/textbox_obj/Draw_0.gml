@@ -1,7 +1,11 @@
 /// @desc Show Text
 
+// Start a new surface to draw on
+surface_set_target(textbox_surface); 
+draw_clear_alpha(c_white, 0); // Clear the surface to start fresh
+
 // Set draw
-draw_set_font(card_small_ft); 
+draw_set_font(card_14_ft); 
 draw_set_color(c_black);
 draw_set_halign(fa_left); 
 
@@ -39,7 +43,7 @@ if (text_progress < message_length) {
 var print = string_copy(mssg, 1, text_progress);
 
 // Draw the currently visible portion of the text
-draw_text(text_x, text_y, print); 
+draw_text(text_x, text_y, print);
 
 // What to do when the text box is done typing
 if (text_progress >= message_length) {
@@ -64,3 +68,9 @@ if (show_q) {
 //// Reset draw <-----------------------Don't know what's going on. Is this needed?
 //draw_set_color(c_white);
 //draw_set_halign(fa_center); 
+
+// Go back to regular surface
+surface_reset_target();
+
+// Apply the drawing we did to ui_surface
+draw_surface(textbox_surface, 0, 0); 
