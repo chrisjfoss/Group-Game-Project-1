@@ -9,8 +9,8 @@
   "name":"button_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"StartMenuObjects",
+    "path":"folders/Objects/StartMenuObjects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

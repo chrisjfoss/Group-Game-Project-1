@@ -3,3 +3,10 @@
 
 window_set_min_height(window_get_height());
 window_set_min_width(window_get_width());
+
+enum DIR {
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT
+};

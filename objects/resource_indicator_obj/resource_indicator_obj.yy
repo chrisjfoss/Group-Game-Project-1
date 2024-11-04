@@ -10,8 +10,8 @@
   "name":"resource_indicator_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"CardGameObjects",
+    "path":"folders/Objects/CardGameObjects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

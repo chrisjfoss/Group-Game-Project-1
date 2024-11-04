@@ -9,8 +9,8 @@
   "name":"play_button_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"StartMenu",
-    "path":"folders/Objects/StartMenu.yy",
+    "name":"StartMenuObjects",
+    "path":"folders/Objects/StartMenuObjects.yy",
   },
   "parentObjectId":{
     "name":"button_obj",
