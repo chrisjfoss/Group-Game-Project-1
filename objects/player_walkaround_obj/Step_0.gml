@@ -3,57 +3,60 @@
 
 var _moving = false;
 
-if (check_left())
+if (!instance_exists(modal_parent_obj))
 {
-	//move left
-	_moving = true;
-	
-	sprite_index = _player_sprites.left;
-	image_speed = _player_walk_image_speed;
-	
-	if (!place_meeting(x-_player_walk_speed,y,blocker_parent_obj))
+	if (check_left())
 	{
-		x -= _player_walk_speed;
+		//move left
+		_moving = true;
+	
+		sprite_index = _player_sprites.left;
+		image_speed = _player_walk_image_speed;
+	
+		if (!place_meeting(x-_player_walk_speed,y,blocker_parent_obj))
+		{
+			x -= _player_walk_speed;
+		}
 	}
-}
-else if (check_right())
-{
-	//move right
-	_moving = true;
-	
-	sprite_index = _player_sprites.right;
-	image_speed = _player_walk_image_speed;
-	
-	if (!place_meeting(x+_player_walk_speed,y,blocker_parent_obj))
+	else if (check_right())
 	{
-		x += _player_walk_speed;
+		//move right
+		_moving = true;
+	
+		sprite_index = _player_sprites.right;
+		image_speed = _player_walk_image_speed;
+	
+		if (!place_meeting(x+_player_walk_speed,y,blocker_parent_obj))
+		{
+			x += _player_walk_speed;
+		}
 	}
-}
 
-if (check_up())
-{
-	//move up
-	_moving = true;
-	
-	sprite_index = _player_sprites.up;
-	image_speed = _player_walk_image_speed;
-	
-	if (!place_meeting(x,y-_player_walk_speed,blocker_parent_obj))
+	if (check_up())
 	{
-		y -= _player_walk_speed;
+		//move up
+		_moving = true;
+	
+		sprite_index = _player_sprites.up;
+		image_speed = _player_walk_image_speed;
+	
+		if (!place_meeting(x,y-_player_walk_speed,blocker_parent_obj))
+		{
+			y -= _player_walk_speed;
+		}
 	}
-}
-else if (check_down())
-{
-	//move down
-	_moving = true;
-	
-	sprite_index = _player_sprites.down;
-	image_speed = _player_walk_image_speed;
-	
-	if (!place_meeting(x,y+_player_walk_speed,blocker_parent_obj))
+	else if (check_down())
 	{
-		y += _player_walk_speed;
+		//move down
+		_moving = true;
+	
+		sprite_index = _player_sprites.down;
+		image_speed = _player_walk_image_speed;
+	
+		if (!place_meeting(x,y+_player_walk_speed,blocker_parent_obj))
+		{
+			y += _player_walk_speed;
+		}
 	}
 }
 

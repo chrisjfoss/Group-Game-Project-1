@@ -1,13 +1,13 @@
 /// @desc Brady Needed something to make a textbox. 
 
-surface_resize(application_surface, 640, 360); // adjusts the DrawGUI layer
+//surface_resize(application_surface, 640, 360); // adjusts the DrawGUI layer
 
 dlog_index = 0; 
 
 dlog[0] = ["You know the thing about card games?", 
 	"You have to play the cards you're dealt!", 
 	"Ha Ha. Isn't that a funny thing to say!?", 
-	["You're not funny^1", "Yes. Hilarious^2"]
+	["You're not funny^1", "Yes. Hilarious^2", "Test option 3^2"]
 ];
 dlog[1] = "You know what! You're right!^0"; 
 dlog[2] = ["See I knew you would think I'm funny!", 

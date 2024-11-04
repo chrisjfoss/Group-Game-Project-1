@@ -3,7 +3,7 @@
 if (do_inputs && !paused) {
 	 
 	// Action Pressed
-	if (keyboard_check_pressed(vk_space)) {
+	if (check_primary_pressed() || mouse_check_button_pressed(mb_left)) {
 		
 		// Action pressed before last page of text = advance page
 		if (page < last_page) {

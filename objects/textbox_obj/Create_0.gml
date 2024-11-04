@@ -1,8 +1,7 @@
 /// @desc Set Vars
 
-// Until we have a global way to reference the size of the screen...
-var res_width = 640; 
-var res_height = 360; 
+var res_width = window_get_width(); 
+var res_height = window_get_height(); 
 
 // Start a new surface because we need to be able to draw a mouse on top with drawGUI
 textbox_surface = surface_create(res_width, res_height); 

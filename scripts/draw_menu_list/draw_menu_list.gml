@@ -15,9 +15,11 @@
 function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 	
 	// Spawn a cursor
-	if (!instance_exists(cursor_obj)) {
+	/*if (!instance_exists(cursor_obj)) {
 		instance_create_depth(mouse_x, mouse_y, depth + 1, cursor_obj); 
-	}
+	}*/
+	window_set_cursor(cr_none);
+	cursor_sprite = cursor_spr;
 	
 	// Solve the length and height of the text to be drawn. 
 	var longest_str = widest_string(arr_options); 
@@ -30,7 +32,7 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 	var box_target_height = text_height * rows + (text_border * 2);
 	
 	// Now that height is solved, check if the mouse is within bounds
-	var mouse_hover = collision_rectangle(x1, y1, x1 + box_width, y1 + box_height, cursor_obj, false, false); 
+	var mouse_hover = point_in_rectangle(mouse_x,mouse_y,x1,y1,x1+box_width,y1+box_height);
 	
 	// Animated popup
 	if popup {
@@ -64,43 +66,47 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 	// Draw options text
 	rows = min(rows, array_length(arr_options)); // allow for fewer than max options
 	for (var i = 0; i < rows; i++) {
+
 		var abridged_txt = check_hidden_num(arr_options[i + offset], "string"); 
+		
+		var fix_offset = 8;
 		
 		// Draw Selector Considering mouse
 		var c = c_yellow;
-		if (mouse_hover != noone) {
+		if (mouse_hover) {
+			 
+			var selector_x = x1 + text_border, 
+			var selector_y = y1 + text_border + (text_height * i), 
+			var selector_x2 = selector_x + string_width(arr_options[i]), 
+			var selector_y2 = selector_y + text_height; 
 			
-			var  
-			selector_x = x1 + text_border, 
-			selector_y = y1 + text_border + (text_height * i), 
-			selector_x2 = selector_x + string_width(arr_options[i]), 
-			selector_y2 = selector_y + text_height; 
+			var option_hover = point_in_rectangle(mouse_x,mouse_y,selector_x,selector_y,selector_x2,selector_y2-1);
 			
-			var option_hover = collision_rectangle(selector_x, selector_y, selector_x2, selector_y2, cursor_obj, false, false); 
-			if (option_hover != noone) {
+			if (option_hover) {
 				draw_rectangle_color(selector_x, selector_y, selector_x2, selector_y2, c, c, c, c, false);
 			}
 			show_debug_message("draw_menu_list says: mouse is hovering over either option");
 		}
 		else {
-			selector_x = x1 + text_border; 
-			selector_y = y1 + text_border + (text_height * selector - text_height * offset) - 8; // No idea why I needed to do - 8		>:(
-			selector_x2 = selector_x + string_width(arr_options[selector]); 
-			selector_y2 = selector_y + text_height; 
-	
-			draw_rectangle_color(selector_x, selector_y, selector_x2, selector_y2, c, c, c, c, false); 
+			var selector_x = x1 + text_border; 
+			var selector_y = y1 + text_border + (text_height * selector - text_height * offset); // No idea why I needed to do - 8		>:(
+			var selector_x2 = selector_x + string_width(arr_options[selector]); 
+			var selector_y2 = selector_y + text_height; 
+			
+			if (i == selector)
+			{
+				draw_rectangle_color(selector_x, selector_y, selector_x2, selector_y2, c, c, c, c, false);
+			}
 			
 			show_debug_message("draw_menu_list says: mouse is NOT hovering");
 		}
 	
-		 
-		
-		draw_text(x1 + text_border, y1 + text_border + (text_height * i), abridged_txt); 	
+		draw_text(x1 + text_border, y1 + text_border + (text_height * i) + fix_offset, abridged_txt); 	
 	}
 	
 	if (!paused) {
 		// Scroll down, selector value goes up
-		if keyboard_check_pressed(vk_down) {
+		if check_down_pressed() {
 			selector = min(selector + 1, array_length(arr_options) - 1); 
 			// Change offset
 			if selector > rows - 1 {
@@ -109,7 +115,7 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 		}
 	
 		// Scroll up, selector value goes down
-		if keyboard_check_pressed(vk_up) {
+		if check_up_pressed() {
 			selector = max(selector - 1, 0); 
 			// Change offset
 			if selector < offset {
@@ -117,4 +123,6 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 			}
 		}
 	}
+
 }
+

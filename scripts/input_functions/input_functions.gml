@@ -71,7 +71,7 @@ function check_down_pressed(){
 }
 
 function check_primary_pressed(){
-	if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(global.gamepad_index,gp_face1))
+	if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(global.gamepad_index,gp_face1))
 	{
 		return true;
 	}
@@ -79,7 +79,7 @@ function check_primary_pressed(){
 }
 
 function check_primary(){
-	if (keyboard_check(vk_enter) || keyboard_check(ord("E")) || gamepad_button_check(global.gamepad_index,gp_face1))
+	if (keyboard_check(vk_enter) || keyboard_check(vk_space) || keyboard_check(ord("E")) || gamepad_button_check(global.gamepad_index,gp_face1))
 	{
 		return true;
 	}

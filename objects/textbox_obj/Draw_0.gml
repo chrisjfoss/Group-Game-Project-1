@@ -1,6 +1,15 @@
 /// @desc Show Text
 
 // Start a new surface to draw on
+if (!surface_exists(textbox_surface))
+{
+	var res_width = window_get_width(); 
+	var res_height = window_get_height(); 
+
+	// Start a new surface because we need to be able to draw a mouse on top with drawGUI
+	textbox_surface = surface_create(res_width, res_height); 
+}
+
 surface_set_target(textbox_surface); 
 draw_clear_alpha(c_white, 0); // Clear the surface to start fresh
 
