@@ -13,3 +13,5 @@ enum DIR {
 
 window_set_cursor(cr_none);
 cursor_sprite = cursor_spr;
+
+init_map();

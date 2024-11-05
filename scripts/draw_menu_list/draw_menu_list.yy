@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"draw_menu_list",
   "parent":{
-    "name":"textbox scripts",
-    "path":"folders/Scripts/textbox scripts.yy",
+    "name":"TextboxScripts",
+    "path":"folders/Scripts/TextboxScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

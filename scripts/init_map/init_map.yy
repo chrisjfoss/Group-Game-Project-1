@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"dlog_respond",
+  "%Name":"init_map",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"dlog_respond",
+  "name":"init_map",
   "parent":{
-    "name":"dlog_scripts",
-    "path":"folders/Scripts/TextboxScripts/dlog_scripts.yy",
+    "name":"MapScripts",
+    "path":"folders/Scripts/MapScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
