@@ -38,11 +38,11 @@ if (event_stage == -1 && selector >= 0)
 				
 				global._player_resources.CIVILIAN = clamp(global._player_resources.CIVILIAN, 0, 10);
 			}
-			else if (_event_choice_variable == "ENGINEERING")
+			else if (_event_choice_variable == "SCIENCE")
 			{
-				global._player_resources.ENGINEERING += _event_choice_delta;
+				global._player_resources.SCIENCE += _event_choice_delta;
 				
-				global._player_resources.ENGINEERING = clamp(global._player_resources.ENGINEERING, 0, 10);
+				global._player_resources.SCIENCE = clamp(global._player_resources.SCIENCE, 0, 10);
 			}
 		}
 	}

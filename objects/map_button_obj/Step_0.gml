@@ -40,6 +40,24 @@ if	(check_primary_pressed() ||
 		{
 			//pick a random event and play it out!
 			var _events_allowed = _active_poi[? "events_possible"];
+			
+			//Remove all previously-experienced events from the array.
+			for (var e = 0; e < array_length(_events_allowed); e++)
+			{
+				var this_event_uid = _events_allowed[e];
+				if (array_get_index(global._events_witnessed,this_event_uid) != -1)
+				{
+					//already witnessed this event! Jetisson it from the airlock.
+					array_delete(_events_allowed,e,1);
+					e--;
+				}
+			}
+			
+			if (array_length(_events_allowed) <= 0)
+			{
+				//no valid events!
+				array_push(_events_allowed, "event_default");
+			}
 		
 			var _event_index_random = irandom(array_length(_events_allowed)-1);
 			var _event_random_uid = _events_allowed[_event_index_random];
@@ -47,6 +65,12 @@ if	(check_primary_pressed() ||
 			//start an event!
 			var _event_box = instance_create_depth(0,0,0,map_event_box_obj);
 			_event_box.event_uid = _event_random_uid;
+			
+			if (_event_random_uid != "event_default")
+			{
+				//do not allow the player to experience the same event twice.
+				array_push(global._events_witnessed,_event_random_uid);
+			}
 		
 			instance_destroy();
 

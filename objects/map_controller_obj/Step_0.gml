@@ -4,7 +4,6 @@
 //animate the sin wave for the player progress counter
 sin_c += (2*pi / (60*2));
 if (sin_c > 2*pi) { sin_c -= 2*pi; }
-if (advancing) { sin_c = 0; }
 
 if (instance_exists(modal_parent_obj)) { exit; }
 

@@ -142,56 +142,56 @@ else if (card_game_phase == GAME_PHASE.DETERMINE_WINNER)
 			//opponent scores!
 			award_trick("opponent");
 			trick_won = "opponent";
-			trick_over_hint_text = "You lost the trick!\nAll colored suits beat Gray.";
+			trick_over_hint_text = "You lost the trick!\nAll other suits beat Gray.";
 		}
 		else if (p_suit != "Gray" && o_suit == "Gray")
 		{
 			//player scores!
 			award_trick("player");
 			trick_won = "player";
-			trick_over_hint_text = "You won the trick!\nAll colored suits beat Gray.";
+			trick_over_hint_text = "You won the trick!\nAll other suits beat Gray.";
 		}
-		else if (p_suit == "Orange" && o_suit == "Yellow")
+		else if (p_suit == "Military" && o_suit == "Science")
 		{
 			//opponent scores!
 			award_trick("opponent");
 			trick_won = "opponent";
-			trick_over_hint_text = "You lost the trick!\nYellow beats Orange.";
+			trick_over_hint_text = "You lost the trick!\nScience beats Military.";
 		}
-		else if (p_suit == "Yellow" && o_suit == "Orange")
+		else if (p_suit == "Science" && o_suit == "Military")
 		{
 			//player scores!
 			award_trick("player");
 			trick_won = "player";
-			trick_over_hint_text = "You won the trick!\nYellow beats Orange.";
+			trick_over_hint_text = "You won the trick!\nScience beats Military.";
 		}
-		else if (p_suit == "Pink" && o_suit == "Orange")
+		else if (p_suit == "Civilian" && o_suit == "Military")
 		{
 			//opponent scores!
 			award_trick("opponent");
 			trick_won = "opponent";
-			trick_over_hint_text = "You lost the trick!\nOrange beats Pink.";
+			trick_over_hint_text = "You lost the trick!\nMilitary beats Civilian.";
 		}
-		else if (p_suit == "Orange" && o_suit == "Pink")
+		else if (p_suit == "Military" && o_suit == "Civilian")
 		{
 			//player scores!
 			award_trick("player");
 			trick_won = "player";
-			trick_over_hint_text = "You won the trick!\nOrange beats Pink.";
+			trick_over_hint_text = "You won the trick!\nMilitary beats Civilian.";
 		}
-		else if (p_suit == "Yellow" && o_suit == "Pink")
+		else if (p_suit == "Science" && o_suit == "Civilian")
 		{
 			//opponent scores!
 			award_trick("opponent");
 			trick_won = "opponent";
-			trick_over_hint_text = "You lost the trick!\nPink beats Yellow.";
+			trick_over_hint_text = "You lost the trick!\nCivilian beats Science.";
 		}
-		else if (p_suit == "Pink" && o_suit == "Yellow")
+		else if (p_suit == "Civilian" && o_suit == "Science")
 		{
 			//player scores!
 			award_trick("player");
 			trick_won = "player";
-			trick_over_hint_text = "You won the trick!\nPink beats Yellow.";
+			trick_over_hint_text = "You won the trick!\nCivilian beats Science.";
 		}
 		else if (p_suit == o_suit)
 		{

@@ -65,4 +65,95 @@ function render_map(){
 	{
 		draw_sprite_ext(triangle_spr, 0, _map_x + global._map_progress*_render_gap + vehicle_offset, _map_y-32+2*sin(sin_c), 1, -1, 0, image_blend, 1.0);
 	}
+	
+	//render vehicle cars
+	var _p_x = _map_x + global._map_progress*_render_gap + vehicle_offset;
+	var _p_y = _map_y-4;
+	//first, conductor's car
+	draw_sprite_ext(little_train_conductor_spr,0,_p_x,_p_y,1,1,0,c_white,1.0);
+	//now, the resource cars
+	var order_m = -1;
+	var order_c = -1;
+	var order_s = -1;
+	
+	var order_array = [ global._player_resources.MILITARY, global._player_resources.CIVILIAN, global._player_resources.SCIENCE ];
+	array_sort(order_array,false);
+	
+	while (order_m == -1)
+	{
+		if (order_array[0] == global._player_resources.MILITARY)
+		{
+			order_m = 0;
+		}
+		else if (order_array[1] == global._player_resources.MILITARY)
+		{
+			order_m = 1;
+		}
+		else if (order_array[2] == global._player_resources.MILITARY)
+		{
+			order_m = 2;
+		}
+		else
+		{
+			order_m = 0;
+		}
+	}
+	
+	while (order_c == -1)
+	{
+		if (order_array[0] == global._player_resources.CIVILIAN && order_m != 0)
+		{
+			order_c = 0;
+		}
+		else if (order_array[1] == global._player_resources.CIVILIAN && order_m != 1)
+		{
+			order_c = 1;
+		}
+		else if (order_array[2] == global._player_resources.CIVILIAN && order_m != 2)
+		{
+			order_c = 2;
+		}
+		else
+		{
+			order_c = 1;
+		}
+	}
+	
+	while (order_s == -1)
+	{
+		if (order_array[0] == global._player_resources.SCIENCE && order_m != 0 && order_c != 0)
+		{
+			order_s = 0;
+		}
+		else if (order_array[1] == global._player_resources.SCIENCE && order_m != 1 && order_c != 1)
+		{
+			order_s = 1;
+		}
+		else if (order_array[2] == global._player_resources.SCIENCE && order_m != 2 && order_c != 2)
+		{
+			order_s = 2;
+		}
+		else
+		{
+			order_s = 2;
+		}
+	}
+	
+	//now all are sorted. Draw cars.
+	
+	//colored cars!
+	for (cars = 0; cars <= 2; cars++)
+	{
+		var _loop_var = global._player_resources.MILITARY;
+		var _car_spr = little_train_military_spr;
+		if (order_m == cars) {_loop_var = global._player_resources.MILITARY; _car_spr = little_train_military_spr; }
+		else if (order_c == cars) {_loop_var = global._player_resources.CIVILIAN; _car_spr = little_train_civilian_spr; }
+		else if (order_s == cars) {_loop_var = global._player_resources.SCIENCE; _car_spr = little_train_science_spr; }
+		for (var i = 0; i < _loop_var; i++)
+		{
+			_p_x -= sprite_get_width(_car_spr);
+			draw_sprite_ext(_car_spr,0,_p_x,_p_y,1,1,0,c_white,1.0);
+		}
+	}
+	
 }

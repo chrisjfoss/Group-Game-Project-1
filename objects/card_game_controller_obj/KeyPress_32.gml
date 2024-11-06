@@ -28,9 +28,9 @@ if (card_game_phase == GAME_PHASE.NOT_STARTED)
 			player_suit3_value = resource_value_suit3; 
 		} 
 	}
-	for (var i = 1; i <= player_suit1_value; i++) { ds_list_add(player_deck,"Orange "+string(i)); }
-	for (var i = 1; i <= player_suit2_value; i++) { ds_list_add(player_deck,"Yellow "+string(i)); }
-	for (var i = 1; i <= player_suit3_value; i++) { ds_list_add(player_deck,"Pink "+string(i)); }
+	for (var i = 1; i <= player_suit1_value; i++) { ds_list_add(player_deck,"Military "+string(i)); }
+	for (var i = 1; i <= player_suit2_value; i++) { ds_list_add(player_deck,"Civilian "+string(i)); }
+	for (var i = 1; i <= player_suit3_value; i++) { ds_list_add(player_deck,"Science "+string(i)); }
 	ds_list_shuffle(player_deck);
 	
 	//opponent deck build
@@ -51,9 +51,9 @@ if (card_game_phase == GAME_PHASE.NOT_STARTED)
 			opponent_suit3_value = resource_value_suit3; 
 		} 
 	}
-	for (var i = 1; i <= opponent_suit1_value; i++) { ds_list_add(opponent_deck,"Orange "+string(i)); }
-	for (var i = 1; i <= opponent_suit2_value; i++) { ds_list_add(opponent_deck,"Yellow "+string(i)); }
-	for (var i = 1; i <= opponent_suit3_value; i++) { ds_list_add(opponent_deck,"Pink "+string(i)); }
+	for (var i = 1; i <= opponent_suit1_value; i++) { ds_list_add(opponent_deck,"Military "+string(i)); }
+	for (var i = 1; i <= opponent_suit2_value; i++) { ds_list_add(opponent_deck,"Civilian "+string(i)); }
+	for (var i = 1; i <= opponent_suit3_value; i++) { ds_list_add(opponent_deck,"Science "+string(i)); }
 	ds_list_shuffle(opponent_deck);
 	
 	alarm[0] = 150; //deal cards when alarm goes off

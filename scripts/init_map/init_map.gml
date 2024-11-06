@@ -19,7 +19,15 @@ function init_map(){
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
 	_new_map_element[? "name"] = "Road Event 1";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2" ];
+	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	ds_list_add(global._map_list, _new_map_element);
+	
+	//Road Event
+	var _new_map_element = ds_map_create();
+	_new_map_element[? "sprite"] = map_indicator_event_spr;
+	_new_map_element[? "type"] = "event";
+	_new_map_element[? "name"] = "Road Event 2";
+	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Station 2
@@ -34,8 +42,16 @@ function init_map(){
 	var _new_map_element = ds_map_create();
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
-	_new_map_element[? "name"] = "Road Event 2";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2" ];
+	_new_map_element[? "name"] = "Road Event 3";
+	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	ds_list_add(global._map_list, _new_map_element);
+	
+	//Road Event
+	var _new_map_element = ds_map_create();
+	_new_map_element[? "sprite"] = map_indicator_event_spr;
+	_new_map_element[? "type"] = "event";
+	_new_map_element[? "name"] = "Road Event 4";
+	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Station 3
@@ -50,8 +66,16 @@ function init_map(){
 	var _new_map_element = ds_map_create();
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
-	_new_map_element[? "name"] = "Road Event 3";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2" ];
+	_new_map_element[? "name"] = "Road Event 5";
+	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	ds_list_add(global._map_list, _new_map_element);
+	
+	//Road Event
+	var _new_map_element = ds_map_create();
+	_new_map_element[? "sprite"] = map_indicator_event_spr;
+	_new_map_element[? "type"] = "event";
+	_new_map_element[? "name"] = "Road Event 6";
+	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Station 4
@@ -66,16 +90,24 @@ function init_map(){
 	var _new_map_element = ds_map_create();
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
-	_new_map_element[? "name"] = "Road Event 4";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2" ];
+	_new_map_element[? "name"] = "Road Event 7";
+	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Road Event
 	var _new_map_element = ds_map_create();
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
-	_new_map_element[? "name"] = "Road Event 5";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2" ];
+	_new_map_element[? "name"] = "Road Event 8";
+	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	ds_list_add(global._map_list, _new_map_element);
+	
+	//Road Event
+	var _new_map_element = ds_map_create();
+	_new_map_element[? "sprite"] = map_indicator_event_spr;
+	_new_map_element[? "type"] = "event";
+	_new_map_element[? "name"] = "Road Event 9";
+	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Station 5

@@ -19,12 +19,13 @@ window_set_cursor(cr_none);
 cursor_sprite = cursor_spr;
 
 init_map();
+global._events_witnessed = [];
 
 enum STARTING_VALUES {
 	CREDITS = 50,
-	MILITARY = 0,
-	CIVILIAN = 0,
-	ENGINEERING = 0
+	MILITARY = 1,
+	CIVILIAN = 1,
+	SCIENCE = 1
 }
 
 //player values, useful for scoring the game
@@ -32,7 +33,7 @@ global._player_resources = {
 	CREDITS: STARTING_VALUES.CREDITS,
 	MILITARY: STARTING_VALUES.MILITARY,
 	CIVILIAN: STARTING_VALUES.CIVILIAN,
-	ENGINEERING: STARTING_VALUES.ENGINEERING
+	SCIENCE: STARTING_VALUES.SCIENCE
 }
 	
 init_random_events();
