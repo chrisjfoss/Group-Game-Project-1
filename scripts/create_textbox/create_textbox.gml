@@ -30,8 +30,8 @@ function create_textbox(sprite, sub_img, text, position, popup = true, xx = 0, y
 	var lines, w, h, array_len; 
 	
 	// Until we have a better way to reference the size of the screen...
-	var res_width = 640; 
-	var res_height = 360; 
+	var res_width = display_get_gui_width(); 
+	var res_height = display_get_gui_height(); 
 	
 	// Set the width of the text box
 	if (position == "top" || position == "bottom") {

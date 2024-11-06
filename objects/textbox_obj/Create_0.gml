@@ -31,5 +31,3 @@ max_rows = 3;
 // Used in draw_menu_list
 box_height = 0; 
 offset = 0; 
-
-depth = -500; //put it waaay above other objects in rendering order, so that textboxes appear "on top"

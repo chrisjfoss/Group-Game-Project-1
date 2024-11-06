@@ -18,6 +18,7 @@ else if (_room_goto == "advance")
 	with (map_controller_obj)
 	{
 		advancing = true;
+		with (map_button_obj) { instance_destroy(); }
 	}
 }
 else

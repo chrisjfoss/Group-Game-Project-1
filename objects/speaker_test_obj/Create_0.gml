@@ -1,6 +1,5 @@
 /// @desc Brady Needed something to make a textbox. 
 
-//surface_resize(application_surface, 640, 360); // adjusts the DrawGUI layer
 
 dlog_index = 0; 
 
