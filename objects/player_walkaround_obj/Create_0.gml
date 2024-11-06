@@ -14,4 +14,4 @@ _player_sprites = {
 }
 
 _player_walk_image_speed = 0.2;
-_player_walk_speed = 1;
+_player_walk_speed = 2;

@@ -32,7 +32,7 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 	var box_target_height = text_height * rows + (text_border * 2);
 	
 	// Now that height is solved, check if the mouse is within bounds
-	var mouse_hover = point_in_rectangle(mouse_x,mouse_y,x1,y1,x1+box_width,y1+box_height);
+	var mouse_hover = point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),x1,y1,x1+box_width,y1+box_height);
 	
 	// Animated popup
 	if popup {
@@ -80,7 +80,7 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 			var selector_x2 = selector_x + string_width(arr_options[i]), 
 			var selector_y2 = selector_y + text_height; 
 			
-			var option_hover = point_in_rectangle(mouse_x,mouse_y,selector_x,selector_y,selector_x2,selector_y2-1);
+			var option_hover = point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),selector_x,selector_y,selector_x2,selector_y2-1);
 			
 			if (option_hover) {
 				draw_rectangle_color(selector_x, selector_y, selector_x2, selector_y2, c, c, c, c, false);
@@ -102,7 +102,7 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 			show_debug_message("draw_menu_list says: mouse is NOT hovering");
 		}
 	
-		draw_text(x1 + text_border, y1 + text_border + (text_height * i) + fix_offset, abridged_txt); 	
+		draw_text(x1 + text_border, y1 + text_border + (text_height * i) + fix_offset - 8, abridged_txt); 	
 	}
 	
 	if (!paused) {

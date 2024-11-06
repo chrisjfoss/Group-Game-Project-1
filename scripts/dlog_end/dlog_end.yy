@@ -6,7 +6,7 @@
   "name":"dlog_end",
   "parent":{
     "name":"dlog_scripts",
-    "path":"folders/Scripts/textbox scripts/dlog_scripts.yy",
+    "path":"folders/Scripts/TextboxScripts/dlog_scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

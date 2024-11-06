@@ -20,18 +20,18 @@ function create_textbox(sprite, sub_img, text, position, popup = true, xx = 0, y
 	// 4) ["string", "string", etc., [question options]] - When every line of text has been displayed, a question window will appear, running different functions based on the selection with the defualt being to respond.
 	
 	// This needs to be done so that wrapping will work
-	draw_set_font(card_small_ft); 
+	draw_set_font(card_14_ft); 
 	
 	// How tall is a line of text. This is also used as the border around the text
-	var font_size = string_height("M");
+	var font_size = string_height("M")/2;
 	var double_border = (font_size * 2); 
 	
 	// Prepare empty vars for later
 	var lines, w, h, array_len; 
 	
 	// Until we have a better way to reference the size of the screen...
-	var res_width = 640; 
-	var res_height = 360; 
+	var res_width = display_get_gui_width(); 
+	var res_height = display_get_gui_height(); 
 	
 	// Set the width of the text box
 	if (position == "top" || position == "bottom") {
@@ -40,7 +40,7 @@ function create_textbox(sprite, sub_img, text, position, popup = true, xx = 0, y
 	} else {
 		// for "center" and "custom" position arguments, I want the size of the textbox to adjust automatically
 		var string_w = is_string(text) ? string_width(text) + double_border + font_size: string_width(text[0]) + double_border + font_size; // The spacing still doesn't add up. Fix this, future me
-		w = min(string_w, res_width / 3); 
+		w = min(string_w, res_width-60); 
 	}
 	
 	// Find out how much space you have for wrapping the text.
@@ -64,14 +64,14 @@ function create_textbox(sprite, sub_img, text, position, popup = true, xx = 0, y
 		show_debug_message($"create_texbox says: text is a single string: {text}"); 
 		
 		// Find how many lines there are to calculate height with later
-		lines = wrap_text(text, typeable_w, "lines"); 
+		lines = wrap_text(text, typeable_w-200, "lines"); 
 		
 		// Return the wrapped text
-		text = wrap_text(text, typeable_w); 
+		text = wrap_text(text, typeable_w-200); 
 	} else if (is_array(text)) {
 		
 		// In cases 2-4 height will be calculated using only the first entry in the array, which should always be a string.
-		lines =  wrap_text(text[0], typeable_w, "lines");
+		lines =  wrap_text(text[0], typeable_w-200, "lines");
 		
 		// Look at the last item in the array to determine which of the following cases to use next
 		array_len = array_length(text) - 1;

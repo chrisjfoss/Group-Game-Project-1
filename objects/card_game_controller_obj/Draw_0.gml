@@ -73,10 +73,10 @@ if (player_card_active != "")
 		
 	var this_card_type = player_card_active;
 	var suit_spr = empty_spr;
-	if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit4_spr; }
-	else if (string_pos("Orange", this_card_type) > 0) { suit_spr = suit1_spr; }
-	else if (string_pos("Yellow", this_card_type) > 0) { suit_spr = suit2_spr; }
-	else if (string_pos("Pink", this_card_type) > 0) { suit_spr = suit3_spr; }
+	if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit_gray_spr; }
+	else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; }
+	else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; }
+	else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; }
 		
 	//strip the color from the card string to get the value
 	var card_strength = get_card_power(this_card_type);
@@ -88,10 +88,10 @@ if (player_card_active != "")
 	draw_text(card_x,card_y,string(card_strength));
 	
 	var card_hint_text = "";
-	if (suit_spr == suit4_spr) { card_hint_text = "Loses to all\ncolored suits."; }
-	else if (suit_spr == suit1_spr) { card_hint_text = "Beats Pink.\nLoses to Yellow."; }
-	else if (suit_spr == suit2_spr) { card_hint_text = "Beats Orange.\nLoses to Pink."; }
-	else if (suit_spr == suit3_spr) { card_hint_text = "Beats Yellow.\nLoses to Orange."; }
+	if (suit_spr == suit_gray_spr) { card_hint_text = "Loses to all\nother suits."; }
+	else if (suit_spr == suit_military_spr) { card_hint_text = "Beats Civilian.\nLoses to Science."; }
+	else if (suit_spr == suit_civilian_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
+	else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Civilian."; }
 		
 	draw_set_font(card_small_ft);
 	draw_text(card_x,card_y+32,card_hint_text);
@@ -107,10 +107,10 @@ if (opponent_card_active != "")
 		
 	var this_card_type = opponent_card_active;
 	var suit_spr = empty_spr;
-	if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit4_spr; }
-	else if (string_pos("Orange", this_card_type) > 0) { suit_spr = suit1_spr; }
-	else if (string_pos("Yellow", this_card_type) > 0) { suit_spr = suit2_spr; }
-	else if (string_pos("Pink", this_card_type) > 0) { suit_spr = suit3_spr; }
+	if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit_gray_spr; }
+	else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; }
+	else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; }
+	else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; }
 		
 	//strip the color from the card string to get the value
 	var card_strength = get_card_power(this_card_type);
@@ -122,10 +122,10 @@ if (opponent_card_active != "")
 	draw_text(card_x,card_y,string(card_strength));
 	
 	var card_hint_text = "";
-	if (suit_spr == suit4_spr) { card_hint_text = "Loses to all\ncolored suits."; }
-	else if (suit_spr == suit1_spr) { card_hint_text = "Beats Pink.\nLoses to Yellow."; }
-	else if (suit_spr == suit2_spr) { card_hint_text = "Beats Orange.\nLoses to Pink."; }
-	else if (suit_spr == suit3_spr) { card_hint_text = "Beats Yellow.\nLoses to Orange."; }
+	if (suit_spr == suit_gray_spr) { card_hint_text = "Loses to all\nother suits."; }
+	else if (suit_spr == suit_military_spr) { card_hint_text = "Beats Civilian.\nLoses to Science."; }
+	else if (suit_spr == suit_civilian_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
+	else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Civilian."; }
 		
 	draw_set_font(card_small_ft);
 	draw_text(card_x,card_y+32,card_hint_text);
@@ -143,10 +143,10 @@ if (ds_list_size(player_hand) > 0)
 		
 		var this_card_type = player_hand[| i];
 		var suit_spr = empty_spr;
-		if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit4_spr; }
-		else if (string_pos("Orange", this_card_type) > 0) { suit_spr = suit1_spr; }
-		else if (string_pos("Yellow", this_card_type) > 0) { suit_spr = suit2_spr; }
-		else if (string_pos("Pink", this_card_type) > 0) { suit_spr = suit3_spr; }
+		if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit_gray_spr; }
+		else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; }
+		else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; }
+		else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; }
 		
 		//strip the color from the card string to get the value
 		var card_strength = get_card_power(this_card_type);
@@ -158,10 +158,10 @@ if (ds_list_size(player_hand) > 0)
 		draw_text(card_x,card_y,string(card_strength));
 		
 		var card_hint_text = "";
-		if (suit_spr == suit4_spr) { card_hint_text = "Loses to all\ncolored suits."; }
-		else if (suit_spr == suit1_spr) { card_hint_text = "Beats Pink.\nLoses to Yellow."; }
-		else if (suit_spr == suit2_spr) { card_hint_text = "Beats Orange.\nLoses to Pink."; }
-		else if (suit_spr == suit3_spr) { card_hint_text = "Beats Yellow.\nLoses to Orange."; }
+		if (suit_spr == suit_gray_spr) { card_hint_text = "Loses to all\nother suits."; }
+		else if (suit_spr == suit_military_spr) { card_hint_text = "Beats Civilian.\nLoses to Science."; }
+		else if (suit_spr == suit_civilian_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
+		else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Civilian."; }
 		
 		draw_set_font(card_small_ft);
 		draw_text(card_x,card_y+32,card_hint_text);

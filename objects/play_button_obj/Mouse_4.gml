@@ -12,7 +12,23 @@ if (_room_goto == "textbox")
 	//quick and dirty, create a textbox instance
 	instance_create_depth(0,0,0,speaker_test_obj);
 }
+else if (_room_goto == "advance")
+{
+	//quick and dirty, advance the player's vehicle along the map
+	with (map_controller_obj)
+	{
+		advancing = true;
+		with (map_button_obj) { instance_destroy(); }
+	}
+}
 else
 {
+	//reset stats if new game
+	if (_room_goto == MapRoom)
+	{
+		reset_game_variables();
+		
+	}
+	
 	room_goto(_room_goto);
 }

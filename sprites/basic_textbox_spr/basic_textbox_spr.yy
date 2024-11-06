@@ -44,8 +44,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"textbox sprites",
-    "path":"folders/Sprites/textbox sprites.yy",
+    "name":"TextboxSprites",
+    "path":"folders/Sprites/TextboxSprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

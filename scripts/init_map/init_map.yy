@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"init_map",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"init_map",
+  "parent":{
+    "name":"MapScripts",
+    "path":"folders/Scripts/MapScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -19,6 +19,14 @@ draw_text(x+28+18,y+10,string(resource_value_suit1));
 draw_text(x+28+64+18,y+10,string(resource_value_suit2));
 draw_text(x+28+64*2+18,y+10,string(resource_value_suit3));
 
+draw_set_font(card_small_ft);
+draw_set_color(c_gray);
+draw_text(x+28+18-24,y+10+24,"Military");
+draw_text(x+28+64+18-24,y+10+24,"Civilian");
+draw_text(x+28+64*2+18-24,y+10+24,"Engineering");
+draw_set_font(display_font);
+draw_set_color(c_black);
+
 var setup_phase = false;
 if (instance_exists(card_game_controller_obj))
 {

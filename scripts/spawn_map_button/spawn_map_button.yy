@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"spawn_map_button",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"spawn_map_button",
+  "parent":{
+    "name":"MapScripts",
+    "path":"folders/Scripts/MapScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"init_random_events",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"init_random_events",
+  "parent":{
+    "name":"MapScripts",
+    "path":"folders/Scripts/MapScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
