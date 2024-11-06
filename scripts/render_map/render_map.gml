@@ -55,11 +55,14 @@ function render_map(){
 			draw_set_color(c_white);
 			draw_set_font(card_ft);
 		
-			draw_text(room_width/2, 16, _map_poi_name);
+			draw_text(room_width/2, 8, _map_poi_name);
 		}
 	}
 	
 	
 	//render the player's vehicle along the map
-	draw_sprite_ext(triangle_spr, 0, _map_x + global._map_progress*_render_gap + vehicle_offset, _map_y-32+2*sin(sin_c), 1, -1, 0, image_blend, 1.0);
+	if (!instance_exists(modal_parent_obj))
+	{
+		draw_sprite_ext(triangle_spr, 0, _map_x + global._map_progress*_render_gap + vehicle_offset, _map_y-32+2*sin(sin_c), 1, -1, 0, image_blend, 1.0);
+	}
 }

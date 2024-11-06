@@ -57,6 +57,7 @@
     {"id":{"name":"game_init_obj","path":"objects/game_init_obj/game_init_obj.yy",},},
     {"id":{"name":"map_button_obj","path":"objects/map_button_obj/map_button_obj.yy",},},
     {"id":{"name":"map_controller_obj","path":"objects/map_controller_obj/map_controller_obj.yy",},},
+    {"id":{"name":"map_event_box_obj","path":"objects/map_event_box_obj/map_event_box_obj.yy",},},
     {"id":{"name":"modal_parent_obj","path":"objects/modal_parent_obj/modal_parent_obj.yy",},},
     {"id":{"name":"play_button_obj","path":"objects/play_button_obj/play_button_obj.yy",},},
     {"id":{"name":"player_walkaround_obj","path":"objects/player_walkaround_obj/player_walkaround_obj.yy",},},

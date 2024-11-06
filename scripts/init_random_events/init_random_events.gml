@@ -5,16 +5,46 @@ function init_random_events(){
 	global._random_events = {
 		"test_event1": {
 			"event_text": "You have come across a randomized event. Choose an outcome that you would like to occur for testing purposes.",
-			"choice1": ["+1 Civilian", global._player_resources.CIVILIAN, 1],
-			"choice2": ["-1 Military", global._player_resources.MILITARY, -1],
-			"choice3": ["+2 Engineering", global._player_resources.ENGINEERING, 2],
+			"choice1": [
+				"+1 Civilian", 
+				"CIVILIAN", 
+				1,
+				"You gained some civilian followers! They attached a new car to your train. +1 Civilian."
+			],
+			"choice2": [
+				"-1 Military",
+				"MILITARY",
+				-1,
+				"You lost some military followers! They abandoned your train. -1 Military."
+			],
+			"choice3": [
+				"+2 Engineering",
+				"ENGINEERING",
+				2,
+				"You gained a lot of engineers! They attached new cars to your train. +2 Engineering."
+			],
 		},
 		
 		"test_event2": {
 			"event_text": "You have come across a randomized event. Choose an outcome that you would like to occur for testing purposes.",
-			"choice1": ["+50 Credits", global._player_resources.CREDITS, 50],
-			"choice2": ["-10 Credits", global._player_resources.CREDITS, -10],
-			"choice3": ["Do Nothing", 0, 0],
+			"choice1": [
+				"+50 Credits", 
+				"CREDITS", 
+				50,
+				"You found some money along the road! +50 Credits."
+			],
+			"choice2": [
+				"-10 Credits",
+				"CREDITS",
+				-10,
+				"You lost some money along the road! -10 Credits."
+			],
+			"choice3": [
+				"Do Nothing",
+				0,
+				0,
+				"Nothing of interest happened."
+			],
 		}
 	}
 }

@@ -23,5 +23,15 @@ else if (_room_goto == "advance")
 }
 else
 {
+	//reset stats if new game
+	if (_room_goto == MapRoom)
+	{
+		global._map_progress = 0; //reset progress along map for debug purposes.
+		global._player_resources.CREDITS = STARTING_VALUES.CREDITS;
+		global._player_resources.MILITARY = STARTING_VALUES.MILITARY;
+		global._player_resources.CIVILIAN = STARTING_VALUES.CIVILIAN;
+		global._player_resources.ENGINEERING = STARTING_VALUES.ENGINEERING;
+	}
+	
 	room_goto(_room_goto);
 }

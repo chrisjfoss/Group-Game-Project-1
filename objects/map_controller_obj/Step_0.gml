@@ -31,8 +31,6 @@ if (advancing)
 			global._map_progress += 1; //player is further along in the game!
 			
 			spawn_map_button();
-		
-			//TODO: trigger an event or station scene to occur, based on the player's current positioning.
 		}
 	}
 }
