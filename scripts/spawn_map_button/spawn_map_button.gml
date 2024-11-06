@@ -15,7 +15,7 @@ function spawn_map_button(){
 		var _active_map_poi = global._map_list[| global._map_progress];
 		
 		//spawn a button!
-		var _new_button = instance_create_depth(320, 96, 0, map_button_obj);
+		var _new_button = instance_create_depth(320, 64, 0, map_button_obj);
 		_new_button.image_xscale = 3;
 			
 		if (_active_map_poi[? "type"] == "station")

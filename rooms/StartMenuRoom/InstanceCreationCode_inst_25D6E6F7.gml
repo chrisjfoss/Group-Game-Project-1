@@ -1,2 +1,2 @@
-_button_text = "Play Map";
+_button_text = "New Game";
 _room_goto = MapRoom;

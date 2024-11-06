@@ -102,7 +102,7 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 			show_debug_message("draw_menu_list says: mouse is NOT hovering");
 		}
 	
-		draw_text(x1 + text_border, y1 + text_border + (text_height * i) + fix_offset, abridged_txt); 	
+		draw_text(x1 + text_border, y1 + text_border + (text_height * i) + fix_offset - 8, abridged_txt); 	
 	}
 	
 	if (!paused) {

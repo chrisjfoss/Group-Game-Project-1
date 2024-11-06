@@ -16,6 +16,7 @@ draw_clear_alpha(c_white, 0); // Clear the surface to start fresh
 // Set draw
 draw_set_font(card_14_ft); 
 draw_set_color(c_black);
+draw_set_valign(fa_top);
 draw_set_halign(fa_left); 
 
 // Create Text box background
@@ -35,13 +36,22 @@ draw_sprite_stretched(sprite, sub_img, x, y, width, height);
 
 // Figure out where text will be. Font size acts as a border around the text
 var text_x = x + font_size; 
-var text_y = y + font_size * 2;
+var text_y = y + font_size - 4;
 
 // Type out Text
 var mssg = is_array(text) ? text[page] : text;
 
 // Get the total length of the string (number of characters in the text)
 var message_length = string_length(mssg);
+
+if (text_progress < message_length && text_progress != 0)
+{
+	if (check_primary_pressed() || mouse_check_button_pressed(mb_left))
+	{
+		//advance text to the end
+		text_progress = message_length-1;
+	}
+}
     
 // If the progress through the text (number of characters shown so far) is less than the message length
 if (text_progress < message_length) {

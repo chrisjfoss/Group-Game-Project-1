@@ -156,4 +156,54 @@ function render_map(){
 		}
 	}
 	
+	
+	//draw large cars, too.
+	var _large_car_x = room_width/2;
+	var _large_car_y = room_height-88;
+	
+	if (global._player_resources.MILITARY+global._player_resources.CIVILIAN+global._player_resources.SCIENCE > 7)
+	{
+		//multiple train lines! Scoot up.
+		_large_car_y -= 24;
+	}
+	if (global._player_resources.MILITARY+global._player_resources.CIVILIAN+global._player_resources.SCIENCE > 14)
+	{
+		//multiple train lines! Scoot up.
+		_large_car_y -= 12;
+	}
+	
+	var _large_car_width = sprite_get_width(large_train_conductor_spr) + sprite_get_width(large_train_military_spr)*(global._player_resources.MILITARY+global._player_resources.CIVILIAN+global._player_resources.SCIENCE);
+	
+	_large_car_x += _large_car_width/2;
+	if (_large_car_x > room_width-sprite_get_width(large_train_conductor_spr)/2)
+	{
+		_large_car_x = room_width-sprite_get_width(large_train_conductor_spr)/2;
+	}
+	
+	_large_car_x -= sprite_get_width(large_train_conductor_spr)/2;
+	draw_sprite(large_train_conductor_spr,0,_large_car_x,_large_car_y);
+	_large_car_x -= sprite_get_width(large_train_conductor_spr);
+	_large_car_x += 16;
+	
+	for (cars = 0; cars <= 2; cars++)
+	{
+		var _loop_var = global._player_resources.MILITARY;
+		var _car_spr = large_train_military_spr;
+		if (order_m == cars) {_loop_var = global._player_resources.MILITARY; _car_spr = large_train_military_spr; }
+		else if (order_c == cars) {_loop_var = global._player_resources.CIVILIAN; _car_spr = large_train_civilian_spr; }
+		else if (order_s == cars) {_loop_var = global._player_resources.SCIENCE; _car_spr = large_train_science_spr; }
+		for (var i = 0; i < _loop_var; i++)
+		{
+			draw_sprite_ext(_car_spr,0,_large_car_x,_large_car_y,1,1,0,c_white,1.0);
+			
+			_large_car_x -= sprite_get_width(_car_spr);
+			
+			if (_large_car_x < sprite_get_width(_car_spr)/2)
+			{
+				//new line!
+				_large_car_y += sprite_get_height(_car_spr);
+				_large_car_x = room_width-sprite_get_width(_car_spr)-sprite_get_width(large_train_conductor_spr)-16;
+			}
+		}
+	}
 }

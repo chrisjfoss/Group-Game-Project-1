@@ -8,6 +8,7 @@ function dlog_end(){
 	if (instance_exists(textbox_obj)) {
 		instance_destroy(textbox_obj); 
 	}
+	instance_destroy();
 	
 	// Do any other actions that need to happen when dialogue ends, such as unpause player. 
 }

@@ -11,10 +11,10 @@ draw_text(display_get_gui_width()-6,6,
 			"Science: "+string(global._player_resources.SCIENCE)
 		);
 		
-draw_sprite_ext(credits_symbol_spr,0,display_get_gui_width()-110,16,1,1,0,c_white,1.0);
-draw_sprite_ext(suit_military_spr,0,display_get_gui_width()-110,16+24,1,1,0,c_white,1.0);
-draw_sprite_ext(suit_civilian_spr,0,display_get_gui_width()-110,16+24*2,1,1,0,c_white,1.0);
-draw_sprite_ext(suit_science_spr,0,display_get_gui_width()-110,16+24*3,1,1,0,c_white,1.0);
+draw_sprite_ext(credits_symbol_spr,0,display_get_gui_width()-120,16,1,1,0,c_white,1.0);
+draw_sprite_ext(suit_military_spr,0,display_get_gui_width()-120,16+24,1,1,0,c_white,1.0);
+draw_sprite_ext(suit_civilian_spr,0,display_get_gui_width()-120,16+24*2,1,1,0,c_white,1.0);
+draw_sprite_ext(suit_science_spr,0,display_get_gui_width()-120,16+24*3,1,1,0,c_white,1.0);
 
 //reset render to default
 draw_set_halign(fa_center);

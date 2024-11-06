@@ -1,4 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-global._map_progress = 0; //reset progress along map for debug purposes.
-room_goto(StartMenuRoom);
+
+if (!instance_exists(modal_parent_obj))
+{
+	instance_create_depth(0,0,0,quit_game_confirmation_obj);
+}
