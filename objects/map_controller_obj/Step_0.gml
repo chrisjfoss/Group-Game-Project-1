@@ -7,6 +7,14 @@ if (sin_c > 2*pi) { sin_c -= 2*pi; }
 
 if (instance_exists(modal_parent_obj)) { exit; }
 
+if (global._map_advance)
+{
+	global._map_advance = false;
+	advancing = true;
+	
+	with (map_button_obj) { instance_destroy(); }
+}
+
 if (advancing)
 {
 	if (global._map_progress >= ds_list_size(global._map_list)-1)

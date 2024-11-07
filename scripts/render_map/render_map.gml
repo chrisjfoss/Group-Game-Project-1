@@ -202,7 +202,7 @@ function render_map(){
 			{
 				//new line!
 				_large_car_y += sprite_get_height(_car_spr);
-				_large_car_x = room_width-sprite_get_width(_car_spr)-sprite_get_width(large_train_conductor_spr)-16;
+				_large_car_x = room_width-sprite_get_width(_car_spr)-sprite_get_width(large_train_conductor_spr)-32;
 			}
 		}
 	}

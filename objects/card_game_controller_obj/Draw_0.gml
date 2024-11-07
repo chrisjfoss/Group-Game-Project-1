@@ -60,7 +60,7 @@ else if (card_game_phase == GAME_PHASE.GAME_OVER)
 	else { game_over_txt = "You lose!"; }
 	
 	hint_text_x = room_width/2;
-	draw_text(hint_text_x,hint_text_y,"Game over.\n"+game_over_txt+"\n(SPACEBAR to play again)");
+	draw_text(hint_text_x,hint_text_y,"Game over.\n"+game_over_txt+"\n(SPACEBAR to continue)");
 }
 
 if (player_card_active != "")

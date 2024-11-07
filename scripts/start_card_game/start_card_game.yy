@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"start_card_game",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"start_card_game",
+  "parent":{
+    "name":"CardGameScripts",
+    "path":"folders/Scripts/CardGameScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -9,11 +9,13 @@ window_set_min_width(window_get_width());
 display_set_gui_size(room_width, room_height);
 
 enum DIR {
-	UP,
-	DOWN,
-	LEFT,
-	RIGHT
+	UP = 0,
+	DOWN = 1,
+	LEFT = 2,
+	RIGHT = 3
 };
+
+global._map_advance = false;
 
 window_set_cursor(cr_none);
 cursor_sprite = cursor_spr;

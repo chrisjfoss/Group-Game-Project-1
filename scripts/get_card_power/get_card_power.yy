@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"get_card_power",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"CardGameScripts",
+    "path":"folders/Scripts/CardGameScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
