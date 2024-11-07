@@ -1,19 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"player_walkaround_obj",
+  "%Name":"npc_parent_obj",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"player_walkaround_obj",
+  "name":"npc_parent_obj",
   "overriddenProperties":[],
   "parent":{
     "name":"WalkaroundObjects",
     "path":"folders/Objects/WalkaroundObjects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"blocker_parent_obj",
+    "path":"objects/blocker_parent_obj/blocker_parent_obj.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,10 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"player_down_spr",
-    "path":"sprites/player_down_spr/player_down_spr.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

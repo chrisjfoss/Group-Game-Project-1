@@ -1,19 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"player_walkaround_obj",
+  "%Name":"cowboy_obj",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"player_walkaround_obj",
+  "name":"cowboy_obj",
   "overriddenProperties":[],
   "parent":{
     "name":"WalkaroundObjects",
     "path":"folders/Objects/WalkaroundObjects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"npc_parent_obj",
+    "path":"objects/npc_parent_obj/npc_parent_obj.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"player_down_spr",
-    "path":"sprites/player_down_spr/player_down_spr.yy",
+    "name":"cowboy_spr",
+    "path":"sprites/cowboy_spr/cowboy_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,
