@@ -8,6 +8,10 @@ draw_self();
 
 if keyboard_check_pressed(ord("G")) {show_hitbox = !show_hitbox;}
 
+if (instance_exists(last_npc) && last_npc != noone && !instance_exists(modal_parent_obj))
+{
+	draw_sprite_ext(triangle_spr, 0, last_npc.x, last_npc.y-last_npc.sprite_height+sin(last_npc.sin_c)*2 - 8,0.5,-0.5,0,c_white,1.0);
+}
 
 //if show_hitbox {
 //    var _grab_dist = 16; 

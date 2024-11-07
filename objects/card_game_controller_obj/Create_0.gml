@@ -39,3 +39,8 @@ trick_over_hint_text = "";
 
 player_hand = ds_list_create();
 opponent_hand = ds_list_create();
+
+loss_room = MapRoom;
+loss_x = 64;
+loss_y = 64;
+loss_dir = DIR.DOWN;

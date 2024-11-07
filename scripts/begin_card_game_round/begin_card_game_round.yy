@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"begin_card_game_round",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"begin_card_game_round",
+  "parent":{
+    "name":"CardGameScripts",
+    "path":"folders/Scripts/CardGameScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

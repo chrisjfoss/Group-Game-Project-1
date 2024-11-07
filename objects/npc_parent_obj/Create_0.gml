@@ -10,6 +10,10 @@ enum NPC_STATE {
 
 image_speed = 0; 
 
+depth = -y;
+
+sin_c = 0;
+
 state = NPC_STATE.IDLE;
 return_state = NPC_STATE.IDLE; 
 

@@ -3,6 +3,8 @@
 
 var _moving = false;
 
+depth = -y;
+
 // Pause input if modal_parent_obj exists
 if (!instance_exists(modal_parent_obj))
 {
@@ -13,7 +15,8 @@ if (!instance_exists(modal_parent_obj))
 	
 		sprite_index = _player_sprites.left;
 		image_speed = _player_walk_image_speed;
-		direction = 180; 
+		
+		_player_direction = DIR.LEFT;
 	
 		if (!place_meeting(x-_player_walk_speed,y,blocker_parent_obj))
 		{
@@ -27,7 +30,8 @@ if (!instance_exists(modal_parent_obj))
 	
 		sprite_index = _player_sprites.right;
 		image_speed = _player_walk_image_speed;
-		direction = 0; 
+		
+		_player_direction = DIR.RIGHT;
 	
 		if (!place_meeting(x+_player_walk_speed,y,blocker_parent_obj))
 		{
@@ -42,8 +46,9 @@ if (!instance_exists(modal_parent_obj))
 	
 		sprite_index = _player_sprites.up;
 		image_speed = _player_walk_image_speed;
-		direction = 90;
 	
+		_player_direction = DIR.UP;
+		
 		if (!place_meeting(x,y-_player_walk_speed,blocker_parent_obj))
 		{
 			y -= _player_walk_speed;
@@ -56,7 +61,8 @@ if (!instance_exists(modal_parent_obj))
 	
 		sprite_index = _player_sprites.down;
 		image_speed = _player_walk_image_speed;
-		direction = 270; 
+		
+		_player_direction = DIR.DOWN;
 	
 		if (!place_meeting(x,y+_player_walk_speed,blocker_parent_obj))
 		{
@@ -69,21 +75,14 @@ if (!instance_exists(modal_parent_obj))
 	var _grab_dist = 16; 
 	var _half_player_size = sprite_get_height(sprite_index) / 2; // This assumes player will always be square. which is probably wrong. 
 	
-	// These values assume the player origin will remain bottom center
+	var _hitbox_offset_x = 0;
+	var _hitbox_offset_y = 0;
+	if (_player_direction == DIR.DOWN) { _hitbox_offset_y += _grab_dist; }
+	if (_player_direction == DIR.UP) { _hitbox_offset_y -= _grab_dist; }
+	if (_player_direction == DIR.LEFT) { _hitbox_offset_x -= _grab_dist; }
+	if (_player_direction == DIR.RIGHT) { _hitbox_offset_x += _grab_dist; }
 	
-	var _hitbox_x = x + lengthdir_x(_half_player_size, direction);
-	
-	// This is literally all I can think to do to get the hitbox centered. 
-	if (direction == 180) {_hitbox_x -= _grab_dist;} // ofset for the fact that the rectangle is drawn at top left.
-	if (direction == 90 || direction == 270) {  
-		// Facing up or down
-		_hitbox_x = x - (_grab_dist / 2);  // Center on player's x position
-	}
-	
-	// We subtract half player size to set y to be center of player 
-	var _hitbox_y = (y - _half_player_size) + lengthdir_y(_half_player_size, direction); 
-	
-	var _npc_inst = collision_rectangle(_hitbox_x, _hitbox_y, _hitbox_x + _grab_dist, _hitbox_y + _grab_dist, npc_parent_obj, true, true);
+	var _npc_inst = instance_place(x+_hitbox_offset_x,y+_hitbox_offset_y,npc_parent_obj);
 	
 	// If you hit a new instance, deactivate the last one and activate the new one
     if _npc_inst != noone {

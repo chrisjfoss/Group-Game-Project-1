@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":71,
   "bbox_left":0,
-  "bbox_right":109,
+  "bbox_right":111,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -14,8 +14,8 @@
   "frames":[
     {"$GMSpriteFrame":"","%Name":"fb6e8584-002a-44b4-8375-6ee9ec4adfe2","name":"fb6e8584-002a-44b4-8375-6ee9ec4adfe2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
-  "gridX":0,
-  "gridY":0,
+  "gridX":16,
+  "gridY":8,
   "height":72,
   "HTile":false,
   "layers":[
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":55,
+    "xorigin":56,
     "yorigin":36,
   },
   "swatchColours":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":110,
+  "width":112,
 }

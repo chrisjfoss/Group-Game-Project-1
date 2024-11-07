@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"award_trick",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"CardGameScripts",
+    "path":"folders/Scripts/CardGameScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
