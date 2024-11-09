@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"dlog_continue",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"dlog_continue",
+  "parent":{
+    "name":"dlog_scripts",
+    "path":"folders/Scripts/TextboxScripts/dlog_scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

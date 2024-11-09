@@ -86,7 +86,7 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 				draw_rectangle_color(selector_x, selector_y, selector_x2, selector_y2, c, c, c, c, false);
 				selector = i;
 			}
-			show_debug_message("draw_menu_list says: mouse is hovering over either option");
+			// show_debug_message("draw_menu_list says: mouse is hovering over either option");
 		}
 		else {
 			var selector_x = x1 + text_border; 
@@ -99,7 +99,7 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 				draw_rectangle_color(selector_x, selector_y, selector_x2, selector_y2, c, c, c, c, false);
 			}
 			
-			show_debug_message("draw_menu_list says: mouse is NOT hovering");
+			// show_debug_message("draw_menu_list says: mouse is NOT hovering");
 		}
 	
 		draw_text(x1 + text_border, y1 + text_border + (text_height * i) + fix_offset - 8, abridged_txt); 	
