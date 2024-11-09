@@ -77,9 +77,9 @@ if (show_q) {
 	var longest_str = widest_string(question_options); 
 	var qw = longest_str + (font_size * 2); // question width
 	var qx = rx - qw; // x on question box 
-	var _max_rows = min(array_length(question_options), max_rows); // Cap the replies to 3 on screen at once
-	var qh = max_rows * font_size + (font_size * 2);
-	var qy = y - qh; // y on question box
+	var _max_rows = min(array_length(question_options), max_rows); // Cap the replies
+	var qh = (_max_rows * font_size*2) + (font_size*2);
+	var qy = y - qh - 4; // y on question box
 	
 	draw_menu_list(question_options, sprite, qx, qy, font_size, true, _max_rows);  
 }

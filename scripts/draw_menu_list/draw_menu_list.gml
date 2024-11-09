@@ -77,7 +77,7 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 			 
 			var selector_x = x1 + text_border, 
 			var selector_y = y1 + text_border + (text_height * i), 
-			var selector_x2 = selector_x + string_width(arr_options[i]), 
+			var selector_x2 = selector_x + longest_str, 
 			var selector_y2 = selector_y + text_height; 
 			
 			var option_hover = point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),selector_x,selector_y,selector_x2,selector_y2-1);
@@ -91,7 +91,7 @@ function draw_menu_list(arr_options, spr, x1, y1, text_border, popup, rows){
 		else {
 			var selector_x = x1 + text_border; 
 			var selector_y = y1 + text_border + (text_height * selector - text_height * offset); // No idea why I needed to do - 8		>:(
-			var selector_x2 = selector_x + string_width(arr_options[selector]); 
+			var selector_x2 = selector_x + longest_str; 
 			var selector_y2 = selector_y + text_height; 
 			
 			if (i == selector)
