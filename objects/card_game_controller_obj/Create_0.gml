@@ -12,6 +12,8 @@ enum GAME_PHASE {
 	GAME_OVER = 8,
 }
 
+card_selected = 0; //0-4, which card is actively selected by mouse, keyboard, or gamepad? -1 means none selected currently.
+
 card_game_phase = GAME_PHASE.NOT_STARTED;
 //this variable controls the current state of the card game.
 //1: Game setup. Determine resource indicator values.
