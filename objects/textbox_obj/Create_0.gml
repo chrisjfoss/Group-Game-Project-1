@@ -26,7 +26,7 @@ show_q = false;
 
 // Used to select options
 selector = 0; 
-max_rows = 3; 
+max_rows = 8; 
 
 // Used in draw_menu_list
 box_height = 0; 
