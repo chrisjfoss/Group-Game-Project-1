@@ -11,39 +11,46 @@ if (event_stage == -1 && selector >= 0)
 		
 		//add to the variable as described in the event array
 		var _event_struct = global._random_events[$ event_uid];
-		var _event_choice_array = _event_struct[$ "choice"+string(event_stage+1)];
-		var _event_choice_variable = _event_choice_array[1];
-		var _event_choice_delta = _event_choice_array[2];
-		
-		show_debug_message(_event_choice_variable);
-		show_debug_message(_event_choice_delta);
-		
-		if (_event_choice_variable != 0)
+		var _event_choice_struct = _event_struct[$ "choice"+string(event_stage+1)];
+
+		var outcome_i = 1;
+		while (struct_exists(_event_choice_struct, "choice_outcome"+string(outcome_i)+"_type"))
 		{
-			if (_event_choice_variable == "CREDITS")
+			var _event_outcome_type = _event_choice_struct[$ "choice_outcome"+string(outcome_i)+"_type"];
+			var _event_outcome_value = _event_choice_struct[$ "choice_outcome"+string(outcome_i)+"_value"];
+			
+			show_debug_message(_event_outcome_type);
+			show_debug_message(_event_outcome_value);
+		
+			if (_event_outcome_type != 0)
 			{
-				global._player_resources.CREDITS += _event_choice_delta;
+				if (_event_outcome_type == "CREDITS")
+				{
+					global._player_resources.CREDITS += _event_outcome_value;
 				
-				//TODO check for game over if credits < 0
-			}
-			else if (_event_choice_variable == "MILITARY")
-			{
-				global._player_resources.MILITARY += _event_choice_delta;
+					//TODO check for game over if credits < 0
+				}
+				else if (_event_outcome_type == "MILITARY")
+				{
+					global._player_resources.MILITARY += _event_outcome_value;
 				
-				global._player_resources.MILITARY = clamp(global._player_resources.MILITARY, 0, 10);
-			}
-			else if (_event_choice_variable == "CIVILIAN")
-			{
-				global._player_resources.CIVILIAN += _event_choice_delta;
+					global._player_resources.MILITARY = clamp(global._player_resources.MILITARY, 0, 10);
+				}
+				else if (_event_outcome_type == "CIVILIAN")
+				{
+					global._player_resources.CIVILIAN += _event_outcome_value;
 				
-				global._player_resources.CIVILIAN = clamp(global._player_resources.CIVILIAN, 0, 10);
-			}
-			else if (_event_choice_variable == "SCIENCE")
-			{
-				global._player_resources.SCIENCE += _event_choice_delta;
+					global._player_resources.CIVILIAN = clamp(global._player_resources.CIVILIAN, 0, 10);
+				}
+				else if (_event_outcome_type == "SCIENCE")
+				{
+					global._player_resources.SCIENCE += _event_outcome_value;
 				
-				global._player_resources.SCIENCE = clamp(global._player_resources.SCIENCE, 0, 10);
+					global._player_resources.SCIENCE = clamp(global._player_resources.SCIENCE, 0, 10);
+				}
 			}
+			
+			outcome_i++;
 		}
 	}
 }
