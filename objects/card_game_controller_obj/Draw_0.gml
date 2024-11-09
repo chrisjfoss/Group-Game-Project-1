@@ -9,7 +9,25 @@ draw_set_font(card_ft);
 var hint_text_x = room_width/2;
 var hint_text_y = room_height/2;
 
-if (card_game_phase == GAME_PHASE.NOT_STARTED)
+if (card_game_phase == GAME_PHASE.HOW_TO_PLAY)
+{
+	draw_set_font(card_14_ft);
+	draw_text(hint_text_x,hint_text_y,
+	"===CARD GAME===\n\n"+
+	"Take 3 tricks to win!\n\n"+
+	"The bigger your train, the better the cards in your deck.\n\n"+
+	"Military beats Civilian beats Science beats Military.\n"+
+	"Gray Stars lose to other suits.\n\n"+
+	"Higher numbers win tricks. Leading player wins ties.\n"+
+	"Follow suit if possible. Whoever won the previous trick leads.\n\n"+
+	"Good luck! (SPACEBAR to start)"
+	);
+	draw_set_font(card_ft);
+	
+	draw_sprite_ext(cheat_sheet_spr,0,24,24,1,1,0,c_white,1.0);
+	draw_sprite_ext(cheat_sheet_spr,0,room_width-24,24,1,1,0,c_white,1.0);
+}
+else if (card_game_phase == GAME_PHASE.CHOOSE_RESOURCES)
 {
 	draw_text(hint_text_x,hint_text_y,"Determine Resource Values for each participant,\nthen press SPACEBAR to start the game.");
 }

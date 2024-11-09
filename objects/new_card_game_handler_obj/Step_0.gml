@@ -34,7 +34,8 @@ if (room == CardGameRoom)
 	
 	with (card_game_controller_obj)
 	{
-		begin_card_game_round();
+		/*begin_card_game_round();*/
+		card_game_phase = GAME_PHASE.HOW_TO_PLAY;
 		
 		loss_room = returnroom;
 		loss_x = returnx;

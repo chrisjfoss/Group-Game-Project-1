@@ -1,6 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+if (instance_exists(card_game_controller_obj))
+{
+	if (card_game_controller_obj.card_game_phase == GAME_PHASE.HOW_TO_PLAY)
+	{
+		exit;
+	}
+}
+
 draw_set_font(display_font);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
@@ -30,7 +39,7 @@ draw_set_color(c_black);
 var setup_phase = false;
 if (instance_exists(card_game_controller_obj))
 {
-	if (card_game_controller_obj.card_game_phase == GAME_PHASE.NOT_STARTED)
+	if (card_game_controller_obj.card_game_phase == GAME_PHASE.CHOOSE_RESOURCES)
 	{
 		setup_phase = true;
 		

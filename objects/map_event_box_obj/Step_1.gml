@@ -29,6 +29,14 @@ if (event_stage == -1 && selector >= 0)
 					global._player_resources.CREDITS += _event_outcome_value;
 				
 					//TODO check for game over if credits < 0
+					
+					
+					
+					
+					if (global._player_resources.CREDITS < 0)
+					{
+						global._player_resources.CREDITS = 0;
+					}
 				}
 				else if (_event_outcome_type == "MILITARY")
 				{
