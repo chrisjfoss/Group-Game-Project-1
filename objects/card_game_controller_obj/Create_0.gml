@@ -2,7 +2,8 @@
 // You can write your code in this editor
 
 enum GAME_PHASE {
-	NOT_STARTED = 1,
+	HOW_TO_PLAY = 0,
+	CHOOSE_RESOURCES = 1,
 	INITIALIZING_DECKS = 2,
 	DEALING_CARDS = 3,
 	PLAYER_TURN = 4,
@@ -12,7 +13,9 @@ enum GAME_PHASE {
 	GAME_OVER = 8,
 }
 
-card_game_phase = GAME_PHASE.NOT_STARTED;
+card_selected = 0; //0-4, which card is actively selected by mouse, keyboard, or gamepad? -1 means none selected currently.
+
+card_game_phase = GAME_PHASE.CHOOSE_RESOURCES;
 //this variable controls the current state of the card game.
 //1: Game setup. Determine resource indicator values.
 //2: Shuffling deck.

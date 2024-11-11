@@ -5,10 +5,14 @@ if (instance_exists(modal_parent_obj)) { exit; }
 
 if (check_primary_pressed() || mouse_check_button_pressed(mb_left))
 {
-	if (card_game_phase == GAME_PHASE.NOT_STARTED)
+	if (card_game_phase == GAME_PHASE.CHOOSE_RESOURCES)
 	{
 		begin_card_game_round();
 	
+	}
+	else if (card_game_phase == GAME_PHASE.HOW_TO_PLAY)
+	{
+		begin_card_game_round();
 	}
 	else if (card_game_phase == GAME_PHASE.GAME_OVER)
 	{
@@ -44,7 +48,7 @@ if (check_primary_pressed() || mouse_check_button_pressed(mb_left))
 		/*
 		//LEGACY CODE, RESTARTS THE CARD GAME FROM THE TOP
 	
-		card_game_phase = GAME_PHASE.NOT_STARTED; //reset the game from the top!
+		card_game_phase = GAME_PHASE.CHOOSE_RESOURCES; //reset the game from the top!
 	
 		with (resource_indicator_obj) { alarm[0] = 20; animation_pip = 0; tricks_taken = 0; resource_value_suit1 = 2; resource_value_suit2 = 2; resource_value_suit3 = 2; }
 		*/

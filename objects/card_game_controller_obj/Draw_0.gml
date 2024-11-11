@@ -9,7 +9,25 @@ draw_set_font(card_ft);
 var hint_text_x = room_width/2;
 var hint_text_y = room_height/2;
 
-if (card_game_phase == GAME_PHASE.NOT_STARTED)
+if (card_game_phase == GAME_PHASE.HOW_TO_PLAY)
+{
+	draw_set_font(card_14_ft);
+	draw_text(hint_text_x,hint_text_y,
+	"===CARD GAME===\n\n"+
+	"Take 3 tricks to win!\n\n"+
+	"The bigger your train, the better the cards in your deck.\n\n"+
+	"Military beats Civilian beats Science beats Military.\n"+
+	"Gray Stars lose to other suits.\n\n"+
+	"Higher numbers win tricks. Leading player wins ties.\n"+
+	"Follow suit if possible. Whoever won the previous trick leads.\n\n"+
+	"Good luck! (SPACEBAR to start)"
+	);
+	draw_set_font(card_ft);
+	
+	draw_sprite_ext(cheat_sheet_spr,0,24,24,1,1,0,c_white,1.0);
+	draw_sprite_ext(cheat_sheet_spr,0,room_width-24,24,1,1,0,c_white,1.0);
+}
+else if (card_game_phase == GAME_PHASE.CHOOSE_RESOURCES)
 {
 	draw_text(hint_text_x,hint_text_y,"Determine Resource Values for each participant,\nthen press SPACEBAR to start the game.");
 }
@@ -137,6 +155,25 @@ if (ds_list_size(player_hand) > 0)
 	var card_x = 48;
 	var card_y = 288;
 	
+	if (card_game_phase == GAME_PHASE.PLAYER_TURN)
+	{
+		//permits selecting cards with keyboard or gamepad
+		if (check_left_pressed())
+		{
+			card_selected -= 1;
+			if (card_selected < 0) { card_selected = 0; }
+		}
+		else if (check_right_pressed())
+		{
+			card_selected += 1;
+			if (card_selected >= ds_list_size(player_hand)) { card_selected = ds_list_size(player_hand)-1; }
+		}
+	}
+	else
+	{
+		card_selected = 0;
+	}
+	
 	for (var i = 0; i < ds_list_size(player_hand); i++)
 	{
 		draw_sprite(card_front_spr,0,card_x,card_y);
@@ -165,18 +202,80 @@ if (ds_list_size(player_hand) > 0)
 		
 		draw_set_font(card_small_ft);
 		draw_text(card_x,card_y+32,card_hint_text);
-
+	
 		//check if the player clicked this card if it is their turn.
 		if (card_game_phase == GAME_PHASE.PLAYER_TURN)
 		{
-			if (mouse_check_button_pressed(mb_left))
+			if (card_selected == i)
 			{
-				if (mouse_x > card_x-32 && mouse_x < card_x+32 && mouse_y > card_y-48 && mouse_y < card_y+48)
+				draw_sprite_ext(triangle_spr,0,card_x,card_y-64,1,-1,0,c_white,1.0);
+			}
+		
+			var mouse_in_card = false;
+			if (mouse_x > card_x-32 && mouse_x < card_x+32 && mouse_y > card_y-48 && mouse_y < card_y+48)
+			{
+				card_selected = i;
+				mouse_in_card = true;
+			}
+			
+			if (card_selected == i && ((mouse_check_button_pressed(mb_left)&&mouse_in_card) || check_primary_pressed()))
+			{
+				//clicked this card! Let's play it, if that's valid.
+				if (opponent_card_active == "")
 				{
-					//clicked this card! Let's play it, if that's valid.
-					if (opponent_card_active == "")
+					//simple case, the opponent has not played a card. In this case, all card picks are valid.
+					player_card_active = this_card_type;
+						
+					//remove this card from the player's hand.
+					ds_list_delete(player_hand,i);
+					i--;
+						
+					card_game_phase = GAME_PHASE.OPPONENT_TURN; //change card game phase over to the opponent's turn to play a card down.
+					ai_counter = 0;
+				}
+				else
+				{
+					//determine if the player must follow suit or not. if they must, display an error message. Otherwise, allow the play.
+					var suit_violated = false;
+						
+					var opp_suit = get_card_suit(opponent_card_active);
+						
+					var pl_suit = get_card_suit(this_card_type);
+						
+					if (opp_suit == pl_suit)
 					{
-						//simple case, the opponent has not played a card. In this case, all card picks are valid.
+						suit_violated = false;
+					}
+					else
+					{
+						//not same suit! Determine if the player has ANY of the opponent's suit in their hand.
+						var has_matching_suit = false;
+						for (var j = 0; j < ds_list_size(player_hand); j++)
+						{
+							var check_card = player_hand[| j];
+								
+							var check_suit = get_card_suit(check_card);
+								
+							if (check_suit == opp_suit)
+							{
+								has_matching_suit = true;
+							}
+						}
+							
+						if (has_matching_suit)
+						{
+							suit_violated = true;
+						}
+					}
+						
+					if (suit_violated)
+					{
+						//error message
+						show_message("Invalid choice. You must follow suit! Play a card of the same suit as your opponent.");
+					}
+					else
+					{
+						//valid play
 						player_card_active = this_card_type;
 						
 						//remove this card from the player's hand.
@@ -185,59 +284,6 @@ if (ds_list_size(player_hand) > 0)
 						
 						card_game_phase = GAME_PHASE.OPPONENT_TURN; //change card game phase over to the opponent's turn to play a card down.
 						ai_counter = 0;
-					}
-					else
-					{
-						//determine if the player must follow suit or not. if they must, display an error message. Otherwise, allow the play.
-						var suit_violated = false;
-						
-						var opp_suit = get_card_suit(opponent_card_active);
-						
-						var pl_suit = get_card_suit(this_card_type);
-						
-						if (opp_suit == pl_suit)
-						{
-							suit_violated = false;
-						}
-						else
-						{
-							//not same suit! Determine if the player has ANY of the opponent's suit in their hand.
-							var has_matching_suit = false;
-							for (var j = 0; j < ds_list_size(player_hand); j++)
-							{
-								var check_card = player_hand[| j];
-								
-								var check_suit = get_card_suit(check_card);
-								
-								if (check_suit == opp_suit)
-								{
-									has_matching_suit = true;
-								}
-							}
-							
-							if (has_matching_suit)
-							{
-								suit_violated = true;
-							}
-						}
-						
-						if (suit_violated)
-						{
-							//error message
-							show_message("Invalid choice. You must follow suit! Play a card of the same suit as your opponent.");
-						}
-						else
-						{
-							//valid play
-							player_card_active = this_card_type;
-						
-							//remove this card from the player's hand.
-							ds_list_delete(player_hand,i);
-							i--;
-						
-							card_game_phase = GAME_PHASE.OPPONENT_TURN; //change card game phase over to the opponent's turn to play a card down.
-							ai_counter = 0;
-						}
 					}
 				}
 			}

@@ -13,6 +13,8 @@ if (event_stage == -1)
 {
 	//no choice has been selected by the player! Let's draw the pre-choice text to the screen.
 	var _event_struct = global._random_events[$ event_uid];
+	show_debug_message(event_uid);
+	show_debug_message(_event_struct);
 	var _event_prechoice_text = wrap_text(_event_struct.event_text, event_box_width-16);
 	
 	draw_text(event_box_x+8,event_box_y+8, _event_prechoice_text);
@@ -64,7 +66,7 @@ if (event_stage == -1)
 		{
 			//draw choices text
 			var _event_choice_array = _event_struct[$ "choice"+string(i+1)];
-			var _event_choice_text = _event_choice_array[0];
+			var _event_choice_text = _event_choice_array[$ "choice_text"];
 		
 			if (i == selector)
 			{
@@ -91,8 +93,49 @@ else
 	var _event_struct = global._random_events[$ event_uid];
 	var _event_postchoice_text = "";
 	
-	var _event_postchoice_choice_array = _event_struct[$ "choice"+string(event_stage+1)];
-	_event_postchoice_text = _event_postchoice_choice_array[3];
+	var _event_postchoice_choice_struct = _event_struct[$ "choice"+string(event_stage+1)];
+	_event_postchoice_text = _event_postchoice_choice_struct[$ "choice_post_text"];
+	
+	var results_txt = "\n(";
+	var result_i = 1;
+	while (struct_exists(_event_postchoice_choice_struct, "choice_outcome"+string(result_i)+"_type"))
+	{
+		if (result_i > 1) { results_txt += ", "; }
+		
+		var outcome_i_type = _event_postchoice_choice_struct[$ "choice_outcome"+string(result_i)+"_type"];
+		var outcome_i_value = _event_postchoice_choice_struct[$ "choice_outcome"+string(result_i)+"_value"];
+		
+		var val_string = "";
+		if (outcome_i_value >= 0) { val_string = "+"+string(outcome_i_value); }
+		else if (outcome_i_value < 0) { val_string = string(outcome_i_value); }
+		
+		if (outcome_i_type == "CIVILIAN")
+		{
+			results_txt += val_string + " Civilian";
+		}
+		else if (outcome_i_type == "MILITARY")
+		{
+			results_txt += val_string + " Military";
+		}
+		else if (outcome_i_type == "SCIENCE")
+		{
+			results_txt += val_string + " Science";
+		}
+		else if (outcome_i_type == "CREDITS")
+		{
+			results_txt += val_string + " Credits";
+		}
+		else
+		{
+			results_txt += "Nothing happened"; //nothing happened.
+		}
+		
+		
+		result_i++;
+	}
+	results_txt += ")";
+	
+	_event_postchoice_text += results_txt;
 	
 	_event_postchoice_text = wrap_text(_event_postchoice_text, event_box_width-16);
 	
