@@ -144,7 +144,9 @@ function init_random_events() {
 		"test_event6": {
 			"event_text": "A massive space-slug blocks your path!",
 			"choice1": {
-				"choice_text": "Blast it to pieces!", 
+				"choice_text": "Blast it to pieces!",
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 1,
 				"choice_outcome1_type": "MILITARY",
 				"choice_outcome1_value": -1,
 				"choice_outcome2_type": "CIVILIAN",
@@ -153,6 +155,8 @@ function init_random_events() {
 			},
 			"choice2": {
 				"choice_text": "Honor the slug with a ritual dance", 
+				"choice_prerequisite_type": "CIVILIAN",
+				"choice_prerequisite_value": 1,
 				"choice_outcome1_type": "BATTERIES",
 				"choice_outcome1_value": 35,
 				"choice_post_text": "In some cultures, the space-slug is revered as a diety. You pay your respects, and wouldn't you know it, soon your luck improves. You win some money at a low-stakes poker table."
@@ -177,12 +181,16 @@ function init_random_events() {
 			},
 			"choice2": {
 				"choice_text": "Spend the whole day to repair", 
+				"choice_prerequisite_type": "SCIENCE",
+				"choice_prerequisite_value": 1,
 				"choice_outcome1_type": "SCIENCE",
 				"choice_outcome1_value": 1,
 				"choice_post_text": "You find a dusty owners' manual in the glovebox. In its pages, you learn something new about your incredible vehicle."
 			},
 			"choice3": {
 				"choice_text": "Pay off the locals for new parts", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 10,
 				"choice_outcome1_type": "BATTERIES",
 				"choice_outcome1_value": -10,
 				"choice_outcome2_type": "CIVILIAN",
@@ -201,6 +209,8 @@ function init_random_events() {
 			"event_text": "Oh no! Another train is heading down the tracks in the opposite direction! What should you do?",
 			"choice1": {
 				"choice_text": "Fire a warning shot", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 1,
 				"choice_outcome1_type": "MILITARY",
 				"choice_outcome1_value": 1,
 				"choice_post_text": "You fire a laser bolt, making your presence known. They divert their course. Your reputation as one not-to-be-messed-with increases, and some local thugs join up."
