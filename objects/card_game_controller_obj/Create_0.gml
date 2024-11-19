@@ -10,7 +10,8 @@ enum GAME_PHASE {
 	OPPONENT_TURN = 5,
 	DETERMINE_WINNER = 6,
 	ROUND_END = 7,
-	GAME_OVER = 8,
+	ROUND_OVER = 8,
+	GAME_OVER = 9,
 }
 
 card_selected = 0; //0-4, which card is actively selected by mouse, keyboard, or gamepad? -1 means none selected currently.
@@ -26,6 +27,8 @@ card_game_phase = GAME_PHASE.CHOOSE_RESOURCES;
 //7: Trick over. Go on to next trick.
 //8: GAME OVER.
 
+rounds_won_player = 0;
+rounds_won_opponent = 0;
 
 leading_participant = "player";
 

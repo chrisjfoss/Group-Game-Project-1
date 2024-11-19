@@ -14,6 +14,22 @@ if (check_primary_pressed() || mouse_check_button_pressed(mb_left))
 	{
 		begin_card_game_round();
 	}
+	else if (card_game_phase == GAME_PHASE.ROUND_OVER)
+	{
+		begin_card_game_round();
+		
+		with (resource_indicator_obj) { 
+			tricks_taken = 0;
+		}
+	
+		/*
+		//LEGACY CODE, RESTARTS THE CARD GAME FROM THE TOP
+	
+		card_game_phase = GAME_PHASE.CHOOSE_RESOURCES; //reset the game from the top!
+	
+		with (resource_indicator_obj) { alarm[0] = 20; animation_pip = 0; tricks_taken = 0; resource_value_suit1 = 2; resource_value_suit2 = 2; resource_value_suit3 = 2; }
+		*/
+	}
 	else if (card_game_phase == GAME_PHASE.GAME_OVER)
 	{
 		var player_score = 0;

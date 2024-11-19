@@ -246,8 +246,24 @@ else if (card_game_phase == GAME_PHASE.DETERMINE_WINNER)
 		
 		if (player_score >= 3 || opponent_score >= 3)
 		{
-			//GAME OVER.
-			card_game_phase = GAME_PHASE.GAME_OVER;
+			//ROUND OVER.
+			card_game_phase = GAME_PHASE.ROUND_OVER;
+			
+			if (player_score >= 3)
+			{
+				rounds_won_player += 1;
+			}
+			else
+			{
+				rounds_won_opponent += 1;
+			}
+			
+			if (rounds_won_player >= 2 || rounds_won_opponent >= 2)
+			{
+				//GAME OVER.
+				card_game_phase = GAME_PHASE.GAME_OVER;
+			}
+			
 			ai_counter = 0;
 			
 			ds_list_clear(player_hand);

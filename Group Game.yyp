@@ -143,6 +143,7 @@
     {"id":{"name":"player_right_spr","path":"sprites/player_right_spr/player_right_spr.yy",},},
     {"id":{"name":"player_up_spr","path":"sprites/player_up_spr/player_up_spr.yy",},},
     {"id":{"name":"resource_indicator_bkg_spr","path":"sprites/resource_indicator_bkg_spr/resource_indicator_bkg_spr.yy",},},
+    {"id":{"name":"rounds_won_pip","path":"sprites/rounds_won_pip/rounds_won_pip.yy",},},
     {"id":{"name":"suit_civilian_spr","path":"sprites/suit_civilian_spr/suit_civilian_spr.yy",},},
     {"id":{"name":"suit_gray_spr","path":"sprites/suit_gray_spr/suit_gray_spr.yy",},},
     {"id":{"name":"suit_military_spr","path":"sprites/suit_military_spr/suit_military_spr.yy",},},
