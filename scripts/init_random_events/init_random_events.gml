@@ -17,6 +17,8 @@ function init_random_events() {
 			"event_text": "You have come across a randomized event. Choose an outcome that you would like to occur for testing purposes.",
 			"choice1": {
 				"choice_text": "+1 Civilian", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 1,
 				"choice_outcome1_type": "CIVILIAN",
 				"choice_outcome1_value": 1,
 				"choice_post_text": "You gained some civilian followers! They attached a new car to your train."
@@ -29,6 +31,8 @@ function init_random_events() {
 			},
 			"choice3": {
 				"choice_text": "+2 Science", 
+				"choice_prerequisite_type": "CIVILIAN",
+				"choice_prerequisite_value": 2,
 				"choice_outcome1_type": "SCIENCE",
 				"choice_outcome1_value": 2,
 				"choice_post_text": "You gained lots of brainiacs! They attached new cars to your train."
@@ -38,28 +42,40 @@ function init_random_events() {
 		"test_event2": {
 			"event_text": "Traders ask if you want to buy or sell merchandise.",
 			"choice1": {
-				"choice_text": "+2 Civilian, -10 Credits", 
+				"choice_text": "+2 Civilian, -10 Batteries", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 10,
 				"choice_outcome1_type": "CIVILIAN",
 				"choice_outcome1_value": 2,
-				"choice_outcome2_type": "CREDITS",
+				"choice_outcome2_type": "BATTERIES",
 				"choice_outcome2_value": -10,
 				"choice_post_text": "You trade for their goods, at a price."
 			},
 			"choice2": {
-				"choice_text": "+2 Military, -10 Credits", 
+				"choice_text": "+1 Military, -5 Batteries", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 5,
 				"choice_outcome1_type": "MILITARY",
-				"choice_outcome1_value": 2,
-				"choice_outcome2_type": "CREDITS",
-				"choice_outcome2_value": -10,
+				"choice_outcome1_value": 1,
+				"choice_outcome2_type": "BATTERIES",
+				"choice_outcome2_value": -5,
 				"choice_post_text": "You trade for their goods, at a price."
 			},
 			"choice3": {
-				"choice_text": "+2 Science, -10 Credits", 
+				"choice_text": "+2 Science, -10 Batteries", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 10,
 				"choice_outcome1_type": "SCIENCE",
 				"choice_outcome1_value": 2,
-				"choice_outcome2_type": "CREDITS",
+				"choice_outcome2_type": "BATTERIES",
 				"choice_outcome2_value": -10,
 				"choice_post_text": "You trade for their goods, at a price."
+			},
+			"choice4": {
+				"choice_text": "No thank you.", 
+				"choice_outcome1_type": 0,
+				"choice_outcome1_value": 0,
+				"choice_post_text": "You dismiss the traders and go along on your merry way without making a purchase."
 			}
 		},
 		
@@ -89,7 +105,7 @@ function init_random_events() {
 			},
 			"choice2": {
 				"choice_text": "Sell it on the black market!", 
-				"choice_outcome1_type": "CREDITS",
+				"choice_outcome1_type": "BATTERIES",
 				"choice_outcome1_value": 100,
 				"choice_post_text": "Through dishonest means, you fence the fuel cell to the highest bidder."
 			},
@@ -113,7 +129,7 @@ function init_random_events() {
 				"choice_text": "Loot the scene", 
 				"choice_outcome1_type": "MILITARY",
 				"choice_outcome1_value": 1,
-				"choice_outcome2_type": "CREDITS",
+				"choice_outcome2_type": "BATTERIES",
 				"choice_outcome2_value": 25,
 				"choice_post_text": "You find a laser torch with its batteries practically unused, along with some money left in the pocket of a corpse. Nice!"
 			},
@@ -128,7 +144,9 @@ function init_random_events() {
 		"test_event6": {
 			"event_text": "A massive space-slug blocks your path!",
 			"choice1": {
-				"choice_text": "Blast it to pieces!", 
+				"choice_text": "Blast it to pieces!",
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 1,
 				"choice_outcome1_type": "MILITARY",
 				"choice_outcome1_value": -1,
 				"choice_outcome2_type": "CIVILIAN",
@@ -137,7 +155,9 @@ function init_random_events() {
 			},
 			"choice2": {
 				"choice_text": "Honor the slug with a ritual dance", 
-				"choice_outcome1_type": "CREDITS",
+				"choice_prerequisite_type": "CIVILIAN",
+				"choice_prerequisite_value": 1,
+				"choice_outcome1_type": "BATTERIES",
 				"choice_outcome1_value": 35,
 				"choice_post_text": "In some cultures, the space-slug is revered as a diety. You pay your respects, and wouldn't you know it, soon your luck improves. You win some money at a low-stakes poker table."
 			},
@@ -161,13 +181,17 @@ function init_random_events() {
 			},
 			"choice2": {
 				"choice_text": "Spend the whole day to repair", 
+				"choice_prerequisite_type": "SCIENCE",
+				"choice_prerequisite_value": 1,
 				"choice_outcome1_type": "SCIENCE",
 				"choice_outcome1_value": 1,
 				"choice_post_text": "You find a dusty owners' manual in the glovebox. In its pages, you learn something new about your incredible vehicle."
 			},
 			"choice3": {
 				"choice_text": "Pay off the locals for new parts", 
-				"choice_outcome1_type": "CREDITS",
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 10,
+				"choice_outcome1_type": "BATTERIES",
 				"choice_outcome1_value": -10,
 				"choice_outcome2_type": "CIVILIAN",
 				"choice_outcome2_value": 1,
@@ -185,6 +209,8 @@ function init_random_events() {
 			"event_text": "Oh no! Another train is heading down the tracks in the opposite direction! What should you do?",
 			"choice1": {
 				"choice_text": "Fire a warning shot", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 1,
 				"choice_outcome1_type": "MILITARY",
 				"choice_outcome1_value": 1,
 				"choice_post_text": "You fire a laser bolt, making your presence known. They divert their course. Your reputation as one not-to-be-messed-with increases, and some local thugs join up."
@@ -219,13 +245,13 @@ function init_random_events() {
 				"choice_text": "Stay and listen to the rant", 
 				"choice_outcome1_type": "CIVILIAN",
 				"choice_outcome1_value": -1,
-				"choice_outcome1_type": "CREDITS",
+				"choice_outcome1_type": "BATTERIES",
 				"choice_outcome1_value": 10,
 				"choice_post_text": "You stick around. Many of your people are bored and displeased. Some abandon you. Still, you do learn some interesting lessons you could apply to business."
 			},
 			"choice2": {
 				"choice_text": "Make a small contribution", 
-				"choice_outcome1_type": "CREDITS",
+				"choice_outcome1_type": "BATTERIES",
 				"choice_outcome1_value": -5,
 				"choice_outcome1_type": "SCIENCE",
 				"choice_outcome1_value": 1,

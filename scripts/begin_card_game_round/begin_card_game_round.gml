@@ -16,6 +16,7 @@ function begin_card_game_round(){
 	ds_list_add(player_deck,"Gray 4");
 	ds_list_add(player_deck,"Gray 5");
 	
+	
 	var player_suit1_value = 0;
 	var player_suit2_value = 0;
 	var player_suit3_value = 0;

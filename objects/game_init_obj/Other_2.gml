@@ -24,7 +24,7 @@ init_map();
 global._events_witnessed = [];
 
 enum STARTING_VALUES {
-	CREDITS = 50,
+	BATTERIES = 5,
 	MILITARY = 1,
 	CIVILIAN = 1,
 	SCIENCE = 1
@@ -32,7 +32,7 @@ enum STARTING_VALUES {
 
 //player values, useful for scoring the game
 global._player_resources = {
-	CREDITS: STARTING_VALUES.CREDITS,
+	BATTERIES: STARTING_VALUES.BATTERIES,
 	MILITARY: STARTING_VALUES.MILITARY,
 	CIVILIAN: STARTING_VALUES.CIVILIAN,
 	SCIENCE: STARTING_VALUES.SCIENCE

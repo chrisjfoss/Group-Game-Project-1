@@ -19,7 +19,7 @@
   "height":96,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"972c26d9-49af-4852-b743-ff2ca9f29532","blendMode":0,"displayName":"default","isLocked":false,"name":"972c26d9-49af-4852-b743-ff2ca9f29532","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"ffe177dc-e2c1-4840-a262-e875c8f32f58","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"ffe177dc-e2c1-4840-a262-e875c8f32f58","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"game_logo_spr",
   "nineSlice":null,

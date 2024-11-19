@@ -14,7 +14,7 @@ if (card_game_phase == GAME_PHASE.HOW_TO_PLAY)
 	draw_set_font(card_14_ft);
 	draw_text(hint_text_x,hint_text_y,
 	"===CARD GAME===\n\n"+
-	"Take 3 tricks to win!\n\n"+
+	"Take 3 tricks to win a round! Win 2 rounds to win the game.\n\n"+
 	"The bigger your train, the better the cards in your deck.\n\n"+
 	"Military beats Civilian beats Science beats Military.\n"+
 	"Gray Stars lose to other suits.\n\n"+
@@ -62,7 +62,7 @@ else if (card_game_phase == GAME_PHASE.DETERMINE_WINNER)
 	
 	draw_text(hint_text_x,hint_text_y,trick_over_hint_text);
 }
-else if (card_game_phase == GAME_PHASE.GAME_OVER)
+else if (card_game_phase == GAME_PHASE.ROUND_OVER)
 {
 	var game_over_txt = "";
 	
@@ -74,7 +74,22 @@ else if (card_game_phase == GAME_PHASE.GAME_OVER)
 		else if (type == "opponent") { opponent_score = tricks_taken; }
 	}
 	
-	if (player_score > opponent_score) { game_over_txt = "You win! Congrats!"; }
+	if (player_score > opponent_score) { 
+		game_over_txt = "You win the round!";
+	}
+	else
+	{
+		game_over_txt = "You lost the round!";
+	}
+
+	hint_text_x = room_width/2;
+	draw_text(hint_text_x,hint_text_y,game_over_txt+"\n(SPACEBAR to continue)");
+}
+else if (card_game_phase == GAME_PHASE.GAME_OVER)
+{
+	var game_over_txt = "";
+	
+	if (rounds_won_player > rounds_won_opponent) { game_over_txt = "You win! Congrats!"; }
 	else { game_over_txt = "You lose!"; }
 	
 	hint_text_x = room_width/2;

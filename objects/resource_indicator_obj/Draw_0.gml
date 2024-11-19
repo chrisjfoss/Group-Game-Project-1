@@ -133,10 +133,32 @@ else
 		draw_text(x+28,y-10-10,"player");
 		
 		draw_sprite(cheat_sheet_spr,0,x+sprite_width-16,y-20);
+		
+		for (var i = 1; i <= 2; i++)
+		{
+			var pip_sub = 0;
+			if (card_game_controller_obj.rounds_won_player >= i)
+			{
+				pip_sub = 1;
+			}
+			
+			draw_sprite(rounds_won_pip, pip_sub, x+8*(i-1)+140, y-6);
+		}
 	}
 	else if (type == "opponent")
 	{
 		draw_text(x+28,y-10-10,"opponent");
+		
+		for (var i = 1; i <= 2; i++)
+		{
+			var pip_sub = 0;
+			if (card_game_controller_obj.rounds_won_opponent >= i)
+			{
+				pip_sub = 1;
+			}
+			
+			draw_sprite(rounds_won_pip, pip_sub, x+8*(i-1)+140, y-6);
+		}
 	}
 	
 	
