@@ -17,6 +17,8 @@ function init_random_events() {
 			"event_text": "You have come across a randomized event. Choose an outcome that you would like to occur for testing purposes.",
 			"choice1": {
 				"choice_text": "+1 Civilian", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 1,
 				"choice_outcome1_type": "CIVILIAN",
 				"choice_outcome1_value": 1,
 				"choice_post_text": "You gained some civilian followers! They attached a new car to your train."
@@ -29,6 +31,8 @@ function init_random_events() {
 			},
 			"choice3": {
 				"choice_text": "+2 Science", 
+				"choice_prerequisite_type": "CIVILIAN",
+				"choice_prerequisite_value": 2,
 				"choice_outcome1_type": "SCIENCE",
 				"choice_outcome1_value": 2,
 				"choice_post_text": "You gained lots of brainiacs! They attached new cars to your train."
@@ -39,6 +43,8 @@ function init_random_events() {
 			"event_text": "Traders ask if you want to buy or sell merchandise.",
 			"choice1": {
 				"choice_text": "+2 Civilian, -10 Batteries", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 10,
 				"choice_outcome1_type": "CIVILIAN",
 				"choice_outcome1_value": 2,
 				"choice_outcome2_type": "BATTERIES",
@@ -46,20 +52,30 @@ function init_random_events() {
 				"choice_post_text": "You trade for their goods, at a price."
 			},
 			"choice2": {
-				"choice_text": "+2 Military, -10 Batteries", 
+				"choice_text": "+1 Military, -5 Batteries", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 5,
 				"choice_outcome1_type": "MILITARY",
-				"choice_outcome1_value": 2,
+				"choice_outcome1_value": 1,
 				"choice_outcome2_type": "BATTERIES",
-				"choice_outcome2_value": -10,
+				"choice_outcome2_value": -5,
 				"choice_post_text": "You trade for their goods, at a price."
 			},
 			"choice3": {
 				"choice_text": "+2 Science, -10 Batteries", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 10,
 				"choice_outcome1_type": "SCIENCE",
 				"choice_outcome1_value": 2,
 				"choice_outcome2_type": "BATTERIES",
 				"choice_outcome2_value": -10,
 				"choice_post_text": "You trade for their goods, at a price."
+			},
+			"choice4": {
+				"choice_text": "No thank you.", 
+				"choice_outcome1_type": 0,
+				"choice_outcome1_value": 0,
+				"choice_post_text": "You dismiss the traders and go along on your merry way without making a purchase."
 			}
 		},
 		

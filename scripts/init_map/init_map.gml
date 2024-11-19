@@ -19,7 +19,7 @@ function init_map(){
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
 	_new_map_element[? "name"] = "Road Event 1";
-	_new_map_element[? "events_possible"] = [ "test_event1" ];
+	_new_map_element[? "events_possible"] = [ "test_event2" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Road Event

@@ -124,6 +124,7 @@
     {"id":{"name":"cursor_spr","path":"sprites/cursor_spr/cursor_spr.yy",},},
     {"id":{"name":"empty_spr","path":"sprites/empty_spr/empty_spr.yy",},},
     {"id":{"name":"game_logo_spr","path":"sprites/game_logo_spr/game_logo_spr.yy",},},
+    {"id":{"name":"invalid_gray_spr","path":"sprites/invalid_gray_spr/invalid_gray_spr.yy",},},
     {"id":{"name":"large_train_civilian_spr","path":"sprites/large_train_civilian_spr/large_train_civilian_spr.yy",},},
     {"id":{"name":"large_train_conductor_spr","path":"sprites/large_train_conductor_spr/large_train_conductor_spr.yy",},},
     {"id":{"name":"large_train_military_spr","path":"sprites/large_train_military_spr/large_train_military_spr.yy",},},
