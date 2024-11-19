@@ -24,18 +24,18 @@ if (event_stage == -1 && selector >= 0)
 		
 			if (_event_outcome_type != 0)
 			{
-				if (_event_outcome_type == "CREDITS")
+				if (_event_outcome_type == "BATTERIES")
 				{
-					global._player_resources.CREDITS += _event_outcome_value;
+					global._player_resources.BATTERIES += _event_outcome_value;
 				
-					//TODO check for game over if credits < 0
+					//TODO check for game over if batteries < 0
 					
 					
 					
 					
-					if (global._player_resources.CREDITS < 0)
+					if (global._player_resources.BATTERIES < 0)
 					{
-						global._player_resources.CREDITS = 0;
+						global._player_resources.BATTERIES = 0;
 					}
 				}
 				else if (_event_outcome_type == "MILITARY")

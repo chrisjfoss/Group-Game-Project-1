@@ -121,9 +121,9 @@ else
 		{
 			results_txt += val_string + " Science";
 		}
-		else if (outcome_i_type == "CREDITS")
+		else if (outcome_i_type == "BATTERIES")
 		{
-			results_txt += val_string + " Credits";
+			results_txt += val_string + " Batteries";
 		}
 		else
 		{

@@ -19,8 +19,7 @@
   "height":360,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"069ad381-8db1-428c-a2c8-8a7ef2a7931c","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"069ad381-8db1-428c-a2c8-8a7ef2a7931c","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"03ba39e2-5fef-4dd0-b5d2-be0897901c0a","blendMode":0,"displayName":"default","isLocked":false,"name":"03ba39e2-5fef-4dd0-b5d2-be0897901c0a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"9fc96064-e141-4a07-a55b-012619278244","blendMode":0,"displayName":"default","isLocked":false,"name":"9fc96064-e141-4a07-a55b-012619278244","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"map_bkg_spr",
   "nineSlice":null,
