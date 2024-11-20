@@ -142,7 +142,7 @@ else
 				pip_sub = 1;
 			}
 			
-			draw_sprite(rounds_won_pip, pip_sub, x+8*(i-1)+140, y-6);
+			draw_sprite(rounds_won_pip_spr, pip_sub, x+8*(i-1)+140, y-6);
 		}
 	}
 	else if (type == "opponent")
@@ -157,7 +157,7 @@ else
 				pip_sub = 1;
 			}
 			
-			draw_sprite(rounds_won_pip, pip_sub, x+8*(i-1)+140, y-6);
+			draw_sprite(rounds_won_pip_spr, pip_sub, x+8*(i-1)+140, y-6);
 		}
 	}
 	

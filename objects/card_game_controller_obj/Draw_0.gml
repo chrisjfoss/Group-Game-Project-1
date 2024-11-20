@@ -100,25 +100,32 @@ if (player_card_active != "")
 {
 	//render active player card that is ON THE TABLE right now. Their live play for this trick.
 	var card_x = room_width/2 - 36;
-	var card_y = room_height/2 + 4;
+	var card_y = room_height/2 + 8;
 	
-	draw_sprite(card_front_spr,0,card_x,card_y);
-		
 	var this_card_type = player_card_active;
 	var suit_spr = empty_spr;
-	if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit_gray_spr; }
-	else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; }
-	else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; }
-	else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; }
+	var card_bkg_spr = card_front_spr;
+	if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit_gray_spr; card_bkg_spr = card_gray_bkg_spr; }
+	else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; card_bkg_spr = card_military_bkg_spr; }
+	else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; card_bkg_spr = card_civilian_bkg_spr; }
+	else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; card_bkg_spr = card_science_bkg_spr; }
+	
+	
+	
+	draw_sprite(card_bkg_spr,0,card_x,card_y);
+		
+	
 		
 	//strip the color from the card string to get the value
 	var card_strength = get_card_power(this_card_type);
 		
 	draw_set_color(c_black);
-	draw_set_font(card_ft);
+	draw_set_font(card_14_ft);
 		
-	draw_sprite(suit_spr,0,card_x,card_y-24);
-	draw_text(card_x,card_y,string(card_strength));
+	draw_sprite(suit_spr,0,card_x,card_y);
+	draw_text(card_x,card_y-33,string(card_strength));
+	
+	draw_text_transformed(card_x,card_y+33,string(card_strength),1,1,180);
 	
 	var card_hint_text = "";
 	if (suit_spr == suit_gray_spr) { card_hint_text = "Loses to all\nother suits."; }
@@ -126,33 +133,38 @@ if (player_card_active != "")
 	else if (suit_spr == suit_civilian_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
 	else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Civilian."; }
 		
-	draw_set_font(card_small_ft);
-	draw_text(card_x,card_y+32,card_hint_text);
+	/*draw_set_font(card_small_ft);
+	draw_set_color(c_white);
+	draw_text(card_x,card_y+58,card_hint_text);
+	draw_set_color(c_black);*/
 }
 
 if (opponent_card_active != "")
 {
 	//render active opponent card that is ON THE TABLE right now. Their live play for this trick.
 	var card_x = room_width/2 + 36;
-	var card_y = room_height/2 - 4;
-	
-	draw_sprite(card_front_spr,0,card_x,card_y);
-		
+	var card_y = room_height/2 - 8;
+
 	var this_card_type = opponent_card_active;
 	var suit_spr = empty_spr;
-	if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit_gray_spr; }
-	else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; }
-	else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; }
-	else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; }
+	var card_bkg_spr = card_front_spr;
+	if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit_gray_spr; card_bkg_spr = card_gray_bkg_spr; }
+	else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; card_bkg_spr = card_military_bkg_spr; }
+	else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; card_bkg_spr = card_civilian_bkg_spr; }
+	else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; card_bkg_spr = card_science_bkg_spr; }
+		
+	draw_sprite(card_bkg_spr,0,card_x,card_y);
 		
 	//strip the color from the card string to get the value
 	var card_strength = get_card_power(this_card_type);
 		
 	draw_set_color(c_black);
-	draw_set_font(card_ft);
+	draw_set_font(card_14_ft);
 		
-	draw_sprite(suit_spr,0,card_x,card_y-24);
-	draw_text(card_x,card_y,string(card_strength));
+	draw_sprite_ext(suit_spr,0,card_x,card_y,1,-1,0,c_white,1.0);
+	draw_text(card_x,card_y-33,string(card_strength));
+	
+	draw_text_transformed(card_x,card_y+33,string(card_strength),1,1,180);
 	
 	var card_hint_text = "";
 	if (suit_spr == suit_gray_spr) { card_hint_text = "Loses to all\nother suits."; }
@@ -160,8 +172,11 @@ if (opponent_card_active != "")
 	else if (suit_spr == suit_civilian_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
 	else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Civilian."; }
 		
-	draw_set_font(card_small_ft);
-	draw_text(card_x,card_y+32,card_hint_text);
+	
+	/*draw_set_font(card_small_ft);
+	draw_set_color(c_white);
+	draw_text(card_x,card_y+58,card_hint_text);
+	draw_set_color(c_black);*/
 }
 
 if (ds_list_size(player_hand) > 0)
@@ -191,23 +206,27 @@ if (ds_list_size(player_hand) > 0)
 	
 	for (var i = 0; i < ds_list_size(player_hand); i++)
 	{
-		draw_sprite(card_front_spr,0,card_x,card_y);
 		
 		var this_card_type = player_hand[| i];
 		var suit_spr = empty_spr;
-		if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit_gray_spr; }
-		else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; }
-		else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; }
-		else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; }
+		var card_bkg_spr = card_front_spr;
+		if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit_gray_spr; card_bkg_spr = card_gray_bkg_spr; }
+		else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; card_bkg_spr = card_military_bkg_spr; }
+		else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; card_bkg_spr = card_civilian_bkg_spr; }
+		else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; card_bkg_spr = card_science_bkg_spr; }
+	
+		draw_sprite(card_bkg_spr,0,card_x,card_y);
 		
 		//strip the color from the card string to get the value
 		var card_strength = get_card_power(this_card_type);
 		
 		draw_set_color(c_black);
-		draw_set_font(card_ft);
+		draw_set_font(card_14_ft);
 		
-		draw_sprite(suit_spr,0,card_x,card_y-24);
-		draw_text(card_x,card_y,string(card_strength));
+		draw_sprite(suit_spr,0,card_x,card_y);
+		draw_text(card_x,card_y-33,string(card_strength));
+		
+		draw_text_transformed(card_x,card_y+33,string(card_strength),1,1,180);
 		
 		var card_hint_text = "";
 		if (suit_spr == suit_gray_spr) { card_hint_text = "Loses to all\nother suits."; }
@@ -215,8 +234,13 @@ if (ds_list_size(player_hand) > 0)
 		else if (suit_spr == suit_civilian_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
 		else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Civilian."; }
 		
-		draw_set_font(card_small_ft);
-		draw_text(card_x,card_y+32,card_hint_text);
+		if (card_selected == i && card_game_phase == GAME_PHASE.PLAYER_TURN)
+		{
+			draw_set_font(card_small_ft);
+			draw_set_color(c_white);
+			draw_text(card_x,card_y+58,card_hint_text);
+			draw_set_color(c_black);
+		}
 	
 		//check if the player clicked this card if it is their turn.
 		if (card_game_phase == GAME_PHASE.PLAYER_TURN)
