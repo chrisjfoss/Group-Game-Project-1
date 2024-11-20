@@ -306,22 +306,22 @@ if (ds_list_size(player_hand) > 0)
 		else
 		{
 			//darken player cards to make it clear they are inactive
-			draw_sprite_ext(card_front_spr,0,card_x,card_y,1,1,0,c_dkgray,0.5);
+			draw_sprite_ext(card_front_spr,0,card_x,card_y,1,1,0,c_dkgray,0.75);
 		}
 		
-		card_x += 80;
+		card_x += 68;
 	}
 }
 
 if (ds_list_size(opponent_hand) > 0)
 {
 	//render all opponent cards
-	var	card_x = 272;
+	var	card_x = 272+48;
 	var card_y = 64;
 	
 	for (var i = 0; i < ds_list_size(opponent_hand); i++)
 	{
 		draw_sprite(card_back_spr,0,card_x,card_y);
-		card_x += 80;
+		card_x += 68;
 	}
 }

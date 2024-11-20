@@ -4,7 +4,7 @@
 event_inherited();
 
 opponent_resource_military = 1;
-opponent_resource_civilian = 2;
+opponent_resource_civilian = 1;
 opponent_resource_science = 2;
 
 dlog[0] = [ "Howdy pardner. Would you like to play a game of cards?", ["Play^1", "Don't Play^2"]]; 

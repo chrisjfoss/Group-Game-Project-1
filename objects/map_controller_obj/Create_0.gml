@@ -3,6 +3,9 @@
 
 advancing = false;
 
+smoke_c = 0;
+smoke_c_max = 20;
+
 sin_c = 0;
 
 vehicle_offset = 0; //how much in the x-direction is the player's vehicle "advanced" between the current and next point of interest?

@@ -3,9 +3,9 @@
 // Inherit the parent event
 event_inherited();
 
-opponent_resource_military = 2;
-opponent_resource_civilian = 4;
-opponent_resource_science = 7;
+opponent_resource_military = 5;
+opponent_resource_civilian = 5;
+opponent_resource_science = 4;
 
 dlog[0] = [ "Howdy pardner. Would you like to play a game of cards?", ["Play^1", "Don't Play^2"]]; 
 dlog[1] = [ "Yeeeeee Hawwwwww! Let's play some cards!", 
