@@ -48,9 +48,9 @@ else if (card_game_phase == GAME_PHASE.MULLIGAN)
 	
 	draw_text(hint_text_x,hint_text_y-16,"Pay to mulligan cards, drawing new cards from your deck?\n(Cost: 5 Batteries per card)");
 	
-	draw_set_halign(fa_right);
+	draw_set_halign(fa_left);
 	draw_sprite(batteries_symbol_spr, 0, hint_text_x-32, hint_text_y+24);
-	draw_text(hint_text_x+8,hint_text_y+24,string(global._player_resources.BATTERIES));
+	draw_text(hint_text_x-8,hint_text_y+24,string(global._player_resources.BATTERIES));
 	
 	draw_set_halign(fa_center);
 }
