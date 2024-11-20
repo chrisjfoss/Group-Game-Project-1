@@ -127,6 +127,13 @@ if (player_card_active != "")
 	
 	draw_text_transformed(card_x,card_y+33,string(card_strength),1,1,180);
 	
+	if (string(card_strength) == "6" || string(card_strength) == "9")
+	{
+		//card number requires an underscore for legibility.
+		draw_sprite_ext(card_number_underline_spr, 0, card_x,card_y-33+8,1,1,0,c_black,1.0);
+		draw_sprite_ext(card_number_underline_spr, 0, card_x,card_y+33-9,1,1,0,c_black,1.0);
+	}
+	
 	var card_hint_text = "";
 	if (suit_spr == suit_gray_spr) { card_hint_text = "Loses to all\nother suits."; }
 	else if (suit_spr == suit_military_spr) { card_hint_text = "Beats Civilian.\nLoses to Science."; }
@@ -165,6 +172,13 @@ if (opponent_card_active != "")
 	draw_text(card_x,card_y-33,string(card_strength));
 	
 	draw_text_transformed(card_x,card_y+33,string(card_strength),1,1,180);
+	
+	if (string(card_strength) == "6" || string(card_strength) == "9")
+	{
+		//card number requires an underscore for legibility.
+		draw_sprite_ext(card_number_underline_spr, 0, card_x,card_y-33+8,1,1,0,c_black,1.0);
+		draw_sprite_ext(card_number_underline_spr, 0, card_x,card_y+33-9,1,1,0,c_black,1.0);
+	}
 	
 	var card_hint_text = "";
 	if (suit_spr == suit_gray_spr) { card_hint_text = "Loses to all\nother suits."; }
@@ -228,6 +242,13 @@ if (ds_list_size(player_hand) > 0)
 		
 		draw_text_transformed(card_x,card_y+33,string(card_strength),1,1,180);
 		
+		if (string(card_strength) == "6" || string(card_strength) == "9")
+		{
+			//card number requires an underscore for legibility.
+			draw_sprite_ext(card_number_underline_spr, 0, card_x,card_y-33+8,1,1,0,c_black,1.0);
+			draw_sprite_ext(card_number_underline_spr, 0, card_x,card_y+33-9,1,1,0,c_black,1.0);
+		}
+		
 		var card_hint_text = "";
 		if (suit_spr == suit_gray_spr) { card_hint_text = "Loses to all\nother suits."; }
 		else if (suit_spr == suit_military_spr) { card_hint_text = "Beats Civilian.\nLoses to Science."; }
@@ -255,6 +276,12 @@ if (ds_list_size(player_hand) > 0)
 			{
 				card_selected = i;
 				mouse_in_card = true;
+			}
+			
+			if (instance_exists(modal_parent_obj))
+			{
+				card_selected = -1;
+				mouse_in_card = false;
 			}
 			
 			if (card_selected == i && ((mouse_check_button_pressed(mb_left)&&mouse_in_card) || check_primary_pressed()))
