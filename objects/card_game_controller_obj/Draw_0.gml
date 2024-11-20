@@ -35,6 +35,25 @@ else if (card_game_phase == GAME_PHASE.INITIALIZING_DECKS)
 {
 	draw_text(hint_text_x,hint_text_y,"Shuffling decks...\nBoth decks always contain 5 Gray Star cards.");
 }
+else if (card_game_phase == GAME_PHASE.MULLIGAN)
+{
+	//draw deck left
+	var deck_x = 48;
+	var deck_y = round(room_height/2)+8;
+	for (var i = 0; i < ds_list_size(player_deck); i++)
+	{
+		draw_sprite_ext(card_back_spr, 0, deck_x, deck_y, 1,1,0,c_white,1.0);
+		deck_y -= 4;
+	}
+	
+	draw_text(hint_text_x,hint_text_y-16,"Pay to mulligan cards, drawing new cards from your deck?\n(Cost: 5 Batteries per card)");
+	
+	draw_set_halign(fa_right);
+	draw_sprite(batteries_symbol_spr, 0, hint_text_x-32, hint_text_y+24);
+	draw_text(hint_text_x+8,hint_text_y+24,string(global._player_resources.BATTERIES));
+	
+	draw_set_halign(fa_center);
+}
 else if (card_game_phase == GAME_PHASE.DEALING_CARDS)
 {
 	draw_text(hint_text_x,hint_text_y,"Each participant draws 5 cards from the\ntop of their decks.");
@@ -199,7 +218,7 @@ if (ds_list_size(player_hand) > 0)
 	var card_x = 48;
 	var card_y = 288;
 	
-	if (card_game_phase == GAME_PHASE.PLAYER_TURN)
+	if (card_game_phase == GAME_PHASE.PLAYER_TURN || card_game_phase == GAME_PHASE.MULLIGAN)
 	{
 		//permits selecting cards with keyboard or gamepad
 		if (check_left_pressed())
@@ -210,6 +229,7 @@ if (ds_list_size(player_hand) > 0)
 		else if (check_right_pressed())
 		{
 			card_selected += 1;
+
 			if (card_selected >= ds_list_size(player_hand)) { card_selected = ds_list_size(player_hand)-1; }
 		}
 	}
@@ -228,19 +248,40 @@ if (ds_list_size(player_hand) > 0)
 		else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; card_bkg_spr = card_military_bkg_spr; }
 		else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; card_bkg_spr = card_civilian_bkg_spr; }
 		else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; card_bkg_spr = card_science_bkg_spr; }
+		else if (this_card_type == "Continue")
+		{
+			card_bkg_spr = card_front_spr;
+			suit_spr = continue_icon_spr;
+		}
 	
 		draw_sprite(card_bkg_spr,0,card_x,card_y);
 		
 		//strip the color from the card string to get the value
-		var card_strength = get_card_power(this_card_type);
+		if (this_card_type == "Continue")
+		{
+			var card_strength = "Continue";
+		}
+		else
+		{
+			var card_strength = get_card_power(this_card_type);
+		}
 		
 		draw_set_color(c_black);
 		draw_set_font(card_14_ft);
 		
 		draw_sprite(suit_spr,0,card_x,card_y);
+		
+		if (this_card_type == "Continue")
+		{
+			draw_set_font(card_small_ft);
+		}
+		
 		draw_text(card_x,card_y-33,string(card_strength));
 		
-		draw_text_transformed(card_x,card_y+33,string(card_strength),1,1,180);
+		if (this_card_type != "Continue")
+		{
+			draw_text_transformed(card_x,card_y+33,string(card_strength),1,1,180);
+		}
 		
 		if (string(card_strength) == "6" || string(card_strength) == "9")
 		{
@@ -264,7 +305,7 @@ if (ds_list_size(player_hand) > 0)
 		}
 	
 		//check if the player clicked this card if it is their turn.
-		if (card_game_phase == GAME_PHASE.PLAYER_TURN)
+		if (card_game_phase == GAME_PHASE.PLAYER_TURN || card_game_phase == GAME_PHASE.MULLIGAN)
 		{
 			if (card_selected == i)
 			{
@@ -287,61 +328,11 @@ if (ds_list_size(player_hand) > 0)
 			if (card_selected == i && ((mouse_check_button_pressed(mb_left)&&mouse_in_card) || check_primary_pressed()))
 			{
 				//clicked this card! Let's play it, if that's valid.
-				if (opponent_card_active == "")
+				if (card_game_phase == GAME_PHASE.PLAYER_TURN)
 				{
-					//simple case, the opponent has not played a card. In this case, all card picks are valid.
-					player_card_active = this_card_type;
-						
-					//remove this card from the player's hand.
-					ds_list_delete(player_hand,i);
-					i--;
-						
-					card_game_phase = GAME_PHASE.OPPONENT_TURN; //change card game phase over to the opponent's turn to play a card down.
-					ai_counter = 0;
-				}
-				else
-				{
-					//determine if the player must follow suit or not. if they must, display an error message. Otherwise, allow the play.
-					var suit_violated = false;
-						
-					var opp_suit = get_card_suit(opponent_card_active);
-						
-					var pl_suit = get_card_suit(this_card_type);
-						
-					if (opp_suit == pl_suit)
+					if (opponent_card_active == "")
 					{
-						suit_violated = false;
-					}
-					else
-					{
-						//not same suit! Determine if the player has ANY of the opponent's suit in their hand.
-						var has_matching_suit = false;
-						for (var j = 0; j < ds_list_size(player_hand); j++)
-						{
-							var check_card = player_hand[| j];
-								
-							var check_suit = get_card_suit(check_card);
-								
-							if (check_suit == opp_suit)
-							{
-								has_matching_suit = true;
-							}
-						}
-							
-						if (has_matching_suit)
-						{
-							suit_violated = true;
-						}
-					}
-						
-					if (suit_violated)
-					{
-						//error message
-						show_message("Invalid choice. You must follow suit! Play a card of the same suit as your opponent.");
-					}
-					else
-					{
-						//valid play
+						//simple case, the opponent has not played a card. In this case, all card picks are valid.
 						player_card_active = this_card_type;
 						
 						//remove this card from the player's hand.
@@ -351,8 +342,105 @@ if (ds_list_size(player_hand) > 0)
 						card_game_phase = GAME_PHASE.OPPONENT_TURN; //change card game phase over to the opponent's turn to play a card down.
 						ai_counter = 0;
 					}
+					else
+					{
+						//determine if the player must follow suit or not. if they must, display an error message. Otherwise, allow the play.
+						var suit_violated = false;
+						
+						var opp_suit = get_card_suit(opponent_card_active);
+						
+						var pl_suit = get_card_suit(this_card_type);
+						
+						if (opp_suit == pl_suit)
+						{
+							suit_violated = false;
+						}
+						else
+						{
+							//not same suit! Determine if the player has ANY of the opponent's suit in their hand.
+							var has_matching_suit = false;
+							for (var j = 0; j < ds_list_size(player_hand); j++)
+							{
+								var check_card = player_hand[| j];
+								
+								var check_suit = get_card_suit(check_card);
+								
+								if (check_suit == opp_suit)
+								{
+									has_matching_suit = true;
+								}
+							}
+							
+							if (has_matching_suit)
+							{
+								suit_violated = true;
+							}
+						}
+						
+						if (suit_violated)
+						{
+							//error message
+							show_message("Invalid choice. You must follow suit! Play a card of the same suit as your opponent.");
+						}
+						else
+						{
+							//valid play
+							player_card_active = this_card_type;
+						
+							//remove this card from the player's hand.
+							ds_list_delete(player_hand,i);
+							i--;
+						
+							card_game_phase = GAME_PHASE.OPPONENT_TURN; //change card game phase over to the opponent's turn to play a card down.
+							ai_counter = 0;
+						}
+					}
 				}
+				else if (card_game_phase == GAME_PHASE.MULLIGAN)
+				{
+					//attempt to mulligan this card!
+				
+					//first, check to make sure player has enough batteries to cover the cost.
+					if (card_selected <= 4)
+					{
+						if (global._player_resources.BATTERIES < 5)
+						{
+							show_message("You cannot afford to mulligan a card right now! You do not have enough batteries.");
+						}
+						else
+						{
+							global._player_resources.BATTERIES -= 5;
+					
+							//TODO spend batteries sound effect?
+							
+							player_hand[| card_selected] = player_deck[| 0];
+						
+							ds_list_delete(player_deck,0);
+						}
+					}
+					else
+					{
+						//move on with the game!
+						card_game_phase = GAME_PHASE.PLAYER_TURN;
+						
+						card_selected = 0;
+						
+						//remove "continue" card from player hand
+						for (var i = 0; i < ds_list_size(player_hand); i++)
+						{
+							var this_c = player_hand[| i];
+							if (this_c == "Continue")
+							{
+								ds_list_delete(player_hand,i);
+								i--;
+							}
+						}
+					}
+				}
+				
+				
 			}
+			
 		}
 		else
 		{
