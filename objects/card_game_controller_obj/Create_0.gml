@@ -6,12 +6,13 @@ enum GAME_PHASE {
 	CHOOSE_RESOURCES = 1,
 	INITIALIZING_DECKS = 2,
 	DEALING_CARDS = 3,
-	PLAYER_TURN = 4,
-	OPPONENT_TURN = 5,
-	DETERMINE_WINNER = 6,
-	ROUND_END = 7,
-	ROUND_OVER = 8,
-	GAME_OVER = 9,
+	MULLIGAN = 4,
+	PLAYER_TURN = 5,
+	OPPONENT_TURN = 6,
+	DETERMINE_WINNER = 7,
+	ROUND_END = 8,
+	ROUND_OVER = 9,
+	GAME_OVER = 10
 }
 
 card_selected = 0; //0-4, which card is actively selected by mouse, keyboard, or gamepad? -1 means none selected currently.

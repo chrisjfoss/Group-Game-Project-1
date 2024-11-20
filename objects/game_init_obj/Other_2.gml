@@ -24,7 +24,7 @@ init_map();
 global._events_witnessed = [];
 
 enum STARTING_VALUES {
-	BATTERIES = 5,
+	BATTERIES = 50,
 	MILITARY = 1,
 	CIVILIAN = 1,
 	SCIENCE = 1

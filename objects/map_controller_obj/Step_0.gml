@@ -5,6 +5,8 @@
 sin_c += (2*pi / (60*2));
 if (sin_c > 2*pi) { sin_c -= 2*pi; }
 
+smoke_c += 1;
+
 if (instance_exists(modal_parent_obj)) { exit; }
 
 if (global._map_advance)

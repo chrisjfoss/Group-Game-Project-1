@@ -281,3 +281,23 @@ else if (card_game_phase == GAME_PHASE.DETERMINE_WINNER)
 		}
 	}
 }
+
+if (card_game_phase == GAME_PHASE.MULLIGAN && ds_list_size(player_deck) <= 0)
+{
+	//move on to player's turn! Cannot mulligan any more cards.
+	card_game_phase = GAME_PHASE.PLAYER_TURN;
+	leading_participant = "player";
+	
+	card_selected = 0;
+	
+	//remove "continue" card from player hand
+	for (var i = 0; i < ds_list_size(player_hand); i++)
+	{
+		var this_c = player_hand[| i];
+		if (this_c == "Continue")
+		{
+			ds_list_delete(player_hand,i);
+			i--;
+		}
+	}
+}

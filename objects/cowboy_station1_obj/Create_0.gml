@@ -3,7 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
-opponent_resource_military = 4;
+opponent_resource_military = 2;
 opponent_resource_civilian = 0;
 opponent_resource_science = 0;
 
