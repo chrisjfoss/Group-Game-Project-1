@@ -162,6 +162,7 @@
     {"id":{"name":"card_military_bkg_spr","path":"sprites/card_military_bkg_spr/card_military_bkg_spr.yy",},},
     {"id":{"name":"card_number_underline_spr","path":"sprites/card_number_underline_spr/card_number_underline_spr.yy",},},
     {"id":{"name":"card_science_bkg_spr","path":"sprites/card_science_bkg_spr/card_science_bkg_spr.yy",},},
+    {"id":{"name":"cards_decor_spr","path":"sprites/cards_decor_spr/cards_decor_spr.yy",},},
     {"id":{"name":"cheat_sheet_spr","path":"sprites/cheat_sheet_spr/cheat_sheet_spr.yy",},},
     {"id":{"name":"clockwork_bartender_spr","path":"sprites/clockwork_bartender_spr/clockwork_bartender_spr.yy",},},
     {"id":{"name":"continue_icon_spr","path":"sprites/continue_icon_spr/continue_icon_spr.yy",},},
