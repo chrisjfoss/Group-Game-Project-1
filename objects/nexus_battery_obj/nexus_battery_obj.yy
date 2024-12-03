@@ -1,19 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"opponent_the_nexus_obj",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"nexus_battery_obj",
+  "eventList":[],
   "managed":true,
-  "name":"opponent_the_nexus_obj",
+  "name":"nexus_battery_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"WalkaroundObjects",
-    "path":"folders/Objects/WalkaroundObjects.yy",
+    "name":"TheNexusObjects",
+    "path":"folders/Objects/WalkaroundObjects/TheNexusObjects.yy",
   },
   "parentObjectId":{
-    "name":"npc_parent_obj",
-    "path":"objects/npc_parent_obj/npc_parent_obj.yy",
+    "name":"world_blocker_depth_obj",
+    "path":"objects/world_blocker_depth_obj/world_blocker_depth_obj.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"base_npc1_spr",
-    "path":"sprites/base_npc1_spr/base_npc1_spr.yy",
+    "name":"nexus_power_battery_spr",
+    "path":"sprites/nexus_power_battery_spr/nexus_power_battery_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,

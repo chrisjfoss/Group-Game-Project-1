@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"cowboy_spr",
-    "path":"sprites/cowboy_spr/cowboy_spr.yy",
+    "name":"base_npc2_spr",
+    "path":"sprites/base_npc2_spr/base_npc2_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,
