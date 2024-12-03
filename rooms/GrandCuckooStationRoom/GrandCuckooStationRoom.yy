@@ -80,6 +80,7 @@
     {"name":"inst_3217643C","path":"rooms/GrandCuckooStationRoom/GrandCuckooStationRoom.yy",},
     {"name":"inst_8F65C21","path":"rooms/GrandCuckooStationRoom/GrandCuckooStationRoom.yy",},
     {"name":"inst_594EDCCB","path":"rooms/GrandCuckooStationRoom/GrandCuckooStationRoom.yy",},
+    {"name":"inst_56F5A882","path":"rooms/GrandCuckooStationRoom/GrandCuckooStationRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -158,6 +159,7 @@
         {"$GMRInstance":"v1","%Name":"inst_3217643C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3217643C","objectId":{"name":"tankard_obj","path":"objects/tankard_obj/tankard_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":601.0,"y":127.0,},
         {"$GMRInstance":"v1","%Name":"inst_8F65C21","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_8F65C21","objectId":{"name":"cuckoo_table_obj","path":"objects/cuckoo_table_obj/cuckoo_table_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":408.0,},
         {"$GMRInstance":"v1","%Name":"inst_594EDCCB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_594EDCCB","objectId":{"name":"blocker_parent_obj","path":"objects/blocker_parent_obj/blocker_parent_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":2.0,"x":16.0,"y":32.0,},
+        {"$GMRInstance":"v1","%Name":"inst_56F5A882","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_56F5A882","objectId":{"name":"merchant_obj","path":"objects/merchant_obj/merchant_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":212.0,"y":198.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_3CC7BD84","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_3CC7BD84","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":90.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"cuckoo_tracks_corner_spr","path":"sprites/cuckoo_tracks_corner_spr/cuckoo_tracks_corner_spr.yy",},"x":24.0,"y":120.0,},

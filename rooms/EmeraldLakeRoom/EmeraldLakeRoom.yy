@@ -45,6 +45,7 @@
     {"name":"inst_173CC168","path":"rooms/EmeraldLakeRoom/EmeraldLakeRoom.yy",},
     {"name":"inst_474FEEFA","path":"rooms/EmeraldLakeRoom/EmeraldLakeRoom.yy",},
     {"name":"inst_281838F0","path":"rooms/EmeraldLakeRoom/EmeraldLakeRoom.yy",},
+    {"name":"inst_7FA45656","path":"rooms/EmeraldLakeRoom/EmeraldLakeRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -88,6 +89,7 @@
         {"$GMRInstance":"v1","%Name":"inst_173CC168","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_173CC168","objectId":{"name":"blocker_parent_obj","path":"objects/blocker_parent_obj/blocker_parent_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":288.0,},
         {"$GMRInstance":"v1","%Name":"inst_474FEEFA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_474FEEFA","objectId":{"name":"resources_display_obj","path":"objects/resources_display_obj/resources_display_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":576.0,"y":32.0,},
         {"$GMRInstance":"v1","%Name":"inst_281838F0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_281838F0","objectId":{"name":"opponent_emerald_lake_obj","path":"objects/opponent_emerald_lake_obj/opponent_emerald_lake_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":176.0,"y":175.0,},
+        {"$GMRInstance":"v1","%Name":"inst_7FA45656","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7FA45656","objectId":{"name":"merchant_obj","path":"objects/merchant_obj/merchant_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":80.0,"y":181.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_42656E07","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_42656E07","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"cards_decor_spr","path":"sprites/cards_decor_spr/cards_decor_spr.yy",},"x":177.0,"y":194.0,},
