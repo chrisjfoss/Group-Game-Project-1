@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"cowboy_station2_obj",
+  "%Name":"opponent_fort_endurance_obj",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"cowboy_station2_obj",
+  "name":"opponent_fort_endurance_obj",
   "overriddenProperties":[],
   "parent":{
     "name":"WalkaroundObjects",

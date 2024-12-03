@@ -1,19 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"cowboy_station5_obj",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"whiskey_barrel_obj",
+  "eventList":[],
   "managed":true,
-  "name":"cowboy_station5_obj",
+  "name":"whiskey_barrel_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"WalkaroundObjects",
-    "path":"folders/Objects/WalkaroundObjects.yy",
+    "name":"StellarJunctionObjects",
+    "path":"folders/Objects/WalkaroundObjects/StellarJunctionObjects.yy",
   },
   "parentObjectId":{
-    "name":"npc_parent_obj",
-    "path":"objects/npc_parent_obj/npc_parent_obj.yy",
+    "name":"world_blocker_depth_obj",
+    "path":"objects/world_blocker_depth_obj/world_blocker_depth_obj.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"cowboy_spr",
-    "path":"sprites/cowboy_spr/cowboy_spr.yy",
+    "name":"whiskey_barrel_spr",
+    "path":"sprites/whiskey_barrel_spr/whiskey_barrel_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,

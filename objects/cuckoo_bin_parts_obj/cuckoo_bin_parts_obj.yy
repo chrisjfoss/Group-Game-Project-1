@@ -1,19 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"cowboy_station3_obj",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"cuckoo_bin_parts_obj",
+  "eventList":[],
   "managed":true,
-  "name":"cowboy_station3_obj",
+  "name":"cuckoo_bin_parts_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"WalkaroundObjects",
-    "path":"folders/Objects/WalkaroundObjects.yy",
+    "name":"GrandCuckooStationObjects",
+    "path":"folders/Objects/WalkaroundObjects/GrandCuckooStationObjects.yy",
   },
   "parentObjectId":{
-    "name":"npc_parent_obj",
-    "path":"objects/npc_parent_obj/npc_parent_obj.yy",
+    "name":"world_blocker_depth_obj",
+    "path":"objects/world_blocker_depth_obj/world_blocker_depth_obj.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"cowboy_spr",
-    "path":"sprites/cowboy_spr/cowboy_spr.yy",
+    "name":"cuckoo_bin_clock_parts_spr",
+    "path":"sprites/cuckoo_bin_clock_parts_spr/cuckoo_bin_clock_parts_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,
