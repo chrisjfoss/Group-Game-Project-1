@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
   "%Name":"nexus_train_stopper_spr",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":31,
   "bbox_left":8,
   "bbox_right":23,
-  "bbox_top":0,
+  "bbox_top":8,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,

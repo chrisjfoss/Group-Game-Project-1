@@ -19,6 +19,7 @@
   "height":16,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"420a49ed-885c-41eb-af8d-1aba274e148f","blendMode":3,"displayName":"Layer 1","isLocked":false,"name":"420a49ed-885c-41eb-af8d-1aba274e148f","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"0b3ce23e-d70f-4f01-a5e6-da450fad48b5","blendMode":0,"displayName":"default","isLocked":false,"name":"0b3ce23e-d70f-4f01-a5e6-da450fad48b5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"moon_spr",

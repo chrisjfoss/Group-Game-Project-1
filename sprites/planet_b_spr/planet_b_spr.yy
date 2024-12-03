@@ -19,6 +19,7 @@
   "height":24,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"4e87a068-072b-4f13-9211-87d259f23bd5","blendMode":3,"displayName":"Layer 1","isLocked":false,"name":"4e87a068-072b-4f13-9211-87d259f23bd5","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"9bd1cf1c-b7c0-4c85-9201-074de07e6dc1","blendMode":0,"displayName":"default","isLocked":false,"name":"9bd1cf1c-b7c0-4c85-9201-074de07e6dc1","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"planet_b_spr",

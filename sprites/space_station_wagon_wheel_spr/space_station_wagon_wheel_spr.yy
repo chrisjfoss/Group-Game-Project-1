@@ -19,6 +19,7 @@
   "height":32,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"4fb5fa0a-2024-4426-8f2e-0fa38136ec89","blendMode":3,"displayName":"Layer 1","isLocked":false,"name":"4fb5fa0a-2024-4426-8f2e-0fa38136ec89","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"bda7ada5-0c2f-4956-9bcf-b1e00325068d","blendMode":0,"displayName":"default","isLocked":false,"name":"bda7ada5-0c2f-4956-9bcf-b1e00325068d","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"space_station_wagon_wheel_spr",

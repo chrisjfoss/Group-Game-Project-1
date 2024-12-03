@@ -4,8 +4,8 @@
 event_inherited();
 
 opponent_resource_military = 1;
-opponent_resource_civilian = 1;
-opponent_resource_science = 2;
+opponent_resource_civilian = 2;
+opponent_resource_science = 1;
 
 dlog[0] = [ "You. You have the look of a man who knows his way around a card table.", ["Play^1", "Don't Play^2"]]; 
 dlog[1] = [ "I cannot say no to a challenge. But be warned, I'm something of an expert at this game.", 
