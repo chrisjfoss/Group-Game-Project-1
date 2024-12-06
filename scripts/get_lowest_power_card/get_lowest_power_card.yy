@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_lowest_power_card",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_lowest_power_card",
+  "parent":{
+    "name":"CardGameScripts",
+    "path":"folders/Scripts/CardGameScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
