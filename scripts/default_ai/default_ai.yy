@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"default_ai",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"default_ai",
+  "parent":{
+    "name":"AI",
+    "path":"folders/Scripts/CardGameScripts/AI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

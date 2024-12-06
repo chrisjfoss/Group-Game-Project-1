@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"is_card_winning",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"is_card_winning",
+  "parent":{
+    "name":"CardGameScripts",
+    "path":"folders/Scripts/CardGameScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -7,6 +7,9 @@ opponent_military = 0;
 opponent_civilian = 0;
 opponent_science = 0;
 
+// What type of ai logic will the opponent use?  0 is default ai
+opponent_flavor = 0;
+
 player_military = 0;
 player_civilian = 0;
 player_science = 0;
