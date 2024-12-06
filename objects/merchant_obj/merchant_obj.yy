@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"cowboy_spr",
-    "path":"sprites/cowboy_spr/cowboy_spr.yy",
+    "name":"astronaut_spr",
+    "path":"sprites/astronaut_spr/astronaut_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,
