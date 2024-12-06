@@ -8,10 +8,10 @@ function init_map(){
 
 	//Station 1
 	var _new_map_element = ds_map_create();
-	_new_map_element[? "sprite"] = map_indicator_tutorial_station_spr;
+	_new_map_element[? "sprite"] = map_indicator_stellar_junction_spr;
 	_new_map_element[? "type"] = "station";
-	_new_map_element[? "name"] = "Tutorial Station";
-	_new_map_element[? "room"] = TutorialStationRoom;
+	_new_map_element[? "name"] = "Stellar Junction";
+	_new_map_element[? "room"] = StellarJunctionRoom;
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Road Event
@@ -112,9 +112,9 @@ function init_map(){
 	
 	//Station 5
 	var _new_map_element = ds_map_create();
-	_new_map_element[? "sprite"] = map_indicator_epic_final_boss_world_spr;
+	_new_map_element[? "sprite"] = map_indicator_the_nexus_spr;
 	_new_map_element[? "type"] = "station";
-	_new_map_element[? "name"] = "Epic Final Boss World";
-	_new_map_element[? "room"] = Station5Room;
+	_new_map_element[? "name"] = "The Nexus";
+	_new_map_element[? "room"] = TheNexusRoom;
 	ds_list_add(global._map_list, _new_map_element);
 }
