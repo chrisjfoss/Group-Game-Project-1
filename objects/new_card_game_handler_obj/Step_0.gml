@@ -15,6 +15,8 @@ if (room == CardGameRoom)
 	var returny = return_to_y;
 	var returndir = return_to_dir;
 	
+	var oflavor = opponent_flavor;
+	
 	
 	with (resource_indicator_obj)
 	{
@@ -41,6 +43,8 @@ if (room == CardGameRoom)
 		loss_x = returnx;
 		loss_y = returny;
 		loss_dir = returndir;
+		
+		opponent_flavor = oflavor;
 	}
 	
 	

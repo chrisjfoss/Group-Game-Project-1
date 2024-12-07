@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"aggressive_dumb_ai",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"aggressive_dumb_ai",
+  "parent":{
+    "name":"AI",
+    "path":"folders/Scripts/CardGameScripts/AI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

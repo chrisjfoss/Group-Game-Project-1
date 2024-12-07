@@ -47,79 +47,13 @@ if (card_game_phase == GAME_PHASE.OPPONENT_TURN)
 	}
 	else
 	{
-		//opponent hasn't picked a card yet.
 		if (ai_counter < 100)
 		{
 			ai_counter += 1;
 		}
 		else
 		{
-			//officially pick a card.
-			if (player_card_active == "")
-			{
-				//player has played NOTHING. Pick a random card from my hand to lead with.
-				rand_pick = irandom(ds_list_size(opponent_hand)-1);
-				rand_card = opponent_hand[| rand_pick];
-				
-				opponent_card_active = rand_card;
-				//remove this card from the opponent's hand.
-				ds_list_delete(opponent_hand,rand_pick);
-
-				
-				card_game_phase = GAME_PHASE.PLAYER_TURN; //let the player pick their card.
-				ai_counter = 0;
-			}
-			else
-			{
-				//player has played a card. Let's make a smart decision based on the state of the game.
-				valid_cards = ds_list_create();
-				
-				var player_active_suit = get_card_suit(player_card_active);
-				var player_active_power = get_card_power(player_card_active);
-				
-				for (var k = 0; k < ds_list_size(opponent_hand); k++)
-				{
-					var this_card = opponent_hand[| k];
-					
-					var this_card_suit = get_card_suit(this_card);
-					if (this_card_suit == player_active_suit)
-					{
-						ds_list_add(valid_cards,this_card);
-					}
-				}
-				
-				if (ds_list_size(valid_cards) == 0)
-				{
-					//no matching suit cards! Let's just add all cards to the valid list.
-					for (var k = 0; k < ds_list_size(opponent_hand); k++)
-					{
-						var this_card = opponent_hand[| k];
-						ds_list_add(valid_cards,this_card);
-					}
-				}
-				
-				//For now, just choose a random valid card. TODO: Make computer smarter?
-				ds_list_shuffle(valid_cards);
-				var card_picked = valid_cards[| 0];
-				
-				opponent_card_active = card_picked;
-				
-				
-				//remove this card from the opponent's hand.
-				for (var k = 0; k < ds_list_size(opponent_hand); k++)
-				{
-					var this_c = opponent_hand[| k];
-					if (this_c == card_picked)
-					{
-						ds_list_delete(opponent_hand,k);
-						k--;
-					}
-				}
-				
-				card_game_phase = GAME_PHASE.DETERMINE_WINNER; //let's compare cards and see who won the trick!
-				trick_over_hint_text = "";
-				ai_counter = 0;
-			}
+			ai_select_card(opponent_flavor);
 		}
 	}
 }
@@ -230,7 +164,7 @@ else if (card_game_phase == GAME_PHASE.DETERMINE_WINNER)
 			}
 		}
 	}
-	
+	    
 	ai_counter += 1;
 	
 	if (ai_counter >= 60*4.5)

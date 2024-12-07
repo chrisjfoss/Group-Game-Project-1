@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_allowed_cards",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_allowed_cards",
+  "parent":{
+    "name":"CardGameScripts",
+    "path":"folders/Scripts/CardGameScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
