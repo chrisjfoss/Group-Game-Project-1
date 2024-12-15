@@ -21,7 +21,7 @@ if (event_stage == -1 && selector >= 0)
 		
 		if (_event_prereq_type == "BATTERIES" && global._player_resources.BATTERIES < _event_prereq_value) { _event_invalid_prereq = true; }
 		if (_event_prereq_type == "MILITARY" && global._player_resources.MILITARY < _event_prereq_value) { _event_invalid_prereq = true; }
-		if (_event_prereq_type == "CIVILIAN" && global._player_resources.CIVILIAN < _event_prereq_value) { _event_invalid_prereq = true; }
+		if (_event_prereq_type == "ECONOMY" && global._player_resources.ECONOMY < _event_prereq_value) { _event_invalid_prereq = true; }
 		if (_event_prereq_type == "SCIENCE" && global._player_resources.SCIENCE < _event_prereq_value) { _event_invalid_prereq = true; }
 		
 		if (!_event_invalid_prereq) //is the precondition met?
@@ -61,11 +61,11 @@ if (event_stage == -1 && selector >= 0)
 				
 						global._player_resources.MILITARY = clamp(global._player_resources.MILITARY, 0, 10);
 					}
-					else if (_event_outcome_type == "CIVILIAN")
+					else if (_event_outcome_type == "ECONOMY")
 					{
-						global._player_resources.CIVILIAN += _event_outcome_value;
+						global._player_resources.ECONOMY += _event_outcome_value;
 				
-						global._player_resources.CIVILIAN = clamp(global._player_resources.CIVILIAN, 0, 10);
+						global._player_resources.ECONOMY = clamp(global._player_resources.ECONOMY, 0, 10);
 					}
 					else if (_event_outcome_type == "SCIENCE")
 					{

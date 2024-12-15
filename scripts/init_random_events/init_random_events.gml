@@ -6,7 +6,7 @@ function init_random_events() {
 		"event_default": {
 			"event_text": "DEBUG: Do not remove this event. This is the default event that shows when no events are available to pick.",
 			"choice1": {
-				"choice_text": "+1 Civilian", 
+				"choice_text": "+1 Economy", 
 				"choice_outcome1_type": 0,
 				"choice_outcome1_value": 0,
 				"choice_post_text": "DEBUG: Nothing happened. You continue on your way."
@@ -16,12 +16,12 @@ function init_random_events() {
 		"test_event1": {
 			"event_text": "You have come across a randomized event. Choose an outcome that you would like to occur for testing purposes.",
 			"choice1": {
-				"choice_text": "+1 Civilian", 
+				"choice_text": "+1 Economy", 
 				"choice_prerequisite_type": "MILITARY",
 				"choice_prerequisite_value": 1,
-				"choice_outcome1_type": "CIVILIAN",
+				"choice_outcome1_type": "ECONOMY",
 				"choice_outcome1_value": 1,
-				"choice_post_text": "You gained some civilian followers! They attached a new car to your train."
+				"choice_post_text": "You gained some economy followers! They attached a new car to your train."
 			},
 			"choice2": {
 				"choice_text": "-1 Military", 
@@ -31,7 +31,7 @@ function init_random_events() {
 			},
 			"choice3": {
 				"choice_text": "+2 Science", 
-				"choice_prerequisite_type": "CIVILIAN",
+				"choice_prerequisite_type": "ECONOMY",
 				"choice_prerequisite_value": 2,
 				"choice_outcome1_type": "SCIENCE",
 				"choice_outcome1_value": 2,
@@ -42,10 +42,10 @@ function init_random_events() {
 		"test_event2": {
 			"event_text": "Traders ask if you want to buy or sell merchandise.",
 			"choice1": {
-				"choice_text": "+2 Civilian, -10 Batteries", 
+				"choice_text": "+2 Economy, -10 Batteries", 
 				"choice_prerequisite_type": "BATTERIES",
 				"choice_prerequisite_value": 10,
-				"choice_outcome1_type": "CIVILIAN",
+				"choice_outcome1_type": "ECONOMY",
 				"choice_outcome1_value": 2,
 				"choice_outcome2_type": "BATTERIES",
 				"choice_outcome2_value": -10,
@@ -83,7 +83,7 @@ function init_random_events() {
 			"event_text": "You see a beautiful nebula in the distance. It's a sight to behold.",
 			"choice1": {
 				"choice_text": "Stop and behold the colors", 
-				"choice_outcome1_type": "CIVILIAN",
+				"choice_outcome1_type": "ECONOMY",
 				"choice_outcome1_value": 1,
 				"choice_post_text": "You take in the view. While you do, some random people join your train to marvel at the universe by your side."
 			},
@@ -121,7 +121,7 @@ function init_random_events() {
 			"event_text": "There's signs of a nearby struggle. What should you do?",
 			"choice1": {
 				"choice_text": "Investigate nearby bushes", 
-				"choice_outcome1_type": "CIVILIAN",
+				"choice_outcome1_type": "ECONOMY",
 				"choice_outcome1_value": -1,
 				"choice_post_text": "It's an ambush! You are jumped by bandits, and some of your passengers die in the firefight."
 			},
@@ -149,13 +149,13 @@ function init_random_events() {
 				"choice_prerequisite_value": 1,
 				"choice_outcome1_type": "MILITARY",
 				"choice_outcome1_value": -1,
-				"choice_outcome2_type": "CIVILIAN",
+				"choice_outcome2_type": "ECONOMY",
 				"choice_outcome2_value": 1,
 				"choice_post_text": "The thing is huge, and you waste an entire roll of ammo trying to bring it down! However, its chunks are a delicacy in some stations, and some nearby peasants come out to feast."
 			},
 			"choice2": {
 				"choice_text": "Honor the slug with a ritual dance", 
-				"choice_prerequisite_type": "CIVILIAN",
+				"choice_prerequisite_type": "ECONOMY",
 				"choice_prerequisite_value": 1,
 				"choice_outcome1_type": "BATTERIES",
 				"choice_outcome1_value": 35,
@@ -173,11 +173,11 @@ function init_random_events() {
 			"event_text": "Your train breaks down in the middle of a sparsely-populated valley. What should you do?",
 			"choice1": {
 				"choice_text": "Everyone, get out and push!", 
-				"choice_outcome1_type": "CIVILIAN",
+				"choice_outcome1_type": "ECONOMY",
 				"choice_outcome1_value": -1,
 				"choice_outcome2_type": "MILITARY",
 				"choice_outcome2_value": 1,
-				"choice_post_text": "Some of your civilians die off in the extreme labor to move the train, but on the plus side, the few survivors have found a new level of discipline within their souls."
+				"choice_post_text": "Some of your followers die off in the extreme labor to move the train, but on the plus side, the few survivors have found a new level of discipline within their souls."
 			},
 			"choice2": {
 				"choice_text": "Spend the whole day to repair", 
@@ -193,7 +193,7 @@ function init_random_events() {
 				"choice_prerequisite_value": 10,
 				"choice_outcome1_type": "BATTERIES",
 				"choice_outcome1_value": -10,
-				"choice_outcome2_type": "CIVILIAN",
+				"choice_outcome2_type": "ECONOMY",
 				"choice_outcome2_value": 1,
 				"choice_post_text": "Repairs don't come cheap, but lucky for you, the nearby hardware store has exactly what you need to get going again. The proprieter is sympathetic and joins your cause."
 			},
@@ -223,13 +223,13 @@ function init_random_events() {
 			},
 			"choice3": {
 				"choice_text": "Run off the tracks to avoid a collision", 
-				"choice_outcome1_type": "CIVILIAN",
+				"choice_outcome1_type": "ECONOMY",
 				"choice_outcome1_value": 1,
 				"choice_post_text": "'Sorry!' yells the other conductor. 'I thought this line was disused! Here, take my nephew as an apology. He's a good lad, he'll help you get back on track.'"
 			},
 			"choice4": {
 				"choice_text": "Stay the course", 
-				"choice_outcome1_type": "CIVILIAN",
+				"choice_outcome1_type": "ECONOMY",
 				"choice_outcome1_value": -1,
 				"choice_outcome2_type": "MILITARY",
 				"choice_outcome2_value": -1,
@@ -243,7 +243,7 @@ function init_random_events() {
 			"event_text": "You encounter a fanatical preacher, yelling some nonsense about the end of the universe and requesting donations.",
 			"choice1": {
 				"choice_text": "Stay and listen to the rant", 
-				"choice_outcome1_type": "CIVILIAN",
+				"choice_outcome1_type": "ECONOMY",
 				"choice_outcome1_value": -1,
 				"choice_outcome1_type": "BATTERIES",
 				"choice_outcome1_value": 10,
@@ -275,7 +275,7 @@ function init_random_events() {
 			},
 			"choice2": {
 				"choice_text": "Refill your water tanks", 
-				"choice_outcome1_type": "CIVILIAN",
+				"choice_outcome1_type": "ECONOMY",
 				"choice_outcome1_value": 2,
 				"choice_post_text": "Freshly resupplied, your train is now a tempting place to be for those who live in these inhospitable lands. You've gained some passengers."
 			}
