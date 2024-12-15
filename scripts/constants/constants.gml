@@ -4,7 +4,7 @@
 enum CARD_TYPES {
 	MILITARY,
 	SCIENCE,
-	CIVILIAN,
+	ECONOMY,
 	GRAY
 }
 
@@ -12,8 +12,8 @@ function get_card_type_name(_card_type) {
 	if(_card_type == CARD_TYPES.MILITARY) {
 		return "Military";
 	}
-	else if(_card_type == CARD_TYPES.CIVILIAN) {
-		return "Civilian";
+	else if(_card_type == CARD_TYPES.ECONOMY) {
+		return "Economy";
 	}
 	else if(_card_type == CARD_TYPES.SCIENCE) {
 		return "Science";

@@ -5,7 +5,7 @@ function reset_game_variables(){
 	
 	global._player_resources.BATTERIES = STARTING_VALUES.BATTERIES;
 	global._player_resources.MILITARY = STARTING_VALUES.MILITARY;
-	global._player_resources.CIVILIAN = STARTING_VALUES.CIVILIAN;
+	global._player_resources.ECONOMY = STARTING_VALUES.ECONOMY;
 	global._player_resources.SCIENCE = STARTING_VALUES.SCIENCE;
 	
 	global._events_witnessed = [];

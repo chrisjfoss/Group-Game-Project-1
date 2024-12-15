@@ -16,7 +16,7 @@ if (card_game_phase == GAME_PHASE.HOW_TO_PLAY)
 	"===CARD GAME===\n\n"+
 	"Take 3 tricks to win a round! Win 2 rounds to win the game.\n\n"+
 	"The bigger your train, the better the cards in your deck.\n\n"+
-	"Military beats Civilian beats Science beats Military.\n"+
+	"Military beats Economy beats Science beats Military.\n"+
 	"Gray Stars lose to other suits.\n\n"+
 	"Higher numbers win tricks. Leading player wins ties.\n"+
 	"Follow suit if possible. Whoever won the previous trick leads.\n\n"+
@@ -126,7 +126,7 @@ if (player_card_active != "")
 	var card_bkg_spr = card_front_spr;
 	if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit_gray_spr; card_bkg_spr = card_gray_bkg_spr; }
 	else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; card_bkg_spr = card_military_bkg_spr; }
-	else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; card_bkg_spr = card_civilian_bkg_spr; }
+	else if (string_pos("Economy", this_card_type) > 0) { suit_spr = suit_economy_spr; card_bkg_spr = card_economy_bkg_spr; }
 	else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; card_bkg_spr = card_science_bkg_spr; }
 	
 	
@@ -155,9 +155,9 @@ if (player_card_active != "")
 	
 	var card_hint_text = "";
 	if (suit_spr == suit_gray_spr) { card_hint_text = "Loses to all\nother suits."; }
-	else if (suit_spr == suit_military_spr) { card_hint_text = "Beats Civilian.\nLoses to Science."; }
-	else if (suit_spr == suit_civilian_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
-	else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Civilian."; }
+	else if (suit_spr == suit_military_spr) { card_hint_text = "Beats Economy.\nLoses to Science."; }
+	else if (suit_spr == suit_economy_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
+	else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Economy."; }
 		
 	/*draw_set_font(card_small_ft);
 	draw_set_color(c_white);
@@ -176,7 +176,7 @@ if (opponent_card_active != "")
 	var card_bkg_spr = card_front_spr;
 	if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit_gray_spr; card_bkg_spr = card_gray_bkg_spr; }
 	else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; card_bkg_spr = card_military_bkg_spr; }
-	else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; card_bkg_spr = card_civilian_bkg_spr; }
+	else if (string_pos("Economy", this_card_type) > 0) { suit_spr = suit_economy_spr; card_bkg_spr = card_economy_bkg_spr; }
 	else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; card_bkg_spr = card_science_bkg_spr; }
 		
 	draw_sprite(card_bkg_spr,0,card_x,card_y);
@@ -201,9 +201,9 @@ if (opponent_card_active != "")
 	
 	var card_hint_text = "";
 	if (suit_spr == suit_gray_spr) { card_hint_text = "Loses to all\nother suits."; }
-	else if (suit_spr == suit_military_spr) { card_hint_text = "Beats Civilian.\nLoses to Science."; }
-	else if (suit_spr == suit_civilian_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
-	else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Civilian."; }
+	else if (suit_spr == suit_military_spr) { card_hint_text = "Beats Economy.\nLoses to Science."; }
+	else if (suit_spr == suit_economy_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
+	else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Economy."; }
 		
 	
 	/*draw_set_font(card_small_ft);
@@ -246,7 +246,7 @@ if (ds_list_size(player_hand) > 0)
 		var card_bkg_spr = card_front_spr;
 		if (string_pos("Gray", this_card_type) > 0) { suit_spr = suit_gray_spr; card_bkg_spr = card_gray_bkg_spr; }
 		else if (string_pos("Military", this_card_type) > 0) { suit_spr = suit_military_spr; card_bkg_spr = card_military_bkg_spr; }
-		else if (string_pos("Civilian", this_card_type) > 0) { suit_spr = suit_civilian_spr; card_bkg_spr = card_civilian_bkg_spr; }
+		else if (string_pos("Economy", this_card_type) > 0) { suit_spr = suit_economy_spr; card_bkg_spr = card_economy_bkg_spr; }
 		else if (string_pos("Science", this_card_type) > 0) { suit_spr = suit_science_spr; card_bkg_spr = card_science_bkg_spr; }
 		else if (this_card_type == "Continue")
 		{
@@ -292,9 +292,9 @@ if (ds_list_size(player_hand) > 0)
 		
 		var card_hint_text = "";
 		if (suit_spr == suit_gray_spr) { card_hint_text = "Loses to all\nother suits."; }
-		else if (suit_spr == suit_military_spr) { card_hint_text = "Beats Civilian.\nLoses to Science."; }
-		else if (suit_spr == suit_civilian_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
-		else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Civilian."; }
+		else if (suit_spr == suit_military_spr) { card_hint_text = "Beats Economy.\nLoses to Science."; }
+		else if (suit_spr == suit_economy_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
+		else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Economy."; }
 		
 		if (card_selected == i && card_game_phase == GAME_PHASE.PLAYER_TURN)
 		{

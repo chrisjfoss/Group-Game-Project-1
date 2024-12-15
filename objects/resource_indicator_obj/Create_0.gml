@@ -6,7 +6,7 @@ display_font = card_ft;
 type = "player"; //player/opponent; determines which participant this resource indicator belongs to.
 
 resource_spr_suit1 = suit_military_spr;
-resource_spr_suit2 = suit_civilian_spr;
+resource_spr_suit2 = suit_economy_spr;
 resource_spr_suit3 = suit_science_spr;
 
 resource_value_suit1 = 2;

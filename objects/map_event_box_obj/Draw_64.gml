@@ -80,7 +80,7 @@ if (event_stage == -1)
 			
 			if (_event_prereq_type == "BATTERIES" && global._player_resources.BATTERIES < _event_prereq_value) { _event_invalid_prereq = true; }
 			if (_event_prereq_type == "MILITARY" && global._player_resources.MILITARY < _event_prereq_value) { _event_invalid_prereq = true; }
-			if (_event_prereq_type == "CIVILIAN" && global._player_resources.CIVILIAN < _event_prereq_value) { _event_invalid_prereq = true; }
+			if (_event_prereq_type == "ECONOMY" && global._player_resources.ECONOMY < _event_prereq_value) { _event_invalid_prereq = true; }
 			if (_event_prereq_type == "SCIENCE" && global._player_resources.SCIENCE < _event_prereq_value) { _event_invalid_prereq = true; }
 			
 			if (_event_invalid_prereq)
@@ -107,7 +107,7 @@ if (event_stage == -1)
 					
 				if (_event_prereq_type == "BATTERIES") { _prereq_spr = batteries_symbol_spr; }
 				if (_event_prereq_type == "MILITARY") { _prereq_spr = suit_military_spr; }
-				if (_event_prereq_type == "CIVILIAN") { _prereq_spr = suit_civilian_spr; }
+				if (_event_prereq_type == "ECONOMY") { _prereq_spr = suit_economy_spr; }
 				if (_event_prereq_type == "SCIENCE") { _prereq_spr = suit_science_spr; }
 				
 				draw_sprite_ext(_prereq_spr, 0, event_box_x+event_box_width-8-18, event_box_y+event_box_height+16+4+i*_choice_height,1,1,0,c_white,1.0);
@@ -149,9 +149,9 @@ else
 		if (outcome_i_value >= 0) { val_string = "+"+string(outcome_i_value); }
 		else if (outcome_i_value < 0) { val_string = string(outcome_i_value); }
 		
-		if (outcome_i_type == "CIVILIAN")
+		if (outcome_i_type == "ECONOMY")
 		{
-			results_txt += val_string + " Civilian";
+			results_txt += val_string + " Economy";
 		}
 		else if (outcome_i_type == "MILITARY")
 		{

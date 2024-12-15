@@ -99,33 +99,33 @@ else if (card_game_phase == GAME_PHASE.DETERMINE_WINNER)
 			trick_won = "player";
 			trick_over_hint_text = "You won the trick!\nScience beats Military.";
 		}
-		else if (p_suit == "Civilian" && o_suit == "Military")
+		else if (p_suit == "Economy" && o_suit == "Military")
 		{
 			//opponent scores!
 			award_trick("opponent");
 			trick_won = "opponent";
-			trick_over_hint_text = "You lost the trick!\nMilitary beats Civilian.";
+			trick_over_hint_text = "You lost the trick!\nMilitary beats Economy.";
 		}
-		else if (p_suit == "Military" && o_suit == "Civilian")
+		else if (p_suit == "Military" && o_suit == "Economy")
 		{
 			//player scores!
 			award_trick("player");
 			trick_won = "player";
-			trick_over_hint_text = "You won the trick!\nMilitary beats Civilian.";
+			trick_over_hint_text = "You won the trick!\nMilitary beats Economy.";
 		}
-		else if (p_suit == "Science" && o_suit == "Civilian")
+		else if (p_suit == "Science" && o_suit == "Economy")
 		{
 			//opponent scores!
 			award_trick("opponent");
 			trick_won = "opponent";
-			trick_over_hint_text = "You lost the trick!\nCivilian beats Science.";
+			trick_over_hint_text = "You lost the trick!\nEconomy beats Science.";
 		}
-		else if (p_suit == "Civilian" && o_suit == "Science")
+		else if (p_suit == "Economy" && o_suit == "Science")
 		{
 			//player scores!
 			award_trick("player");
 			trick_won = "player";
-			trick_over_hint_text = "You won the trick!\nCivilian beats Science.";
+			trick_over_hint_text = "You won the trick!\nEconomy beats Science.";
 		}
 		else if (p_suit == o_suit)
 		{

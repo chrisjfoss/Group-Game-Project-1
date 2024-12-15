@@ -85,7 +85,7 @@ function render_map(){
 	var order_c = -1;
 	var order_s = -1;
 	
-	var order_array = [ global._player_resources.MILITARY, global._player_resources.CIVILIAN, global._player_resources.SCIENCE ];
+	var order_array = [ global._player_resources.MILITARY, global._player_resources.ECONOMY, global._player_resources.SCIENCE ];
 	array_sort(order_array,false);
 	
 	while (order_m == -1)
@@ -110,15 +110,15 @@ function render_map(){
 	
 	while (order_c == -1)
 	{
-		if (order_array[0] == global._player_resources.CIVILIAN && order_m != 0)
+		if (order_array[0] == global._player_resources.ECONOMY && order_m != 0)
 		{
 			order_c = 0;
 		}
-		else if (order_array[1] == global._player_resources.CIVILIAN && order_m != 1)
+		else if (order_array[1] == global._player_resources.ECONOMY && order_m != 1)
 		{
 			order_c = 1;
 		}
-		else if (order_array[2] == global._player_resources.CIVILIAN && order_m != 2)
+		else if (order_array[2] == global._player_resources.ECONOMY && order_m != 2)
 		{
 			order_c = 2;
 		}
@@ -156,7 +156,7 @@ function render_map(){
 		var _loop_var = global._player_resources.MILITARY;
 		var _car_spr = little_train_military_spr;
 		if (order_m == cars) {_loop_var = global._player_resources.MILITARY; _car_spr = little_train_military_spr; }
-		else if (order_c == cars) {_loop_var = global._player_resources.CIVILIAN; _car_spr = little_train_civilian_spr; }
+		else if (order_c == cars) {_loop_var = global._player_resources.ECONOMY; _car_spr = little_train_economy_spr; }
 		else if (order_s == cars) {_loop_var = global._player_resources.SCIENCE; _car_spr = little_train_science_spr; }
 		for (var i = 0; i < _loop_var; i++)
 		{
@@ -170,18 +170,18 @@ function render_map(){
 	var _large_car_x = room_width/2;
 	var _large_car_y = room_height-88;
 	
-	if (global._player_resources.MILITARY+global._player_resources.CIVILIAN+global._player_resources.SCIENCE > 7)
+	if (global._player_resources.MILITARY+global._player_resources.ECONOMY+global._player_resources.SCIENCE > 7)
 	{
 		//multiple train lines! Scoot up.
 		_large_car_y -= 24;
 	}
-	if (global._player_resources.MILITARY+global._player_resources.CIVILIAN+global._player_resources.SCIENCE > 14)
+	if (global._player_resources.MILITARY+global._player_resources.ECONOMY+global._player_resources.SCIENCE > 14)
 	{
 		//multiple train lines! Scoot up.
 		_large_car_y -= 12;
 	}
 	
-	var _large_car_width = sprite_get_width(large_train_conductor_spr) + sprite_get_width(large_train_military_spr)*(global._player_resources.MILITARY+global._player_resources.CIVILIAN+global._player_resources.SCIENCE);
+	var _large_car_width = sprite_get_width(large_train_conductor_spr) + sprite_get_width(large_train_military_spr)*(global._player_resources.MILITARY+global._player_resources.ECONOMY+global._player_resources.SCIENCE);
 	
 	_large_car_x += (_large_car_width/2);
 	
@@ -202,7 +202,7 @@ function render_map(){
 		var _loop_var = global._player_resources.MILITARY;
 		var _car_spr = large_train_military_spr;
 		if (order_m == cars) {_loop_var = global._player_resources.MILITARY; _car_spr = large_train_military_spr; }
-		else if (order_c == cars) {_loop_var = global._player_resources.CIVILIAN; _car_spr = large_train_civilian_spr; }
+		else if (order_c == cars) {_loop_var = global._player_resources.ECONOMY; _car_spr = large_train_economy_spr; }
 		else if (order_s == cars) {_loop_var = global._player_resources.SCIENCE; _car_spr = large_train_science_spr; }
 		for (var i = 0; i < _loop_var; i++)
 		{

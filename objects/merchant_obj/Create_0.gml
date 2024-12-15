@@ -34,9 +34,9 @@ function purchase(resource, amount, cost) {
 
 dlog[0] = ["The boss here is ruling with an iron fist, a lot of citizens want out.^1",dlog_continue];
 dlog[1] = [ "Looking to hire anyone?", [
-				"Civilian: 10 Batteries",
+				"Banker: 10 Batteries",
 				function() {
-					purchase("CIVILIAN", 1, 10);
+					purchase("ECONOMY", 1, 10);
 				},
 				"Soldier: 30 Batteries",
 				function() {

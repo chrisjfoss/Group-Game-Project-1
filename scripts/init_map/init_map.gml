@@ -19,7 +19,7 @@ function init_map(){
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
 	_new_map_element[? "name"] = "Dusty Crossroads";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	_new_map_element[? "events_possible"] = [ "event_cactus", "event_corpses", "event_abandoned_train", "event_grass", "event_abyss", "event_distortion", "event_stopped_train", "event_engine_failure", "event_cargo", "event_hovercart", "event_melvin", "event_batteries1", "event_batteries2", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Road Event
@@ -27,7 +27,7 @@ function init_map(){
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
 	_new_map_element[? "name"] = "Baleful Woods";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	_new_map_element[? "events_possible"] = [ "event_cactus", "event_corpses", "event_abandoned_train", "event_grass", "event_abyss", "event_distortion", "event_stopped_train", "event_engine_failure", "event_cargo", "event_hovercart", "event_melvin", "event_batteries1", "event_batteries2", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Station 2
@@ -43,7 +43,7 @@ function init_map(){
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
 	_new_map_element[? "name"] = "Cratered Valley";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	_new_map_element[? "events_possible"] = [ "event_pond", "event_travelers", "event_hills", "event_barricade", "event_gunfire", "event_melvin", "event_batteries1", "event_batteries2", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Road Event
@@ -51,7 +51,7 @@ function init_map(){
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
 	_new_map_element[? "name"] = "Bloodied Field";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	_new_map_element[? "events_possible"] = [ "event_pond", "event_travelers", "event_hills", "event_barricade", "event_gunfire", "event_melvin", "event_batteries1", "event_batteries2", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Station 3
@@ -67,7 +67,7 @@ function init_map(){
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
 	_new_map_element[? "name"] = "The Drop-off";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	_new_map_element[? "events_possible"] = [ "event_pond", "event_travelers", "event_hills", "event_barricade", "event_gunfire", "event_melvin", "event_batteries1", "event_batteries2", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Road Event
@@ -75,7 +75,7 @@ function init_map(){
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
 	_new_map_element[? "name"] = "Eerie Swamp";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	_new_map_element[? "events_possible"] = [ "event_pond", "event_travelers", "event_hills", "event_barricade", "event_gunfire", "event_melvin", "event_batteries1", "event_batteries2", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Station 4
@@ -91,7 +91,7 @@ function init_map(){
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
 	_new_map_element[? "name"] = "Cog Mines";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	_new_map_element[? "events_possible"] = [ "event_melvin", "event_batteries1", "event_batteries2",  "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Road Event
@@ -99,7 +99,7 @@ function init_map(){
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
 	_new_map_element[? "name"] = "Abandoned Farms";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	_new_map_element[? "events_possible"] = [ "event_melvin", "event_batteries1", "event_batteries2", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Road Event
@@ -107,7 +107,7 @@ function init_map(){
 	_new_map_element[? "sprite"] = map_indicator_event_spr;
 	_new_map_element[? "type"] = "event";
 	_new_map_element[? "name"] = "The Dread Plains";
-	_new_map_element[? "events_possible"] = [ "test_event1", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
+	_new_map_element[? "events_possible"] = [ "event_melvin", "event_batteries1", "event_batteries2", "test_event2", "test_event3", "test_event4", "test_event5", "test_event6", "test_event7", "test_event8", "test_event9", "test_event10" ];
 	ds_list_add(global._map_list, _new_map_element);
 	
 	//Station 5

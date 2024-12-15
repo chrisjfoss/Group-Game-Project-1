@@ -39,13 +39,13 @@ function card_result_by_suit(_card_one, _card_two) {
 	}
 	
 	if(_card_one_suit == get_card_type_name(CARD_TYPES.MILITARY)) {
-		if(_card_two_suit == get_card_type_name(CARD_TYPES.CIVILIAN)) {
+		if(_card_two_suit == get_card_type_name(CARD_TYPES.ECONOMY)) {
 			return 1;
 		}
 		return -1;
 	}
 	
-	if(_card_one_suit == get_card_type_name(CARD_TYPES.CIVILIAN)) {
+	if(_card_one_suit == get_card_type_name(CARD_TYPES.ECONOMY)) {
 		if(_card_two_suit == get_card_type_name(CARD_TYPES.SCIENCE)) {
 			return 1;
 		}
