@@ -763,6 +763,480 @@ function init_random_events() {
 				"choice_outcome1_value": 0,
 				"choice_post_text": "You decide not to buy anything from Melvin."
 			}
+		},
+		
+		"event_nothingness": {
+			"event_text": "A vast patch of nothingness looms upon the tracks ahead. The void is always a strange sight to behold, as if a bite has been taken out of reality and only a sickening darkness remains. With the tracks now gone, you will need to find a way forward.",
+			"choice1": {
+				"choice_text": "Create a ramp", 
+				"choice_prerequisite_type": "SCIENCE",
+				"choice_prerequisite_value": 2,
+				"choice_outcome1_type": "ECONOMY",
+				"choice_outcome1_value": -1,
+				"choice_post_text": "Your train flies full speed ahead, but a miscacluation means that the last car didn't quite clear the void. It is swallowed by darkness."
+			},
+			"choice2": {
+				"choice_text": "Use experimental rockets", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 2,
+				"choice_outcome1_type": "SCIENCE",
+				"choice_outcome1_value": 1,
+				"choice_post_text": "The makeshift rockets roar to life and the passengers prepare for the worst. Much to everyone's surprise, the rockets are an astounding success! Your train clears the void with room to spare."
+			},
+			"choice3": {
+				"choice_text": "Lay new tracks", 
+				"choice_prerequisite_type": "ECONOMY",
+				"choice_prerequisite_value": 2,
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": -10,
+				"choice_post_text": "A few unsavory sorts watch your train with a devious look in their eyes. However, your weapons keep them at bay while everyone else gets the new tracks laid. After a few greuling days of work, you are able to move around the void and continue your journey. But the time spent has been taxing on your energy reserves."
+			},
+			"choice4": {
+				"choice_text": "Continue without stopping", 
+				"choice_outcome1_type": "MILITARY",
+				"choice_outcome1_value": -1,
+				"choice_outcome2_type": "ECONOMY",
+				"choice_outcome2_value": -1,
+				"choice_outcome3_type": "SCIENCE",
+				"choice_outcome3_value": -1,
+				"choice_post_text": "You choose to barrel through the inky darkness heedless of the danger. Some of your train cars get swallowed up."
+			}
+		},
+		
+		"event_tree": {
+			"event_text": "An absolutely massive, yet twisted, tree has grown by an emerald stream beside the train tracks. As you pass underneath one of its branches, you hear an unnerving snap.",
+			"choice1": {
+				"choice_text": "Pull the brakes!", 
+				"choice_outcome1_type": "SCIENCE",
+				"choice_outcome1_value": 1,
+				"choice_post_text": "Your brakes squeel loudly as the train screetches to a slow halt, but you don't stop until well past the tree. With a powerful thud, the limb falls behind your train. You send a team to investigate and perform research on how the tree grew so large."
+			},
+			"choice2": {
+				"choice_text": "Push the engines hard!", 
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": -10,
+				"choice_post_text": "You tax the engnies to well over the recommended speed. Your train suddenly rockets forward and flings people out of their seats. Thankfully, the tree does not land on your cars, but you spent some extra energy pushing the engines."
+			},
+			"choice3": {
+				"choice_text": "Ignore the sound.", 
+				"choice_outcome1_type": 0,
+				"choice_outcome1_value": 0,
+				"choice_post_text": "You move forward heedless of the danger. Your passengers become increasingly alarmed by the creaking sounds from outside, but, against all odds, you pass by the tree unscathed."
+			}
+		},
+		
+		"event_mountain": {
+			"event_text": "As you pass through a mountain, you find that a recent rockslide has blocked the tunnel up ahead.",
+			"choice1": {
+				"choice_text": "Send people to clear the rocks.", 
+				"choice_outcome1_type": "ECONOMY",
+				"choice_outcome1_value": -1,
+				"choice_post_text": "The boulders are large and heavy. It is strenuous work to painstankingly clear a path for your train. Just as the work is finishing, a terrible accident causes a boulder to fall and smash one of your train cars like a soda can!"
+			},
+			"choice2": {
+				"choice_text": "Blow up the rocks.", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 3,
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": 10,
+				"choice_post_text": "You are well equipped with explosives. After laying the charges properly, you set off a well coordinated fireball. As the dust settles, your path is clear. You also find that one of the boulders was concealing gold, which you promptly trade for needed supplies."
+			},
+			"choice3": {
+				"choice_text": "Pay travelers to move the rocks.", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 15,
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": -15,
+				"choice_post_text": "You pay a group of semi-trustworthy travelers to remove the rocks in your path. The work takes longer than you expect, but the work gets done. With a sigh of relief, you move forward."
+			}
+		},
+		
+		"event_tower": {
+			"event_text": "A ramshackle wooden tower looms over the tracks. There are no lights on and it seems eerily quiet.",
+			"choice1": {
+				"choice_text": "Send scientists to investigate.", 
+				"choice_prerequisite_type": "SCIENCE",
+				"choice_prerequisite_value": 3,
+				"choice_outcome1_type": "MILITARY",
+				"choice_outcome1_value": 1,
+				"choice_post_text": "The scientsists carefully move to the first floor. The entire building creaks with each step. They happen to find a crate of laser rifles and return with their findings."
+			},
+			"choice2": {
+				"choice_text": "Send soldiers to investigate.", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 3,
+				"choice_outcome1_type": "SCIENCE",
+				"choice_outcome1_value": 1,
+				"choice_post_text": "Your armed forces head to the basement of the tower, fully prepared for a firefight. The darkness and eerie silence are disturbing, but they find a strange contraption made of gears and bring it back."
+			},
+			"choice3": {
+				"choice_text": "Send businessmen to investigate.", 
+				"choice_prerequisite_type": "ECONOMY",
+				"choice_prerequisite_value": 3,
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": 20,
+				"choice_outcome2_type": "ECONOMY",
+				"choice_outcome2_value": -1,
+				"choice_post_text": "The businessmen decide to move to the upper floor of the decrepit tower. They find decaying skeletons sitting at a card table next to a large box of batteries. Suddenly, the floor gives way and one of the businessmen falls to his death!"
+			},
+			"choice4": {
+				"choice_text": "Ignore the structure.", 
+				"choice_outcome1_type": 0,
+				"choice_outcome1_value": 0,
+				"choice_post_text": "You decide it is best to ignore the tower and continue on your way."
+			}
+		},
+		
+		"event_dog": {
+			"event_text": "You hear a forlorn howling coming from the other side of a hill. Then, a half-starved dog appears at the top of the hill and looks down at your train. Its eyes are sad and pleading.",
+			"choice1": {
+				"choice_text": "Feed the dog.", 
+				"choice_outcome1_type": "MILITARY",
+				"choice_outcome1_value": -1,
+				"choice_post_text": "You beckon the dog over and give it some food. The starving animal seems grateful, then it howls loudly by your ear. Suddenly, a pack of the dogs appears on the hill top. They rush your train and attack your passengers!"
+			},
+			"choice2": {
+				"choice_text": "Shoot the dog.", 
+				"choice_outcome1_type": 0,
+				"choice_outcome1_value": 0,
+				"choice_post_text": "You pull out a laser pistol and take a deep breath. It's best to put the poor creature out of its misery, you think to yourself. Soon only a carbon scorch mark remains. That's when you notice forlorn eyes staring at you from every hill in the area. Time to leave!"
+			},
+			"choice3": {
+				"choice_text": "Follow the dog.", 
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": -5,
+				"choice_outcome2_type": "SCIENCE",
+				"choice_outcome2_value": 1,
+				"choice_post_text": "The dog leads you over the hill to a small cave. As you travel, more and more of the sad looking dogs appear and follow you. Unnerved, but unable to leave the pack, you enter the cave. Inside you find a busted clockwork person! After a few hours, the dogs sleep and you leave with the clockwork person. It takes some effort and energy to fix, but soon you have a new passenger aboard your train."
+			},
+			"choice4": {
+				"choice_text": "Ignore the dog.", 
+				"choice_outcome1_type": "SCIENCE",
+				"choice_outcome1_value": -1,
+				"choice_post_text": "You choose to ignore the dog and keep the train moving forward. The animal howls loudly at your train and soon a cacophony of howls joins in from every hill and valley around. Sad looking dog creatures of all sizes and shapes surround your train and box you in. You are only able to escape after a group of scientists go out to study the creatures and are promptly eaten!"
+			}
+		},
+		
+		"event_sacrifice": {
+			"event_text": "On the tracks a monsterous lobster creature blocks your progress and demands the death of one your cars to its foul god. The monster is seemingly invulnerable.",
+			"choice1": {
+				"choice_text": "Sacrifice a scientist", 
+				"choice_prerequisite_type": "SCIENCE",
+				"choice_prerequisite_value": 1,
+				"choice_outcome1_type": "SCIENCE",
+				"choice_outcome1_value": -1,
+				"choice_post_text": "The Beast devours your chosen sacrifice."
+			},
+			"choice2": {
+				"choice_text": "Sacrifice a civilian", 
+				"choice_prerequisite_type": "ECONOMY",
+				"choice_prerequisite_value": 1,
+				"choice_outcome1_type": "ECONOMY",
+				"choice_outcome1_value": -1,
+				"choice_post_text": "The Beast devours your chosen sacrifice."
+			},
+			"choice3": {
+				"choice_text": "Sacrifice a soldier", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 1,
+				"choice_outcome1_type": "MILITARY",
+				"choice_outcome1_value": -1,
+				"choice_post_text": "The Beast devours your chosen sacrifice."
+			},
+			"choice4": {
+				"choice_text": "Bribe the lobster", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 50,
+				"choice_outcome1_type": "SCIENCE",
+				"choice_outcome1_value": -1,
+				"choice_outcome2_type": "MILITARY",
+				"choice_outcome2_value": -1,
+				"choice_outcome3_type": "ECONOMY",
+				"choice_outcome3_value": -1,
+				"choice_post_text": "The lobster is angered that you have tried this and assaults your train!"
+			},
+			"choice5": {
+				"choice_text": "Fight the lobster", 
+				"choice_outcome1_type": "SCIENCE",
+				"choice_outcome1_value": -2,
+				"choice_outcome2_type": "MILITARY",
+				"choice_outcome2_value": -2,
+				"choice_outcome3_type": "ECONOMY",
+				"choice_outcome3_value": -2,
+				"choice_post_text": "The fighting is short and brutal. Few survive the onslaught of the beast's massive claws."
+			}
+		},
+		
+		"event_radiation_zone": {
+			"event_text": "The train has entered a highly radioactive zone. The danger is great, but there is also opportunity here.",
+			"choice1": {
+				"choice_text": "Weaponize the radiation", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 10,
+				"choice_outcome1_type": "MILITARY",
+				"choice_outcome1_value": 2,
+				"choice_outcome2_type": "BATTERIES",
+				"choice_outcome2_value": -10,
+				"choice_post_text": "You have contained the background radiation, powered the trains weapons, but at a cost."
+			},
+			"choice2": {
+				"choice_text": "Prepare a scientific solution", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 5,
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": -5,
+				"choice_outcome2_type": "SCIENCE",
+				"choice_outcome2_value": 1,
+				"choice_post_text": "The scientists have made ramshackle shield for the train."
+			},
+			"choice3": {
+				"choice_text": "Absorb the energy", 
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": 20,
+				"choice_outcome2_type": "SCIENCE",
+				"choice_outcome2_value": -1,
+				"choice_post_text": "The radiation absorbtion has freed up the batteries that run the train. However, in the process, the science team was poisoned by radiation!"
+			}
+		},
+		
+		"event_sentry": {
+			"event_text": "A large defensive mobile sentry gun was detected ahead and it block your progress till its dealt with.",
+			"choice1": {
+				"choice_text": "Destroy it!", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 1,
+				"choice_outcome1_type": 0,
+				"choice_outcome1_value": 0,
+				"choice_post_text": "The sentry gun is now a smoldering heap."
+			},
+			"choice2": {
+				"choice_text": "Attempt to hack it", 
+				"choice_prerequisite_type": "SCIENCE",
+				"choice_prerequisite_value": 2,
+				"choice_outcome1_type": "MILITARY",
+				"choice_outcome1_value": 1,
+				"choice_post_text": "The hacking attempt is success, and the sentry gun is moved and placed on your train."
+			},
+			"choice3": {
+				"choice_text": "Shut it down and salvage", 
+				"choice_prerequisite_type": "ECONOMY",
+				"choice_prerequisite_value": 3,
+				"choice_outcome1_type": "ECONOMY",
+				"choice_outcome1_value": -2,
+				"choice_outcome2_type": "BATTERIES",
+				"choice_outcome2_value": 25,
+				"choice_post_text": "The sentry is salvaged and shut down, but it fires upon the passengers!"
+			},
+			"choice4": {
+				"choice_text": "Ignore the sentry gun", 
+				"choice_outcome1_type": "MILITARY",
+				"choice_outcome1_value": -1,
+				"choice_post_text": "The sentry gun cannon punches a hole through the train!"
+			}
+		},
+		
+		"event_gamble": {
+			"event_text": "The train stops as there a frog-like humanoid camped next to the tracks. He holds a gun and beckons you foward to play a different sort of gambling game. His four barreled gun is raised to you. He tells you select a barrel for him to fire.",
+			"choice1": {
+				"choice_text": "Barrel 1", 
+				"choice_outcome1_type": 0,
+				"choice_outcome1_value": 0,
+				"choice_post_text": "There is click and nothing happens. The frog laughs and tells you its not your lucky day"
+			},
+			"choice2": {
+				"choice_text": "Barrel 2", 
+				"choice_outcome1_type": 0,
+				"choice_outcome1_value": 0,
+				"choice_post_text": "There is click and nothing happens. The frog laughs and tells you its not your lucky day"
+			},
+			"choice3": {
+				"choice_text": "Barrel 3", 
+				"choice_outcome1_type": "MILITARY",
+				"choice_outcome1_value": 1,
+				"choice_outcome2_type": "BATTERIES",
+				"choice_outcome2_value": 15,
+				"choice_post_text": "He raises to gun and tells this is the loaded barrel. You don't move. And asks if you are sure. He lifts the gun to sky and fires. Laughing all the while, the Frog man says, 'you have moxy,' and tells you he is former gun fighter looking for fun."
+			},
+			"choice4": {
+				"choice_text": "Barrel 4", 
+				"choice_outcome1_type": 0,
+				"choice_outcome1_value": 0,
+				"choice_post_text": "There is click and nothing happens. The frog laughs and tells you its not your lucky day"
+			},
+			"choice5": {
+				"choice_text": "No thanks!", 
+				"choice_outcome1_type": 0,
+				"choice_outcome1_value": 0,
+				"choice_post_text": "'Get out, you coward!' the frog-man shouts. You continue on your way."
+			}
+		},
+		
+		"event_stampede": {
+			"event_text": "A stampede of millions of 6 foot tall milipede-like animals rumbles over the horizon heading in your direction!",
+			"choice1": {
+				"choice_text": "Speed up and attempt avoid", 
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": -10,
+				"choice_post_text": "You aren't quick enough, the milipedes hit the train like tsunami, damaging it in the process. The train will need repairs in the next port."
+			},
+			"choice2": {
+				"choice_text": "Weapons to full!", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 2,
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": -5,
+				"choice_post_text": "The trains weapons shoot at the creatures, and drive them away but the constant barrage required batteries to be spent."
+			},
+			"choice3": {
+				"choice_text": "Ask passengers for advice", 
+				"choice_prerequisite_type": "ECONOMY",
+				"choice_prerequisite_value": 4,
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": 20,
+				"choice_post_text": "A passager knows to stay still when the Coraltron mitigrate. The swarms climbs over the still train and some of the swarm is left behind. Their meat is considered delicious to most and can be sold."
+			},
+			"choice4": {
+				"choice_text": "Research the stampede", 
+				"choice_outcome1_type": "SCIENCE",
+				"choice_outcome1_value": 1,
+				"choice_post_text": "The researchers know that a common mixature of basic goods drives them away. The swarm avoids the train."
+			}
+		},
+		
+		"event_slavers": {
+			"event_text": "A crawling vehicile of arms and legs, flags down your train. Crewed by insectoid slavers, they ask if you want to buy any slaves for your journey.",
+			"choice1": {
+				"choice_text": "Revolt!", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 4,
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": 15,
+				"choice_outcome2_type": "SCIENCE",
+				"choice_outcome2_value": 1,
+				"choice_outcome3_type": "ECONOMY",
+				"choice_outcome3_value": 1,
+				"choice_post_text": "While the slavers machine is strong, you suprise them by opening up on them. The vehicle is destroyed the slaves are freed and join you."
+			},
+			"choice2": {
+				"choice_text": "Buy a civilian", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 10,
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": -10,
+				"choice_outcome2_type": "ECONOMY",
+				"choice_outcome2_value": 1,
+				"choice_post_text": "You have made your purchase."
+			},
+			"choice3": {
+				"choice_text": "Buy a scientist", 
+				"choice_prerequisite_type": "BATTERIES",
+				"choice_prerequisite_value": 10,
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": -10,
+				"choice_outcome2_type": "SCIENCE",
+				"choice_outcome2_value": 1,
+				"choice_post_text": "You have made your purchase."
+			},
+			"choice4": {
+				"choice_text": "I don't deal in slaves.", 
+				"choice_outcome1_type": 0,
+				"choice_outcome1_value": 0,
+				"choice_post_text": "The slavers sneer and bid you to move along."
+			}
+		},
+		
+		"event_power_plant": {
+			"event_text": "You come across an automated power plant. Perhaps something useful can be gained from there.",
+			"choice1": {
+				"choice_text": "Shut down the plant and salvage", 
+				"choice_prerequisite_type": "SCIENCE",
+				"choice_prerequisite_value": 2,
+				"choice_outcome1_type": "SCIENCE",
+				"choice_outcome1_value": -1,
+				"choice_outcome2_type": "ECONOMY",
+				"choice_outcome2_value": -1,
+				"choice_post_text": "The plants machines immediately attack the train upon its attempts!"
+			},
+			"choice2": {
+				"choice_text": "Siphon a small amount of power", 
+				"choice_prerequisite_type": "ECONOMY",
+				"choice_prerequisite_value": 1,
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": 5,
+				"choice_post_text": "A small amount of power was not noticed."
+			},
+			"choice3": {
+				"choice_text": "Siphon a medium size of energy", 
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": 10,
+				"choice_post_text": "The plant doesn't notice!"
+			},
+			"choice4": {
+				"choice_text": "Take a large amount of batteries", 
+				"choice_outcome1_type": "MILITARY",
+				"choice_outcome1_value": -1,
+				"choice_outcome2_type": "ECONOMY",
+				"choice_outcome2_value": -1,
+				"choice_outcome3_type": "SCIENCE",
+				"choice_outcome3_value": -1,
+				"choice_post_text": "The plant is unstable and siphon has unbalanced things further, and it explodes in electromagnetic fire!"
+			}
+		},
+		
+		"event_old_mission": {
+			"event_text": "The train scopes see what appears a small church. At the door, a kindly fungus person greets and hugs and asks you to pray and break bread with him.",
+			"choice1": {
+				"choice_text": "Pray with the fungi", 
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": 5,
+				"choice_post_text": "He is happy and offers its last 5 batteries. The fungi waves you and hopes your journey is successful."
+			},
+			"choice2": {
+				"choice_text": "Convince him to join you", 
+				"choice_prerequisite_type": "ECONOMY",
+				"choice_prerequisite_value": 2,
+				"choice_outcome1_type": "ECONOMY",
+				"choice_outcome1_value": 1,
+				"choice_post_text": "The fungi realizes its kindness will not save the world. The fungi-man will join your adventure!"
+			},
+			"choice3": {
+				"choice_text": "Rob the fungi", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 2,
+				"choice_outcome1_type": "MILITARY",
+				"choice_outcome1_value": -2,
+				"choice_post_text": "The fungi bemoans your foolish action as it sores choke and kill your troops!"
+			}
+		},
+		
+		"event_ghost_town": {
+			"event_text": "You find an abandoned town covered in black cobweb-like structures. There is no sound or life in this area.",
+			"choice1": {
+				"choice_text": "Don't go into the town", 
+				"choice_outcome1_type": 0,
+				"choice_outcome1_value": 0,
+				"choice_post_text": "The town has an eerie off putting look, perhaps its good to avoid it."
+			},
+			"choice2": {
+				"choice_text": "Explore the town using troops", 
+				"choice_outcome1_type": "MILITARY",
+				"choice_outcome1_value": -1,
+				"choice_post_text": "Whatever the organic mass is, it has a mind as it begins to consume those that enter. The screams will haunt you forever."
+			},
+			"choice3": {
+				"choice_text": "Send a team to research", 
+				"choice_outcome1_type": "SCIENCE",
+				"choice_outcome1_value": -1,
+				"choice_post_text": "Whatever the organic mass is, it has a mind as it begins to consume those that enter. The screams will haunt you forever."
+			},
+			"choice4": {
+				"choice_text": "Burn the town", 
+				"choice_prerequisite_type": "MILITARY",
+				"choice_prerequisite_value": 3,
+				"choice_outcome1_type": "BATTERIES",
+				"choice_outcome1_value": 15,
+				"choice_post_text": "The black cobweb-thing howls and shrieks as it up to the torch. In the smoldering remains you find a number of supplies!"
+			}
 		}
 	}
 }
