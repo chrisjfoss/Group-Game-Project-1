@@ -1099,7 +1099,7 @@ function init_random_events() {
 				"choice_text": "Research the stampede", 
 				"choice_outcome1_type": "SCIENCE",
 				"choice_outcome1_value": 1,
-				"choice_post_text": "The researchers know that a common mixature of basic goods drives them away. The swarm avoids the train."
+				"choice_post_text": "The researchers know that a common mixture of basic goods drives them away. The swarm avoids the train."
 			}
 		},
 		
