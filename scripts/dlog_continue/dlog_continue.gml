@@ -7,7 +7,6 @@
  */
 
 function dlog_continue() {
-		
 	// Start by getting rid of the old textbox
 	if (instance_exists(textbox_obj)) {
 		instance_destroy(textbox_obj); 
@@ -16,7 +15,7 @@ function dlog_continue() {
 	// Have the speaker automatically create a new textbox
 	with (creator) {
 		// Get the string being written. 
-		var str = dlog[dlog_index]; 
+		var str = dlog[dlog_index];
 	
 		// Extract the instructions
 		var n = check_hidden_num(str); // This deletes the instructions and returns a string of numbers

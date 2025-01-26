@@ -22,6 +22,7 @@
     {"name":"inst_7BD9996F","path":"rooms/TheNexusRoom/TheNexusRoom.yy",},
     {"name":"inst_19FD09FC","path":"rooms/TheNexusRoom/TheNexusRoom.yy",},
     {"name":"inst_6A978958","path":"rooms/TheNexusRoom/TheNexusRoom.yy",},
+    {"name":"inst_36C823F7","path":"rooms/TheNexusRoom/TheNexusRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -42,6 +43,7 @@
         {"$GMRInstance":"v1","%Name":"inst_6A978958","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6A978958","objectId":{"name":"nexus_train_stopper_obj","path":"objects/nexus_train_stopper_obj/nexus_train_stopper_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":184.0,"y":87.0,},
         {"$GMRInstance":"v1","%Name":"inst_19FD09FC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_19FD09FC","objectId":{"name":"nexus_train_stopper_obj","path":"objects/nexus_train_stopper_obj/nexus_train_stopper_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":184.0,"y":94.0,},
         {"$GMRInstance":"v1","%Name":"inst_7BD9996F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7BD9996F","objectId":{"name":"nexus_train_stopper_obj","path":"objects/nexus_train_stopper_obj/nexus_train_stopper_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":184.0,"y":101.0,},
+        {"$GMRInstance":"v1","%Name":"inst_36C823F7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_36C823F7","objectId":{"name":"_train_is_a_person_obj","path":"objects/_train_is_a_person_obj/_train_is_a_person_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":0.5,"x":24.0,"y":64.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_1B124449","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_1B124449","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"train_tracks_horizontal_spr","path":"sprites/train_tracks_horizontal_spr/train_tracks_horizontal_spr.yy",},"x":0.0,"y":72.0,},

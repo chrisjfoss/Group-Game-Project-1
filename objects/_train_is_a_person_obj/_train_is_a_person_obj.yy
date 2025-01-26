@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"train_is_a_person_obj",
+  "%Name":"_train_is_a_person_obj",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"train_is_a_person_obj",
+  "name":"_train_is_a_person_obj",
   "overriddenProperties":[],
   "parent":{
     "name":"WalkaroundObjects",
