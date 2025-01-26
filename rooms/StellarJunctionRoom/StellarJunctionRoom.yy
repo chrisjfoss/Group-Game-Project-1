@@ -108,6 +108,7 @@
     {"name":"inst_2F11F23B","path":"rooms/StellarJunctionRoom/StellarJunctionRoom.yy",},
     {"name":"inst_4CA45EC4","path":"rooms/StellarJunctionRoom/StellarJunctionRoom.yy",},
     {"name":"inst_61D20F32","path":"rooms/StellarJunctionRoom/StellarJunctionRoom.yy",},
+    {"name":"inst_4CD0B91F","path":"rooms/StellarJunctionRoom/StellarJunctionRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -214,6 +215,7 @@
         {"$GMRInstance":"v1","%Name":"inst_2F11F23B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2F11F23B","objectId":{"name":"cactus_saguaro_obj","path":"objects/cactus_saguaro_obj/cactus_saguaro_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":164.0,"y":427.0,},
         {"$GMRInstance":"v1","%Name":"inst_4CA45EC4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4CA45EC4","objectId":{"name":"cactus_barrel_obj","path":"objects/cactus_barrel_obj/cactus_barrel_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":6.0,"y":475.0,},
         {"$GMRInstance":"v1","%Name":"inst_61D20F32","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_61D20F32","objectId":{"name":"cactus_barrel_obj","path":"objects/cactus_barrel_obj/cactus_barrel_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":515.0,"y":299.0,},
+        {"$GMRInstance":"v1","%Name":"inst_4CD0B91F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4CD0B91F","objectId":{"name":"train_is_a_person_obj","path":"objects/train_is_a_person_obj/train_is_a_person_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":0.5,"x":32.0,"y":136.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_12F2F2B8","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_12F2F2B8","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":0.4,"scaleY":0.4888889,"spriteId":{"name":"stars_nebula_bkg_spr","path":"sprites/stars_nebula_bkg_spr/stars_nebula_bkg_spr.yy",},"x":0.0,"y":-88.0,},

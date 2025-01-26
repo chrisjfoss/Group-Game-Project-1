@@ -43,17 +43,26 @@ if (check_primary_pressed() || mouse_check_button_pressed(mb_left))
 		if (player_score > opponent_score) { 
 			//Victory! Advance along the map.
 			global._map_advance = true;
-			room_goto(MapRoom);
+			
+			room_goto(return_room);
+			
+			var _player_setter = instance_create_depth(0,0,0,player_setter_obj);
+			_player_setter.player_set_x = return_x;
+			_player_setter.player_set_y = return_y;
+			_player_setter.player_set_dir = return_dir;
+			
+			show_debug_message("DIR SET: "+string(_player_setter.player_set_dir));
+			
 		}
 		else 
 		{ 
 			//Failure! Return to the station.
-			room_goto(loss_room);
+			room_goto(return_room);
 			
 			var _player_setter = instance_create_depth(0,0,0,player_setter_obj);
-			_player_setter.player_set_x = loss_x;
-			_player_setter.player_set_y = loss_y;
-			_player_setter.player_set_dir = loss_dir;
+			_player_setter.player_set_x = return_x;
+			_player_setter.player_set_y = return_y;
+			_player_setter.player_set_dir = return_dir;
 			
 			show_debug_message("DIR SET: "+string(_player_setter.player_set_dir));
 		}

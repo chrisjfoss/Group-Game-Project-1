@@ -124,6 +124,7 @@
     {"id":{"name":"speaker_test_obj","path":"objects/speaker_test_obj/speaker_test_obj.yy",},},
     {"id":{"name":"tankard_obj","path":"objects/tankard_obj/tankard_obj.yy",},},
     {"id":{"name":"textbox_obj","path":"objects/textbox_obj/textbox_obj.yy",},},
+    {"id":{"name":"train_is_a_person_obj","path":"objects/train_is_a_person_obj/train_is_a_person_obj.yy",},},
     {"id":{"name":"train_smoke_particle_obj","path":"objects/train_smoke_particle_obj/train_smoke_particle_obj.yy",},},
     {"id":{"name":"tumbleweed_obj","path":"objects/tumbleweed_obj/tumbleweed_obj.yy",},},
     {"id":{"name":"walkaround_controller_obj","path":"objects/walkaround_controller_obj/walkaround_controller_obj.yy",},},

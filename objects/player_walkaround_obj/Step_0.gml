@@ -95,7 +95,10 @@ if (!instance_exists(modal_parent_obj))
             }
         }
         // Activate the instance so it can talk to you
-		_npc_inst.state = NPC_STATE.ACTIVE;
+		if(_npc_inst.state != NPC_STATE.DISABLED) {
+			show_debug_message("Setting npc instance to active");
+			_npc_inst.state = NPC_STATE.ACTIVE;
+		}
 		last_npc = _npc_inst;
 
     } 

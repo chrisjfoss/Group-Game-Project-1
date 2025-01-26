@@ -49,7 +49,7 @@ opponent_hand = ds_list_create();
 
 opponent_flavor = 0;
 
-loss_room = MapRoom;
-loss_x = 64;
-loss_y = 64;
-loss_dir = DIR.DOWN;
+return_room = MapRoom;
+return_x = 64;
+return_y = 64;
+return_dir = DIR.DOWN;
