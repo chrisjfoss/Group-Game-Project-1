@@ -3,7 +3,6 @@
 
 // Feel Free to delete this entire event when it is no longer needed
 
-
 draw_self(); 
 
 if keyboard_check_pressed(ord("G")) {show_hitbox = !show_hitbox;}

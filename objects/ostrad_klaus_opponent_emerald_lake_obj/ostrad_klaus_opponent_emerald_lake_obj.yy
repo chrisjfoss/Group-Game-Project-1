@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"opponent_emerald_lake_obj",
+  "%Name":"ostrad_klaus_opponent_emerald_lake_obj",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"opponent_emerald_lake_obj",
+  "name":"ostrad_klaus_opponent_emerald_lake_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"WalkaroundObjects",
-    "path":"folders/Objects/WalkaroundObjects.yy",
+    "name":"EmeraldLakeObjects",
+    "path":"folders/Objects/WalkaroundObjects/EmeraldLakeObjects.yy",
   },
   "parentObjectId":{
     "name":"npc_parent_obj",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"base_npc2_spr",
-    "path":"sprites/base_npc2_spr/base_npc2_spr.yy",
+    "name":"ostrad_klaus_npc_down_spr",
+    "path":"sprites/ostrad_klaus_npc_down_spr/ostrad_klaus_npc_down_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,
