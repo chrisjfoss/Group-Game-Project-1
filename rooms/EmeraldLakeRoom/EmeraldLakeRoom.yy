@@ -89,6 +89,7 @@
     {"name":"inst_68B4462C","path":"rooms/EmeraldLakeRoom/EmeraldLakeRoom.yy",},
     {"name":"inst_1A675286","path":"rooms/EmeraldLakeRoom/EmeraldLakeRoom.yy",},
     {"name":"inst_5EC4C15C","path":"rooms/EmeraldLakeRoom/EmeraldLakeRoom.yy",},
+    {"name":"inst_7635808","path":"rooms/EmeraldLakeRoom/EmeraldLakeRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -176,6 +177,7 @@
         {"$GMRInstance":"v1","%Name":"inst_68B4462C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_68B4462C","objectId":{"name":"merchant_obj","path":"objects/merchant_obj/merchant_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":432.0,"y":408.0,},
         {"$GMRInstance":"v1","%Name":"inst_1A675286","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1A675286","objectId":{"name":"hobart_howard_emerald_lake_npc_obj","path":"objects/hobart_howard_emerald_lake_npc_obj/hobart_howard_emerald_lake_npc_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":149.0,"y":134.0,},
         {"$GMRInstance":"v1","%Name":"inst_5EC4C15C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5EC4C15C","objectId":{"name":"a_veruna_smith_emerald_lake_npc_obj","path":"objects/a_veruna_smith_emerald_lake_npc_obj/a_veruna_smith_emerald_lake_npc_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":523.0,"y":128.0,},
+        {"$GMRInstance":"v1","%Name":"inst_7635808","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7635808","objectId":{"name":"_train_is_a_person_obj","path":"objects/_train_is_a_person_obj/_train_is_a_person_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":0.5,"x":24.0,"y":152.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_6A8F4BFA","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_6A8F4BFA","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"darkness_spr","path":"sprites/darkness_spr/darkness_spr.yy",},"x":0.0,"y":160.0,},

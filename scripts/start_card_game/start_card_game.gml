@@ -13,6 +13,7 @@ function start_card_game(opp_m, opp_c, opp_s, opponent_flavor = 0){
 	new_card_game_handler.return_to_y = player_walkaround_obj.y;
 	new_card_game_handler.return_to_dir = player_walkaround_obj._player_direction;
 	new_card_game_handler.opponent_flavor = opponent_flavor;
+	new_card_game_handler.return_to_room = room;
 	
 	show_debug_message("DIR RETURN: "+string(new_card_game_handler.return_to_dir));
 	

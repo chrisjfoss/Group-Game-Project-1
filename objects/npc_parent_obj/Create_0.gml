@@ -5,7 +5,7 @@ enum NPC_FACING {
 }
 
 enum NPC_STATE {
-	ACTIVE, IDLE, MOVING
+	ACTIVE, IDLE, MOVING, DISABLED
 }
 
 image_speed = 0; 

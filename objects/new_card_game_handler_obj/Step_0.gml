@@ -39,10 +39,10 @@ if (room == CardGameRoom)
 		/*begin_card_game_round();*/
 		card_game_phase = GAME_PHASE.HOW_TO_PLAY;
 		
-		loss_room = returnroom;
-		loss_x = returnx;
-		loss_y = returny;
-		loss_dir = returndir;
+		return_room = returnroom;
+		return_x = returnx;
+		return_y = returny;
+		return_dir = returndir;
 		
 		opponent_flavor = oflavor;
 	}

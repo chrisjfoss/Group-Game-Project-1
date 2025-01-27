@@ -46,7 +46,7 @@ function create_textbox(sprite, sub_img, text, position, popup = true, xx = 0, y
 	// Find out how much space you have for wrapping the text.
 	var typeable_w = w - double_border;
 	
-	// Default to not a quetion
+	// Default to not a question
 	var is_question = false; 
 	
 	// Set up the question arrays anyway

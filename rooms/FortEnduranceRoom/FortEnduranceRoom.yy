@@ -47,6 +47,7 @@
     {"name":"inst_78F33782","path":"rooms/FortEnduranceRoom/FortEnduranceRoom.yy",},
     {"name":"inst_E553440","path":"rooms/FortEnduranceRoom/FortEnduranceRoom.yy",},
     {"name":"inst_12539047","path":"rooms/FortEnduranceRoom/FortEnduranceRoom.yy",},
+    {"name":"inst_24175610","path":"rooms/FortEnduranceRoom/FortEnduranceRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -92,6 +93,7 @@
         {"$GMRInstance":"v1","%Name":"inst_78F33782","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_78F33782","objectId":{"name":"smoke_stack_obj","path":"objects/smoke_stack_obj/smoke_stack_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3.0,"y":137.0,},
         {"$GMRInstance":"v1","%Name":"inst_E553440","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_E553440","objectId":{"name":"endurance_bot_obj","path":"objects/endurance_bot_obj/endurance_bot_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":447.0,"y":239.0,},
         {"$GMRInstance":"v1","%Name":"inst_12539047","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_12539047","objectId":{"name":"endurance_top_obj","path":"objects/endurance_top_obj/endurance_top_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":327.0,"y":155.0,},
+        {"$GMRInstance":"v1","%Name":"inst_24175610","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_24175610","objectId":{"name":"_train_is_a_person_obj","path":"objects/_train_is_a_person_obj/_train_is_a_person_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":0.5,"x":32.0,"y":345.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_5C072228","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_5C072228","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"cards_decor_spr","path":"sprites/cards_decor_spr/cards_decor_spr.yy",},"x":466.0,"y":114.0,},
