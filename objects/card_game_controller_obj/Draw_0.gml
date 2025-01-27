@@ -256,6 +256,45 @@ if (ds_list_size(player_hand) > 0)
 	
 		draw_sprite(card_bkg_spr,0,card_x,card_y);
 		
+		var card_valid_now = true;
+		
+		//determine if the player must follow suit or not. if they must, display an error message. Otherwise, allow the play.
+		
+		if (opponent_card_active != "")
+		{
+			var opp_suit = get_card_suit(opponent_card_active);
+						
+			var pl_suit = get_card_suit(this_card_type);
+						
+			if (opp_suit == pl_suit)
+			{
+				card_valid_now = true;
+			}
+			else
+			{
+				//not same suit! Determine if the player has ANY of the opponent's suit in their hand.
+				var has_matching_suit = false;
+				for (var j = 0; j < ds_list_size(player_hand); j++)
+				{
+					var check_card = player_hand[| j];
+								
+					var check_suit = get_card_suit(check_card);
+								
+					if (check_suit == opp_suit)
+					{
+						has_matching_suit = true;
+					}
+				}
+							
+				if (has_matching_suit)
+				{
+					card_valid_now = false;
+				}
+			}
+		}
+		
+		
+		
 		//strip the color from the card string to get the value
 		if (this_card_type == "Continue")
 		{
@@ -295,6 +334,11 @@ if (ds_list_size(player_hand) > 0)
 		else if (suit_spr == suit_military_spr) { card_hint_text = "Beats Economy.\nLoses to Science."; }
 		else if (suit_spr == suit_economy_spr) { card_hint_text = "Beats Science.\nLoses to Military."; }
 		else if (suit_spr == suit_science_spr) { card_hint_text = "Beats Military.\nLoses to Economy."; }
+		
+		if (!card_valid_now && card_game_phase == GAME_PHASE.PLAYER_TURN)
+		{
+			draw_sprite_ext(card_front_spr,0,card_x,card_y,1,1,0,c_dkgray,0.75);
+		}
 		
 		if (card_selected == i && card_game_phase == GAME_PHASE.PLAYER_TURN)
 		{
