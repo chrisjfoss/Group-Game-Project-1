@@ -2,31 +2,16 @@
 // You can write your code in this editor
 event_inherited();
 
-function spend_batteries(_resource, _cost) {
-	var _succeeded = false;
-	var _remaining = _resource;
-	
-	if(_remaining >= _cost) {
-		_remaining-= _cost;
-		_succeeded = true;
-	}
-	
-	return { _remaining, _succeeded };
-}
-
 function purchase(resource, amount, cost) {
 	creator = self;
-	var _result = spend_batteries(global._player_resources.BATTERIES, cost);
-					
-	global._player_resources.BATTERIES = _result._remaining;
+	var _succeeded = purchase_resource(resource, amount, cost);
 	
 	creator = self;
-	if(_result._succeeded) {
-		global._player_resources[$ resource] += amount;
-		dlog_continue(4)
+	if(_succeeded) {
+		dlog_continue(4);
 	}
 	else {
-		dlog_continue(3)
+		dlog_continue(3);
 	}
 }
 

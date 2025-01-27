@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"spend_resources",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"spend_resources",
+  "parent":{
+    "name":"Resources",
+    "path":"folders/Scripts/CardGameScripts/Resources.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

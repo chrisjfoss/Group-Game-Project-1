@@ -59,6 +59,9 @@ if (check_primary_pressed() || mouse_check_button_pressed(mb_left))
 			//Failure! Return to the station.
 			room_goto(return_room);
 			
+			// Lose 10 batteries when you lose
+			spend_batteries(10);
+			
 			var _player_setter = instance_create_depth(0,0,0,player_setter_obj);
 			_player_setter.player_set_x = return_x;
 			_player_setter.player_set_y = return_y;
