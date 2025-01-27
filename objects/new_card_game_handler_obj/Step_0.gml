@@ -4,10 +4,10 @@
 if (room == CardGameRoom)
 {
 	var om = opponent_military;
-	var oc = opponent_civilian;
+	var oc = opponent_economy;
 	var os = opponent_science;
 	var pm = player_military;
-	var pc = player_civilian;
+	var pc = player_economy;
 	var ps = player_science;
 	
 	var returnroom = return_to_room;
