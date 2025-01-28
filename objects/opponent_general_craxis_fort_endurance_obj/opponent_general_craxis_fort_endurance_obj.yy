@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"opponent_fort_endurance_obj",
+  "%Name":"opponent_general_craxis_fort_endurance_obj",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"opponent_fort_endurance_obj",
+  "name":"opponent_general_craxis_fort_endurance_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"WalkaroundObjects",
-    "path":"folders/Objects/WalkaroundObjects.yy",
+    "name":"FortEnduranceObjects",
+    "path":"folders/Objects/WalkaroundObjects/FortEnduranceObjects.yy",
   },
   "parentObjectId":{
     "name":"npc_parent_obj",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"base_npc4_spr",
-    "path":"sprites/base_npc4_spr/base_npc4_spr.yy",
+    "name":"cardinal_soldier_npc_down_spr",
+    "path":"sprites/cardinal_soldier_npc_down_spr/cardinal_soldier_npc_down_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,
