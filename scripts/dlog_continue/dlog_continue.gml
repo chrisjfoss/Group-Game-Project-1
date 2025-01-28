@@ -9,7 +9,10 @@
 function dlog_continue() {
 	// Start by getting rid of the old textbox
 	if (instance_exists(textbox_obj)) {
-		instance_destroy(textbox_obj); 
+		with (textbox_obj)
+		{
+			instance_destroy(); 
+		}
 	}
 	
 	// Have the speaker automatically create a new textbox
@@ -26,6 +29,7 @@ function dlog_continue() {
 	
 		// Apply the change
 		dlog_index = n;
+		show_debug_message("Textbox continuing.");
 		create_textbox(window_sprite, 0, dlog[dlog_index], "bottom", false); 
 	}
 }

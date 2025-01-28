@@ -23,4 +23,5 @@ dlog[2] = ["Exiting to Main Menu...",
 
 window_sprite = basic_textbox_spr; 
 
+show_debug_message("Quit game confirmation firing.");
 create_textbox(window_sprite, 0, dlog[dlog_index], "bottom"); 

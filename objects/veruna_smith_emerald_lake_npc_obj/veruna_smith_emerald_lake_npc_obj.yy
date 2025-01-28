@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"a_quartermaster_kalkik_npc_obj",
+  "%Name":"veruna_smith_emerald_lake_npc_obj",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"a_quartermaster_kalkik_npc_obj",
+  "name":"veruna_smith_emerald_lake_npc_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"FortEnduranceObjects",
-    "path":"folders/Objects/WalkaroundObjects/FortEnduranceObjects.yy",
+    "name":"EmeraldLakeObjects",
+    "path":"folders/Objects/WalkaroundObjects/EmeraldLakeObjects.yy",
   },
   "parentObjectId":{
     "name":"npc_parent_obj",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"quartermaster_valkik_npc_right_spr",
-    "path":"sprites/quartermaster_valkik_npc_right_spr/quartermaster_valkik_npc_right_spr.yy",
+    "name":"veruna_smith_npc_down_spr",
+    "path":"sprites/veruna_smith_npc_down_spr/veruna_smith_npc_down_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,

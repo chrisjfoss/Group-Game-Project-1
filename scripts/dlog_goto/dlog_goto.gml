@@ -7,9 +7,13 @@
 function dlog_goto(){
 	// Get the string being written. 
 	var str = creator.dlog[creator.dlog_index]; 
+	show_debug_message(creator);
+	show_debug_message(creator.object_index);
+	show_debug_message(object_get_name(creator.object_index));
 	
 	// Extract the instructions
 	var n = check_hidden_num(str); // This deletes the instructions and returns a string of numbers
+	show_debug_message(n);
 	
 	// Apply the change
 	creator.dlog_index = n;

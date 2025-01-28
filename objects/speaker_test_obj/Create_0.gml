@@ -20,4 +20,5 @@ dlog[2] = ["See I knew you would think I'm funny!",
 
 window_sprite = basic_textbox_spr; 
 
+show_debug_message("Speaker test firing.");
 create_textbox(window_sprite, 0, dlog[dlog_index], "bottom"); 

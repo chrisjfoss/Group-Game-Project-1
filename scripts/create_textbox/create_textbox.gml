@@ -12,6 +12,7 @@
 */
 
 function create_textbox(sprite, sub_img, text, position, popup = true, xx = 0, yy = 0){
+	show_debug_message("CREATING NEW TEXTBOX!");
 	
 	// NOTE: text can be in 4 formats: 
 	// 1) "string" - When the sigle line of text is done, the textbox will go away.

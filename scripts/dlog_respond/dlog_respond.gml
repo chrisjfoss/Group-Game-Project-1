@@ -19,6 +19,7 @@ function dlog_respond(){
 	
 	// Have the speaker automatically create a new textbox
 	with (creator) {
+		show_debug_message("Textbox responding.");
 		create_textbox(window_sprite, 0, dlog[dlog_index], "bottom", false); 
 	}
 }
