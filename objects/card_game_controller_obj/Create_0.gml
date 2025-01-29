@@ -49,7 +49,7 @@ opponent_hand = ds_list_create();
 
 opponent_flavor = 0;
 
-return_room = MapRoom;
+return_room = global.last_station_visited;
 return_x = 64;
 return_y = 64;
 return_dir = DIR.DOWN;

@@ -9,6 +9,7 @@ if (instance_exists(player_walkaround_obj))
 	
 	with (player_walkaround_obj)
 	{
+		
 		//set sprite according to direction
 		if (_player_direction == DIR.DOWN)
 		{
@@ -27,6 +28,14 @@ if (instance_exists(player_walkaround_obj))
 			sprite_index = _player_sprites.right;
 		}
 	}
+	
+	if instance_exists(global.opponent) {
+		with (global.opponent) {
+			dlog_index = global.won_last_card_game ? 3 : 4;
+			
+			create_textbox(basic_textbox_spr, 0, dlog[dlog_index], "bottom"); 
+		}
+	}	
 	
 	instance_destroy();
 }
