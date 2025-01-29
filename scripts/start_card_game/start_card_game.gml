@@ -17,5 +17,9 @@ function start_card_game(opp_m, opp_c, opp_s, opponent_flavor = 0){
 	
 	show_debug_message("DIR RETURN: "+string(new_card_game_handler.return_to_dir));
 	
+	global.last_station_visited = room; 
+	global.won_last_card_game = false;
+	global.opponent = object_index; 
+	
 	room_goto(CardGameRoom);
 }

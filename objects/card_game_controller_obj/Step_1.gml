@@ -41,8 +41,10 @@ if (check_primary_pressed() || mouse_check_button_pressed(mb_left))
 		}
 	
 		if (player_score > opponent_score) { 
-			//Victory! Advance along the map.
-			global._map_advance = true;
+			//Victory! Return to Walkaround phase.
+			//global._map_advance = true;
+			
+			global.won_last_card_game = true; 
 			
 			room_goto(return_room);
 			

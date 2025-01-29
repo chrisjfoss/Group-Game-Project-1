@@ -15,3 +15,7 @@ dlog[1] = [ "Prepare to be vanquished. Then I shall turn you into fuel for the m
 		  ]; 
 dlog[2] = [ "I knew you lacked the courage to follow through.^0", dlog_goto]; 
 
+// Dialogue for after winning or losing the game. Must be accessed by changing dlog_index during card game phase.
+dlog[3] = ["This is what I will say as soon as I lose the game!^5", dlog_goto]; 
+dlog[4] = ["This is what I will say as soon as I win the game! The next time you talk to me, I will ask to play again.^0", dlog_goto]; 
+dlog[5] = "This is what I will say if you talk to me after I've lost. There is no way to get me to say anything else."; 
