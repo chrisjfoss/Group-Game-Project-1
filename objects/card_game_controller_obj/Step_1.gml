@@ -42,7 +42,7 @@ if (check_primary_pressed() || mouse_check_button_pressed(mb_left))
 	
 		if (player_score > opponent_score) { 
 			//Victory! Return to Walkaround phase.
-			//global._map_advance = true;
+			global._map_advance = true;
 			
 			global.won_last_card_game = true; 
 			

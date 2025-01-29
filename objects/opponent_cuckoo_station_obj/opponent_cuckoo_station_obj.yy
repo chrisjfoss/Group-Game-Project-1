@@ -8,8 +8,8 @@
   "name":"opponent_cuckoo_station_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"WalkaroundObjects",
-    "path":"folders/Objects/WalkaroundObjects.yy",
+    "name":"GrandCuckooStationObjects",
+    "path":"folders/Objects/WalkaroundObjects/GrandCuckooStationObjects.yy",
   },
   "parentObjectId":{
     "name":"npc_parent_obj",

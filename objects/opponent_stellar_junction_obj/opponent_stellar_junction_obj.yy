@@ -8,8 +8,8 @@
   "name":"opponent_stellar_junction_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"WalkaroundObjects",
-    "path":"folders/Objects/WalkaroundObjects.yy",
+    "name":"StellarJunctionObjects",
+    "path":"folders/Objects/WalkaroundObjects/StellarJunctionObjects.yy",
   },
   "parentObjectId":{
     "name":"npc_parent_obj",
