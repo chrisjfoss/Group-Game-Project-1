@@ -25,9 +25,9 @@ global._events_witnessed = [];
 
 enum STARTING_VALUES {
 	BATTERIES = 50,
-	MILITARY = 10,
-	ECONOMY = 10,
-	SCIENCE = 10
+	MILITARY = 1,
+	ECONOMY = 1,
+	SCIENCE = 1
 }
 
 //player values, useful for scoring the game
